@@ -1,121 +1,323 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SuperDaddyChris | Official Artist Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #080808;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to bottom, #120000, #000), url("album-cover.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px;
-    }
+<title>SuperDaddyChris | Official Artist Website</title>
 
-    h1 {
-      font-size: 64px;
-      margin: 0;
-    }
+<meta name="description" content="Official website of SuperDaddyChris — independent hip hop artist and cinematic storyteller behind Love Me Back.">
 
-    .tagline {
-      font-size: 24px;
-      color: #ff4b4b;
-      margin-top: 10px;
-    }
+<style>
 
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: #ff1f1f;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
 
-    section {
-      padding: 60px;
-      max-width: 900px;
-    }
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,.95)),
+    url('love-me-back-cover.jpg');
 
-    .music-links a {
-      display: inline-block;
-      margin: 10px;
-      color: white;
-      text-decoration: none;
-      border: 1px solid #ff4b4b;
-      padding: 12px 20px;
-      border-radius: 25px;
-    }
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:60px;
+}
 
-    footer {
-      padding: 30px;
-      text-align: center;
-      background: #111;
-      color: #aaa;
-    }
-  </style>
+.hero-content{
+    max-width:700px;
+}
+
+h1{
+    font-size:72px;
+    margin:0;
+    color:white;
+}
+
+.red{
+    color:#ff1f1f;
+}
+
+.tagline{
+    font-size:24px;
+    margin-top:15px;
+    color:#ff4d4d;
+}
+
+.bio{
+    margin-top:25px;
+    line-height:1.7;
+    color:#ddd;
+    font-size:18px;
+}
+
+.button-group{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    margin-right:15px;
+    margin-bottom:15px;
+    padding:16px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-red{
+    background:#ff1f1f;
+}
+
+.btn-outline{
+    border:2px solid #ff1f1f;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.album-grid{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.album-cover{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,0,0,.3);
+}
+
+.tracklist{
+    line-height:2;
+    color:#ddd;
+    font-size:18px;
+}
+
+.socials{
+    margin-top:40px;
+}
+
+.socials a{
+    display:inline-block;
+    margin-right:15px;
+    margin-bottom:15px;
+    padding:14px 24px;
+    border:1px solid #ff1f1f;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.video-card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.video-card:hover{
+    transform:translateY(-10px);
+}
+
+.video-card img{
+    width:100%;
+    display:block;
+}
+
+.video-info{
+    padding:20px;
+}
+
+footer{
+    background:#080808;
+    text-align:center;
+    padding:50px;
+    color:#777;
+}
+
+@media(max-width:900px){
+
+.hero{
+    padding:30px;
+}
+
+h1{
+    font-size:48px;
+}
+
+.album-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>SuperDaddyChris</h1>
-    <div class="tagline">Independent Hip Hop Artist & Cinematic Storyteller</div>
-    <a class="button" href="#music">Listen to Love Me Back</a>
-  </div>
+<div class="hero">
 
-  <section>
-    <h2>About SuperDaddyChris</h2>
-    <p>
-      SuperDaddyChris is an independent hip hop artist and visual creator known for raw emotional storytelling,
-      cinematic music videos, and AI-assisted creative projects. His album <strong>Love Me Back</strong> explores
-      heartbreak, regret, love, and healing through a connected visual universe.
-    </p>
-  </section>
+<div class="hero-content">
 
-  <section id="music">
-    <h2>Music</h2>
-    <p>Stream the album <strong>Love Me Back</strong> now.</p>
+<h1>SuperDaddy<span class="red">Chris</span></h1>
 
-    <div class="music-links">
-      <a href="#">Spotify</a>
-      <a href="#">Apple Music</a>
-      <a href="#">YouTube Music</a>
-      <a href="#">Amazon Music</a>
-    </div>
-  </section>
+<div class="tagline">
+Independent Hip Hop Artist & Cinematic Storyteller
+</div>
 
-  <section>
-    <h2>Videos</h2>
-    <p>
-      Watch the official visual series for <strong>Love Me Back</strong>, including
-      <em>Perfect Girl</em>, <em>Cry Wolf</em>, and <em>Are We Through</em>.
-    </p>
-    <a class="button" href="#">Watch on YouTube</a>
-  </section>
+<div class="bio">
+Official website of SuperDaddyChris — creator of the cinematic album
+<b>Love Me Back</b>, blending emotional storytelling,
+music videos, and dark visual worlds inspired by heartbreak,
+redemption, and love.
+</div>
 
-  <section>
-    <h2>Press / Contact</h2>
-    <p>
-      For interviews, features, collaborations, or booking:
-    </p>
-    <p><strong>Email:</strong> superdaddychris@gmail.com</p>
-  </section>
+<div class="button-group">
 
-  <footer>
-    © 2026 SuperDaddyChris. Official Artist Website.
-  </footer>
+<a class="btn btn-red"
+href="https://open.spotify.com/album/29QxGNdCLjZpffYWi1hyQv"
+target="_blank">
+Listen on Spotify
+</a>
+
+<a class="btn btn-outline"
+href="https://www.youtube.com/@SuperDaddyChris"
+target="_blank">
+Watch Videos
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<section>
+
+<div class="section-title">
+LOVE ME BACK
+</div>
+
+<div class="album-grid">
+
+<div>
+<img src="love-me-back-cover.jpg" class="album-cover">
+</div>
+
+<div>
+
+<div class="tracklist">
+
+01. Not the Man You Think I Am<br>
+02. Cry Wolf<br>
+03. Perfect Girl<br>
+04. Love Hates Me<br>
+05. Are We Through<br>
+
+</div>
+
+<div class="socials">
+
+<a href="https://open.spotify.com/artist/6Sg3u97rKDlO3OWH24n3Fd" target="_blank">Spotify</a>
+
+<a href="https://music.apple.com/us/artist/superdaddychris/1883781526" target="_blank">Apple Music</a>
+
+<a href="https://music.amazon.com/artists/B0D9DLLKYP/superdaddychris" target="_blank">Amazon Music</a>
+
+<a href="https://www.instagram.com/superdaddychris/" target="_blank">Instagram</a>
+
+<a href="https://www.tiktok.com/@superdaddychris" target="_blank">TikTok</a>
+
+<a href="https://www.youtube.com/@SuperDaddyChris" target="_blank">YouTube</a>
+
+<a href="https://www.facebook.com/share/18yoajtqRr/?mibextid=wwXIfr" target="_blank">Facebook</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="section-title">
+LATEST VIDEOS
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<img src="love-me-back-cover.jpg">
+
+<div class="video-info">
+<h2>Perfect Girl</h2>
+<p>Official Visual</p>
+</div>
+
+</div>
+
+<div class="video-card">
+
+<img src="love-me-back-cover.jpg">
+
+<div class="video-info">
+<h2>Cry Wolf</h2>
+<p>Official Visual</p>
+</div>
+
+</div>
+
+<div class="video-card">
+
+<img src="love-me-back-cover.jpg">
+
+<div class="video-info">
+<h2>Are We Through</h2>
+<p>Official Visual</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SuperDaddyChris — Official Artist Website
+
+</footer>
 
 </body>
 </html>
