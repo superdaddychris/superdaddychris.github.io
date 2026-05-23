@@ -1,70 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Love Me Back - SuperDaddyChris</title>
+
 <style>
 
-.album-card{
-transition:all .3s ease;
+body{
+background:black;
+color:white;
+font-family:Arial;
+margin:0;
 }
 
-.album-card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 30px rgba(0,140,255,.5);
-border:1px solid #008cff;
+a{
+color:white;
+text-decoration:none;
 }
 
-.album-card img{
-transition:all .3s ease;
+.track{
+display:block;
+padding:15px;
+border-bottom:1px solid #222;
+transition:.3s;
 }
 
-.album-card:hover img{
+.track:hover{
+background:#111;
+padding-left:25px;
+color:#008cff;
+}
+
+.album-cover{
+border-radius:15px;
+transition:.3s;
+}
+
+.album-cover:hover{
 box-shadow:0 0 35px rgba(0,140,255,.6);
 }
 
 </style>
+
 </head>
 
-<body style="background:black; color:white; font-family:Arial; margin:0;">
+<body>
 
-<nav style="padding:20px; text-align:center; background:#050505; position:sticky; top:0; z-index:1000; border-bottom:1px solid #222;">
-<a href="index.html" style="color:white; margin:15px; text-decoration:none;">Home</a>
-<a href="about.html" style="color:white; margin:15px; text-decoration:none;">Bio</a>
-<a href="media.html" style="color:white; margin:15px; text-decoration:none;">Media</a>
-<a href="lyrics.html" style="color:white; margin:15px; text-decoration:none;">Lyrics</a>
-<a href="merch.html" style="color:white; margin:15px; text-decoration:none;">Merch</a>
-<a href="contact.html" style="color:white; margin:15px; text-decoration:none;">Contact</a>
+<nav style="padding:20px; text-align:center; background:#050505; border-bottom:1px solid #222;">
+
+<a href="index.html" style="margin:15px;">Home</a>
+<a href="about.html" style="margin:15px;">Bio</a>
+<a href="media.html" style="margin:15px;">Media</a>
+<a href="lyrics.html" style="margin:15px;">Lyrics</a>
+<a href="merch.html" style="margin:15px;">Merch</a>
+<a href="contact.html" style="margin:15px;">Contact</a>
+
 </nav>
 
-<section style="max-width:500px; margin:50px auto; padding:20px;">
+<section style="max-width:1200px; margin:50px auto; padding:20px;">
 
-<h1 style="text-align:center; font-size:42px;">Lyrics</h1>
+<div style="display:flex; flex-wrap:wrap; gap:40px;">
 
-<p style="text-align:center; color:#aaa; margin-bottom:50px;">
-Select an album to view official lyrics.
+<div style="flex:1; min-width:300px;">
+
+<img src="love-me-back-cover.jpg"
+     alt="Love Me Back Album Cover"
+     class="album-cover"
+     style="width:100%;">
+
+</div>
+
+<div style="flex:2; min-width:300px;">
+
+<h1 style="font-size:48px; margin-top:0;">
+Love Me Back
+</h1>
+
+<p style="color:#aaa;">
+SuperDaddyChris • 2026 • 13 Tracks
 </p>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-gap:30px;
-">
+<hr style="border-color:#222;">
 
-  <a href="love-me-back-album.html" style="color:white; text-decoration:none;">
-    <div class="album-card" style="background:#111; padding:20px; border-radius:18px; text-align:center; border:1px solid #222;">
-      <img src="love-me-back-cover.jpg"
-           alt="Love Me Back Album Cover"
-           style="width:100%; border-radius:14px; margin-bottom:20px;">
+<a href="perfect-girl.html" class="track">
+1. Perfect Girl
+</a>
 
-      <h2 style="margin:10px 0;">Love Me Back</h2>
+<a href="cry-wolf.html" class="track">
+2. Cry Wolf
+</a>
 
-      <p style="color:#aaa; margin:0;">
-        SuperDaddyChris • 2026 • 13 Tracks
-      </p>
-    </div>
-  </a>
+<a href="are-we-through.html" class="track">
+3. Are We Through
+</a>
+
+<a href="love-me-back.html" class="track">
+4. Love Me Back (English Version)
+</a>
+
+<a href="i-wish.html" class="track">
+5. I Wish
+</a>
+
+<a href="misery-loves-company.html" class="track">
+6. Misery Loves Company
+</a>
+
+<a href="never-just-us.html" class="track">
+7. Never Just Us
+</a>
+
+<a href="i-hate-this-city.html" class="track">
+8. I Hate This City
+</a>
+
+<a href="not-the-man-you-think-i-am.html" class="track">
+9. Not the Man You Think I Am
+</a>
+
+<a href="love-hates-me.html" class="track">
+10. Love Hates Me
+</a>
+
+<a href="part-of-me.html" class="track">
+11. Part of Me
+</a>
+
+<a href="see-me.html" class="track">
+12. See Me
+</a>
+
+<a href="not-with-me.html" class="track">
+13. Not With Me
+</a>
+
+</div>
 
 </div>
 
 </section>
+
+</body>
+</html>
 </body>
 </html>
