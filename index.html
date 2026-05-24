@@ -33,7 +33,7 @@ radial-gradient(circle at top, rgba(120,0,0,.35), #000 40%);
     overflow-x:hidden;
 }
 .overlay{
-    position:absolute;
+    position:none;
     top:0;
     left:0;
     width:100%;
@@ -239,7 +239,28 @@ font-size:28px;
 font-size:14px;
 }
 }
+@media (max-width: 768px) {
 
+  .hero h1 {
+    font-size: 58px !important;
+    line-height: 1;
+    word-break: break-word;
+  }
+
+  .hero p {
+    font-size: 18px !important;
+  }
+
+  nav {
+    padding: 12px !important;
+  }
+
+  nav a {
+    font-size: 16px !important;
+    margin: 8px !important;
+  }
+
+}
 </style>
 </head>
 
