@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Private Media Organizer - SuperDaddyChris</title>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+
+<style>
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+nav{
+    padding:20px;
+    text-align:center;
+    background:#000;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #222;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#ff4fd8;
+}
+
+h1{
+    text-align:center;
+    margin-top:40px;
+    font-size:42px;
+}
+
+p{
+    text-align:center;
+    color:#aaa;
+}
+
+.warning{
+    max-width:900px;
+    margin:25px auto;
+    padding:18px;
+    background:#140014;
+    border:1px solid #ff4fd8;
+    border-radius:12px;
+    color:#ddd;
+    line-height:1.6;
+}
+
+.controls{
+    text-align:center;
+    margin:30px auto;
+}
+
+button{
+    background:#ff4fd8;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    margin:8px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ff78e2;
+}
+
+.organizer{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    max-width:1300px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.media-item{
+    background:#111;
+    border:1px solid #222;
+    border-radius:14px;
+    overflow:hidden;
+    cursor:grab;
+    box-shadow:0 0 15px rgba(255,255,255,.06);
+}
+
+.media-item:active{
+    cursor:grabbing;
+}
+
+.media-item img{
+    width:100%;
+    display:block;
+}
+
+.media-info{
+    padding:14px;
+}
+
+.media-info h3{
+    color:#ff4fd8;
+    margin:0 0 8px;
+    font-size:18px;
+}
+
+.media-info p{
+    text-align:left;
+    margin:0;
+    color:#bbb;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 8px;
+    background:#222;
+    border-radius:8px;
+    color:#ddd;
+    font-size:12px;
+}
+
+textarea{
+    display:block;
+    width:90%;
+    max-width:1100px;
+    height:220px;
+    margin:30px auto;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:15px;
+    font-family:monospace;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:30px;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:10px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="media.html">Public Media Page</a>
+<a href="lyrics.html">Lyrics</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<h1>Private Media Organizer</h1>
+
+<p>
+Drag and drop your photos to plan the order for your public media gallery.
+</p>
+
+<div class="warning">
+<strong>Important:</strong> This page is private only because you are not linking it anywhere.
+It is not password protected. Anyone with the exact URL could still see it.
+Use this page as a personal organizer, not a place for secret files.
+</div>
+
+<div class="controls">
+<button onclick="saveOrder()">Save Order On This Device</button>
+<button onclick="loadOrder()">Load Saved Order</button>
+<button onclick="copyOrder()">Generate HTML Order</button>
+<button onclick="resetOrder()">Reset Saved Order</button>
+</div>
+
+<div id="organizer" class="organizer">
+
+<div class="media-item" data-file="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG" data-title="Promotional Artwork">
+<img src="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG">
+<div class="media-info">
+<h3>Promotional Artwork</h3>
+<p>Main promo-style image for the SuperDaddyChris brand.</p>
+<span class="tag">Promo</span>
+</div>
+</div>
+
+<div class="media-item" data-file="IMG_7718.PNG" data-title="Artist Visual">
+<img src="IMG_7718.PNG">
+<div class="media-info">
+<h3>Artist Visual</h3>
+<p>Artist image or creative visual for the media page.</p>
+<span class="tag">Artist</span>
+</div>
+</div>
+
+<div class="media-item" data-file="through close up.PNG" data-title="Are We Through Visual">
+<img src="through close up.PNG">
+<div class="media-info">
+<h3>Are We Through Visual</h3>
+<p>Visual connected to the “Are We Through” song/video era.</p>
+<span class="tag">Are We Through</span>
+</div>
+</div>
+
+<div class="media-item" data-file="IMG_7207.JPG" data-title="Behind-the-Scenes Photo">
+<img src="IMG_7207.JPG">
+<div class="media-info">
+<h3>Behind-the-Scenes Photo</h3>
+<p>Personal or behind-the-scenes image for your creative process.</p>
+<span class="tag">BTS</span>
+</div>
+</div>
+
+<div class="media-item" data-file="cry-wolf-thumb.jpg" data-title="Cry Wolf Thumbnail">
+<img src="cry-wolf-thumb.jpg">
+<div class="media-info">
+<h3>Cry Wolf Thumbnail</h3>
+<p>Thumbnail or promo visual for “Cry Wolf.”</p>
+<span class="tag">Cry Wolf</span>
+</div>
+</div>
+
+<div class="media-item" data-file="crywolf moon.PNG" data-title="Cry Wolf Moon Visual">
+<img src="crywolf moon.PNG">
+<div class="media-info">
+<h3>Cry Wolf Moon Visual</h3>
+<p>Cinematic moon visual from the “Cry Wolf” world.</p>
+<span class="tag">Cry Wolf</span>
+</div>
+</div>
+
+<div class="media-item" data-file="IMG_0203.JPG" data-title="Artist Photo">
+<img src="IMG_0203.JPG">
+<div class="media-info">
+<h3>Artist Photo</h3>
+<p>Photo of SuperDaddyChris for media or press use.</p>
+<span class="tag">Photo</span>
+</div>
+</div>
+
+<div class="media-item" data-file="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png" data-title="Creative Concept Image">
+<img src="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png">
+<div class="media-info">
+<h3>Creative Concept Image</h3>
+<p>Concept artwork or AI-generated visual for the brand.</p>
+<span class="tag">Concept</span>
+</div>
+</div>
+
+<div class="media-item" data-file="LMB-Rose-Shirt.png" data-title="Love Me Back Artwork">
+<img src="LMB-Rose-Shirt.png">
+<div class="media-info">
+<h3>Love Me Back Artwork</h3>
+<p>Visual connected to “Love Me Back,” roses, heartbreak, and regret.</p>
+<span class="tag">Love Me Back</span>
+</div>
+</div>
+
+</div>
+
+<textarea id="output" placeholder="Click 'Generate HTML Order' and your reordered gallery code will appear here."></textarea>
+
+<script>
+const organizer = document.getElementById("organizer");
+
+new Sortable(organizer, {
+    animation: 150
+});
+
+function saveOrder(){
+    const items = document.querySelectorAll(".media-item");
+    const order = [];
+
+    items.forEach(item => {
+        order.push(item.getAttribute("data-file"));
+    });
+
+    localStorage.setItem("superdaddychrisMediaOrder", JSON.stringify(order));
+    alert("Order saved on this device.");
+}
+
+function loadOrder(){
+    const savedOrder = JSON.parse(localStorage.getItem("superdaddychrisMediaOrder"));
+
+    if(!savedOrder){
+        alert("No saved order found yet.");
+        return;
+    }
+
+    savedOrder.forEach(file => {
+        const item = document.querySelector('[data-file="' + file + '"]');
+        if(item){
+            organizer.appendChild(item);
+        }
+    });
+
+    alert("Saved order loaded.");
+}
+
+function resetOrder(){
+    localStorage.removeItem("superdaddychrisMediaOrder");
+    alert("Saved order reset. Refresh the page to return to the original order.");
+}
+
+function copyOrder(){
+    const items = document.querySelectorAll(".media-item");
+    let html = "";
+
+    items.forEach(item => {
+        const file = item.getAttribute("data-file");
+        const title = item.getAttribute("data-title");
+
+        html += '<a href="' + file + '" target="_blank">\\n';
+        html += '<img src="' + file + '">\\n';
+        html += '<div class="caption">' + title + '</div>\\n';
+        html += '</a>\\n\\n';
+    });
+
+    document.getElementById("output").value = html;
+}
+</script>
+
+</body>
+</html>
