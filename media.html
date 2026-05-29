@@ -2,82 +2,280 @@
 <html>
 <head>
 <title>Media - SuperDaddyChris</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+
+nav{
+    padding:20px;
+    text-align:center;
+    background:#050505;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #222;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#ff4fd8;
+}
+
+h1{
+    text-align:center;
+    margin-top:40px;
+    font-size:46px;
+}
+
+h2{
+    text-align:center;
+    color:#ff4fd8;
+    margin-top:60px;
+    font-size:32px;
+}
+
+p{
+    text-align:center;
+    color:#aaa;
+}
+
+.intro{
+    max-width:850px;
+    margin:15px auto 40px;
+    padding:0 20px;
+    line-height:1.6;
+}
+
+.feature-box{
+    max-width:1000px;
+    margin:40px auto;
+    padding:30px 20px;
+    border:1px solid #222;
+    border-radius:18px;
+    background:linear-gradient(135deg,#111,#050505);
+    box-shadow:0 0 25px rgba(255,79,216,.15);
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+    max-width:1200px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.card{
+    background:#0b0b0b;
+    border:1px solid #222;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(255,255,255,.06);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card div{
+    padding:16px;
+}
+
+.card h3{
+    color:#ff4fd8;
+    margin:0 0 8px;
+}
+
+.card p{
+    text-align:left;
+    line-height:1.5;
+    margin:0;
+}
+
+.gallery{
+    column-count:3;
+    column-gap:20px;
+    max-width:1400px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.gallery a{
+    display:block;
+    margin-bottom:20px;
+    break-inside:avoid;
+}
+
+.gallery img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:14px;
+    box-shadow:0 0 15px rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 25px rgba(255,79,216,.4);
+}
+
+.caption{
+    color:#aaa;
+    font-size:14px;
+    text-align:center;
+    margin-top:8px;
+}
+
+@media(max-width:900px){
+    .gallery{
+        column-count:2;
+    }
+
+    h1{
+        font-size:36px;
+    }
+}
+
+@media(max-width:600px){
+    .gallery{
+        column-count:1;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:10px;
+    }
+}
+</style>
+
 </head>
 
-<body style="background:black; color:white; font-family:Arial; margin:0;">
+<body>
 
-<nav style="padding:20px; text-align:center; background:#050505; position:sticky; top:0; z-index:1000; border-bottom:1px solid #222;">
-
-<a href="index.html" style="color:white; margin:15px; text-decoration:none;">Home</a>
-<a href="about.html" style="color:white; margin:15px; text-decoration:none;">Bio</a>
-<a href="media.html" style="color:white; margin:15px; text-decoration:none;">Media</a>
-<a href="lyrics.html" style="color:white; margin:15px; text-decoration:none;">Lyrics</a>
-<a href="https://superdaddychris-shop.fourthwall.com/" style="color:white; margin:15px; text-decoration:none;">Merch</a>
-<a href="contact.html" style="color:white; margin:15px; text-decoration:none;">Contact</a>
-<a href="press.html" style="color:white; margin:15px; text-decoration:none;">Press Kit</a>
-
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">Bio</a>
+<a href="media.html">Media</a>
+<a href="lyrics.html">Lyrics</a>
+<a href="https://superdaddychris-shop.fourthwall.com/">Merch</a>
+<a href="contact.html">Contact</a>
+<a href="press.html">Press Kit</a>
 </nav>
 
-<h1 style="text-align:center; margin-top:40px;">
-Media Gallery
-</h1>
+<h1>Media Gallery</h1>
 
-<p style="text-align:center; color:#aaa;">
-Photos, promotional images, album artwork, and behind-the-scenes content.
+<p class="intro">
+Photos, promotional images, album artwork, AI visuals, animated frames, and behind-the-scenes content from SuperDaddyChris.
 </p>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-max-width:1200px;
-margin:50px auto;
-padding:20px;
-">
+<div class="feature-box">
+<h2>How I Made the Videos</h2>
+<p class="intro">
+This section shows the creative process behind the music videos — from concept images and AI-generated scenes to animated frames, thumbnails, and final promotional visuals.
+</p>
+</div>
 
-<a href="photo1.jpg" target="_blank">
-<img src="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<h2>Behind the Video</h2>
+
+<div class="process-grid">
+
+<div class="card">
+<img src="through close up.PNG">
+<div>
+<h3>Are We Through</h3>
+<p>A close-up visual from the “Are We Through” era, built around tension, late-night thoughts, and a relationship falling apart.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="cry-wolf-thumb.jpg">
+<div>
+<h3>Cry Wolf</h3>
+<p>A dark visual tied to the “Cry Wolf” story, using moody imagery to match a toxic relationship going back and forth.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="crywolf moon.PNG">
+<div>
+<h3>Cry Wolf World</h3>
+<p>A cinematic frame showing the darker atmosphere behind the song — wolves, night energy, and emotional chaos.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="LMB-Rose-Shirt.png">
+<div>
+<h3>Love Me Back</h3>
+<p>A visual connected to the “Love Me Back” era, built around heartbreak, roses, regret, and loving someone who may not love you back.</p>
+</div>
+</div>
+
+</div>
+
+<h2>Photo & Artwork Gallery</h2>
+
+<div class="gallery">
+
+<a href="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG" target="_blank">
+<img src="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG">
+<div class="caption">Promotional artwork</div>
 </a>
 
-<a href="photo2.jpg" target="_blank">
-<img src="IMG_7718.PNG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="IMG_7718.PNG" target="_blank">
+<img src="IMG_7718.PNG">
+<div class="caption">Artist visual</div>
 </a>
 
-<a href="photo3.jpg" target="_blank">
-<img src="through close up.PNG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="through close up.PNG" target="_blank">
+<img src="through close up.PNG">
+<div class="caption">Are We Through visual</div>
 </a>
 
-<a href="photo4.jpg" target="_blank">
-<img src="IMG_7207.JPG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="IMG_7207.JPG" target="_blank">
+<img src="IMG_7207.JPG">
+<div class="caption">Behind-the-scenes photo</div>
 </a>
 
-<a href="photo5.jpg" target="_blank">
-<img src="cry-wolf-thumb.jpg"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="cry-wolf-thumb.jpg" target="_blank">
+<img src="cry-wolf-thumb.jpg">
+<div class="caption">Cry Wolf thumbnail</div>
 </a>
 
-<a href="photo6.jpg" target="_blank">
-<img src="crywolf moon.PNG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="crywolf moon.PNG" target="_blank">
+<img src="crywolf moon.PNG">
+<div class="caption">Cry Wolf moon visual</div>
 </a>
 
-<a href="photo7.jpg" target="_blank">
-<img src="IMG_0203.JPG"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="IMG_0203.JPG" target="_blank">
+<img src="IMG_0203.JPG">
+<div class="caption">Artist photo</div>
 </a>
 
-<a href="photo8.jpg" target="_blank">
-<img src="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png" target="_blank">
+<img src="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png">
+<div class="caption">Creative concept image</div>
 </a>
 
-<a href="photo9.jpg" target="_blank">
-<img src="LMB-Rose-Shirt.png"
-style="width:100%; border-radius:12px; transition:.3s;">
+<a href="LMB-Rose-Shirt.png" target="_blank">
+<img src="LMB-Rose-Shirt.png">
+<div class="caption">Love Me Back artwork</div>
 </a>
 
 </div>
