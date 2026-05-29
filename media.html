@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Media - SuperDaddyChris</title>
+<title>Private Media Organizer - SuperDaddyChris</title>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
 
 <style>
 body{
-    background:black;
+    background:#050505;
     color:white;
     font-family:Arial,sans-serif;
     margin:0;
@@ -14,7 +16,7 @@ body{
 nav{
     padding:20px;
     text-align:center;
-    background:#050505;
+    background:#000;
     position:sticky;
     top:0;
     z-index:1000;
@@ -34,14 +36,7 @@ nav a:hover{
 h1{
     text-align:center;
     margin-top:40px;
-    font-size:46px;
-}
-
-h2{
-    text-align:center;
-    color:#ff4fd8;
-    margin-top:60px;
-    font-size:32px;
+    font-size:42px;
 }
 
 p{
@@ -49,110 +44,107 @@ p{
     color:#aaa;
 }
 
-.intro{
-    max-width:850px;
-    margin:15px auto 40px;
-    padding:0 20px;
+.warning{
+    max-width:900px;
+    margin:25px auto;
+    padding:18px;
+    background:#140014;
+    border:1px solid #ff4fd8;
+    border-radius:12px;
+    color:#ddd;
     line-height:1.6;
 }
 
-.feature-box{
-    max-width:1000px;
-    margin:40px auto;
-    padding:30px 20px;
-    border:1px solid #222;
-    border-radius:18px;
-    background:linear-gradient(135deg,#111,#050505);
-    box-shadow:0 0 25px rgba(255,79,216,.15);
+.controls{
+    text-align:center;
+    margin:30px auto;
 }
 
-.process-grid{
+button{
+    background:#ff4fd8;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    margin:8px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ff78e2;
+}
+
+.organizer{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
-    max-width:1200px;
-    margin:30px auto;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    max-width:1300px;
+    margin:40px auto;
     padding:20px;
 }
 
-.card{
-    background:#0b0b0b;
+.media-item{
+    background:#111;
     border:1px solid #222;
-    border-radius:16px;
+    border-radius:14px;
     overflow:hidden;
+    cursor:grab;
     box-shadow:0 0 15px rgba(255,255,255,.06);
 }
 
-.card img{
+.media-item:active{
+    cursor:grabbing;
+}
+
+.media-item img{
     width:100%;
     display:block;
 }
 
-.card div{
-    padding:16px;
+.media-info{
+    padding:14px;
 }
 
-.card h3{
+.media-info h3{
     color:#ff4fd8;
     margin:0 0 8px;
+    font-size:18px;
 }
 
-.card p{
+.media-info p{
     text-align:left;
-    line-height:1.5;
     margin:0;
-}
-
-.gallery{
-    column-count:3;
-    column-gap:20px;
-    max-width:1400px;
-    margin:40px auto;
-    padding:20px;
-}
-
-.gallery a{
-    display:block;
-    margin-bottom:20px;
-    break-inside:avoid;
-}
-
-.gallery img{
-    width:100%;
-    height:auto;
-    display:block;
-    border-radius:14px;
-    box-shadow:0 0 15px rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.gallery img:hover{
-    transform:scale(1.02);
-    box-shadow:0 0 25px rgba(255,79,216,.4);
-}
-
-.caption{
-    color:#aaa;
+    color:#bbb;
     font-size:14px;
-    text-align:center;
-    margin-top:8px;
+    line-height:1.4;
 }
 
-@media(max-width:900px){
-    .gallery{
-        column-count:2;
-    }
+.tag{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 8px;
+    background:#222;
+    border-radius:8px;
+    color:#ddd;
+    font-size:12px;
+}
 
-    h1{
-        font-size:36px;
-    }
+textarea{
+    display:block;
+    width:90%;
+    max-width:1100px;
+    height:220px;
+    margin:30px auto;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    border-radius:12px;
+    padding:15px;
+    font-family:monospace;
 }
 
 @media(max-width:600px){
-    .gallery{
-        column-count:1;
-    }
-
     h1{
         font-size:30px;
     }
@@ -170,72 +162,176 @@ p{
 
 <nav>
 <a href="index.html">Home</a>
-<a href="about.html">Bio</a>
-<a href="media.html">Media</a>
+<a href="media.html">Public Media Page</a>
 <a href="lyrics.html">Lyrics</a>
-<a href="https://superdaddychris-shop.fourthwall.com/">Merch</a>
 <a href="contact.html">Contact</a>
-<a href="press.html">Press Kit</a>
 </nav>
 
-<h1>Media Gallery</h1>
+<h1>Private Media Organizer</h1>
 
-<p class="intro">
-Photos, promotional images, album artwork, AI visuals, animated frames, and behind-the-scenes content from SuperDaddyChris.
+<p>
+Drag and drop your photos to plan the order for your public media gallery.
 </p>
 
-<div class="feature-box">
-<h2>How I Made the Videos</h2>
-<p class="intro">
-This section shows the creative process behind the music videos — from concept images and AI-generated scenes to animated frames, thumbnails, and final promotional visuals.
-</p>
+<div class="warning">
+<strong>Important:</strong> This page is private only because you are not linking it anywhere.
+It is not password protected. Anyone with the exact URL could still see it.
+Use this page as a personal organizer, not a place for secret files.
 </div>
 
-<h2>Behind the Video</h2>
+<div class="controls">
+<button onclick="saveOrder()">Save Order On This Device</button>
+<button onclick="loadOrder()">Load Saved Order</button>
+<button onclick="copyOrder()">Generate HTML Order</button>
+<button onclick="resetOrder()">Reset Saved Order</button>
+</div>
 
-<div class="process-grid">
+<div id="organizer" class="organizer">
 
-<div class="card">
+<div class="media-item" data-file="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG" data-title="Promotional Artwork">
+<img src="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG">
+<div class="media-info">
+<h3>Promotional Artwork</h3>
+<p>Main promo-style image for the SuperDaddyChris brand.</p>
+<span class="tag">Promo</span>
+</div>
+</div>
+
+<div class="media-item" data-file="IMG_7718.PNG" data-title="Artist Visual">
+<img src="IMG_7718.PNG">
+<div class="media-info">
+<h3>Artist Visual</h3>
+<p>Artist image or creative visual for the media page.</p>
+<span class="tag">Artist</span>
+</div>
+</div>
+
+<div class="media-item" data-file="through close up.PNG" data-title="Are We Through Visual">
 <img src="through close up.PNG">
-<div>
-<h3>Are We Through</h3>
-<p>A close-up visual from the “Are We Through” era, built around tension, late-night thoughts, and a relationship falling apart.</p>
+<div class="media-info">
+<h3>Are We Through Visual</h3>
+<p>Visual connected to the “Are We Through” song/video era.</p>
+<span class="tag">Are We Through</span>
 </div>
 </div>
 
-<div class="card">
+<div class="media-item" data-file="IMG_7207.JPG" data-title="Behind-the-Scenes Photo">
+<img src="IMG_7207.JPG">
+<div class="media-info">
+<h3>Behind-the-Scenes Photo</h3>
+<p>Personal or behind-the-scenes image for your creative process.</p>
+<span class="tag">BTS</span>
+</div>
+</div>
+
+<div class="media-item" data-file="cry-wolf-thumb.jpg" data-title="Cry Wolf Thumbnail">
 <img src="cry-wolf-thumb.jpg">
-<div>
-<h3>Cry Wolf</h3>
-<p>A dark visual tied to the “Cry Wolf” story, using moody imagery to match a toxic relationship going back and forth.</p>
+<div class="media-info">
+<h3>Cry Wolf Thumbnail</h3>
+<p>Thumbnail or promo visual for “Cry Wolf.”</p>
+<span class="tag">Cry Wolf</span>
 </div>
 </div>
 
-<div class="card">
+<div class="media-item" data-file="crywolf moon.PNG" data-title="Cry Wolf Moon Visual">
 <img src="crywolf moon.PNG">
-<div>
-<h3>Cry Wolf World</h3>
-<p>A cinematic frame showing the darker atmosphere behind the song — wolves, night energy, and emotional chaos.</p>
+<div class="media-info">
+<h3>Cry Wolf Moon Visual</h3>
+<p>Cinematic moon visual from the “Cry Wolf” world.</p>
+<span class="tag">Cry Wolf</span>
 </div>
 </div>
 
-<div class="card">
+<div class="media-item" data-file="IMG_0203.JPG" data-title="Artist Photo">
+<img src="IMG_0203.JPG">
+<div class="media-info">
+<h3>Artist Photo</h3>
+<p>Photo of SuperDaddyChris for media or press use.</p>
+<span class="tag">Photo</span>
+</div>
+</div>
+
+<div class="media-item" data-file="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png" data-title="Creative Concept Image">
+<img src="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png">
+<div class="media-info">
+<h3>Creative Concept Image</h3>
+<p>Concept artwork or AI-generated visual for the brand.</p>
+<span class="tag">Concept</span>
+</div>
+</div>
+
+<div class="media-item" data-file="LMB-Rose-Shirt.png" data-title="Love Me Back Artwork">
 <img src="LMB-Rose-Shirt.png">
-<div>
-<h3>Love Me Back</h3>
-<p>A visual connected to the “Love Me Back” era, built around heartbreak, roses, regret, and loving someone who may not love you back.</p>
+<div class="media-info">
+<h3>Love Me Back Artwork</h3>
+<p>Visual connected to “Love Me Back,” roses, heartbreak, and regret.</p>
+<span class="tag">Love Me Back</span>
 </div>
 </div>
 
 </div>
 
-<h2>Photo & Artwork Gallery</h2>
+<textarea id="output" placeholder="Click 'Generate HTML Order' and your reordered gallery code will appear here."></textarea>
 
-<div class="gallery">
+<script>
+const organizer = document.getElementById("organizer");
 
-<a href="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG" target="_blank">\n<img src="EAF408F3-D19B-40AA-AF3F-5CF259BDB380.PNG">\n<div class="caption">Promotional Artwork</div>\n</a>\n\n<a href="through close up.PNG" target="_blank">\n<img src="through close up.PNG">\n<div class="caption">Are We Through Visual</div>\n</a>\n\n<a href="cry-wolf-thumb.jpg" target="_blank">\n<img src="cry-wolf-thumb.jpg">\n<div class="caption">Cry Wolf Thumbnail</div>\n</a>\n\n<a href="crywolf moon.PNG" target="_blank">\n<img src="crywolf moon.PNG">\n<div class="caption">Cry Wolf Moon Visual</div>\n</a>\n\n<a href="IMG_0203.JPG" target="_blank">\n<img src="IMG_0203.JPG">\n<div class="caption">Artist Photo</div>\n</a>\n\n<a href="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png" target="_blank">\n<img src="795042FD-8BC8-47B6-8C84-8A0C2269DAB5.png">\n<div class="caption">Creative Concept Image</div>\n</a>\n\n<a href="IMG_7718.PNG" target="_blank">\n<img src="IMG_7718.PNG">\n<div class="caption">Artist Visual</div>\n</a>\n\n<a href="IMG_7207.JPG" target="_blank">\n<img src="IMG_7207.JPG">\n<div class="caption">Behind-the-Scenes Photo</div>\n</a>\n\n<a href="LMB-Rose-Shirt.png" target="_blank">\n<img src="LMB-Rose-Shirt.png">\n<div class="caption">Love Me Back Artwork</div>\n</a>\n\n
+new Sortable(organizer, {
+    animation: 150
+});
 
-</div>
+function saveOrder(){
+    const items = document.querySelectorAll(".media-item");
+    const order = [];
+
+    items.forEach(item => {
+        order.push(item.getAttribute("data-file"));
+    });
+
+    localStorage.setItem("superdaddychrisMediaOrder", JSON.stringify(order));
+    alert("Order saved on this device.");
+}
+
+function loadOrder(){
+    const savedOrder = JSON.parse(localStorage.getItem("superdaddychrisMediaOrder"));
+
+    if(!savedOrder){
+        alert("No saved order found yet.");
+        return;
+    }
+
+    savedOrder.forEach(file => {
+        const item = document.querySelector('[data-file="' + file + '"]');
+        if(item){
+            organizer.appendChild(item);
+        }
+    });
+
+    alert("Saved order loaded.");
+}
+
+function resetOrder(){
+    localStorage.removeItem("superdaddychrisMediaOrder");
+    alert("Saved order reset. Refresh the page to return to the original order.");
+}
+
+function copyOrder(){
+    const items = document.querySelectorAll(".media-item");
+    let html = "";
+
+    items.forEach(item => {
+        const file = item.getAttribute("data-file");
+        const title = item.getAttribute("data-title");
+
+        html += '<a href="' + file + '" target="_blank">\\n';
+        html += '<img src="' + file + '">\\n';
+        html += '<div class="caption">' + title + '</div>\\n';
+        html += '</a>\\n\\n';
+    });
+
+    document.getElementById("output").value = html;
+}
+</script>
 
 </body>
 </html>
