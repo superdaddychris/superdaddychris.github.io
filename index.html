@@ -41,7 +41,7 @@ body{
 }
 
 nav{
-    padding:20px;
+    padding:12px 8px;
     text-align:center;
     background:#050505;
     position:sticky;
@@ -52,9 +52,10 @@ nav{
 
 nav a{
     color:white;
-    margin:15px;
+    margin:6px 8px;
     text-decoration:none;
-    font-size:17px;
+    font-size:13px;
+    display:inline-block;
 }
 
 nav a:hover{
@@ -152,6 +153,34 @@ h1{
     border-color:#1877f2;
 }
 
+.instagram-feature{
+    max-width:430px;
+    margin-top:25px;
+    margin-bottom:30px;
+    padding:15px;
+    background:rgba(0,0,0,.7);
+    border:1px solid rgba(255,59,141,.6);
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(255,0,100,.35);
+}
+
+.instagram-title{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.instagram-media{
+    min-width:100% !important;
+    max-width:100% !important;
+    width:100% !important;
+    background:white !important;
+    border-radius:12px !important;
+    margin:0 auto 20px auto !important;
+}
+
 .hero-player{
     max-width:430px;
     margin-top:25px;
@@ -180,10 +209,6 @@ h1{
 
 .btn-red{
     background:#ff1f1f;
-}
-
-.btn-outline{
-    border:2px solid #ff1f1f;
 }
 
 .btn:hover{
@@ -342,13 +367,12 @@ footer{
     }
 
     nav{
-        padding:12px;
+        padding:10px 5px;
     }
 
     nav a{
-        display:inline-block;
-        font-size:16px;
-        margin:8px;
+        font-size:11px;
+        margin:4px 5px;
     }
 
     .hero{
@@ -393,6 +417,11 @@ footer{
     .follow-box{
         grid-template-columns:1fr;
         max-width:100%;
+    }
+
+    .instagram-feature{
+        max-width:100%;
+        padding:10px;
     }
 
     .hero-player{
@@ -470,6 +499,29 @@ footer{
             <a class="follow-card facebook" href="https://www.facebook.com/share/18yoajtqRr/?mibextid=wwXIfr" target="_blank">
                 📘 Follow on Facebook
             </a>
+
+        </div>
+
+        <div class="instagram-feature">
+
+            <div class="instagram-title">
+                Latest From Instagram
+            </div>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DXdJG3HETeT/"
+                data-instgrm-version="14">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DX-RbL_hs4w/"
+                data-instgrm-version="14">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DYS73zqgKSE/"
+                data-instgrm-version="14">
+            </blockquote>
 
         </div>
 
@@ -636,6 +688,8 @@ footer{
 <footer>
     © 2026 SuperDaddyChris — Official Artist Website
 </footer>
+
+<script async src="https://www.instagram.com/embed.js"></script>
 
 </body>
 </html>
