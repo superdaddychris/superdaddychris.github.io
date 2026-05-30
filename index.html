@@ -7,64 +7,86 @@
 <title>SuperDaddyChris | Official Artist Website</title>
 
 <meta name="description" content="Official website of SuperDaddyChris — independent hip hop artist and cinematic storyteller behind Love Me Back.">
+<meta name="keywords" content="SuperDaddyChris, Super Daddy Chris, Love Me Back, Cry Wolf, Perfect Girl, Are We Through, I Wish, Misery Loves Company, Never Just Us, Not the Man You Think I am, Part of Me, See Me, Not With Me, I Hate This City, Love hates Me, IDGAD, I Didn't Know, independent hip hop artist, cinematic music videos, Houston artist, emotional hip hop">
+<meta name="author" content="SuperDaddyChris">
+<meta name="robots" content="index, follow">
+
 <meta property="og:title" content="SuperDaddyChris | Official Artist Website">
-
 <meta property="og:description" content="Official website of SuperDaddyChris featuring Love Me Back, Cry Wolf, Perfect Girl, and cinematic visual storytelling.">
-
 <meta property="og:image" content="crywolf moon.PNG">
-
 <meta property="og:type" content="website">
 
-<meta name="keywords" content="SuperDaddyChris, Super Daddy Chris, Love Me Back, Cry Wolf, Perfect Girl, Are We Through, I Wish, Misery Loves Company, Never Just Us, Not the Man You Think I am, Part of Me, See Me, Not With Me, I Hate This City, Love hates Me, IDGAD, I Didn't Know, independent hip hop artist, cinematic music videos, Houston artist, emotional hip hop">
-
-<meta name="author" content="SuperDaddyChris">
-
-<meta name="robots" content="index, follow">
 <style>
 html{
     scroll-behavior:smooth;
 }
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-background:
-linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-url("2848E977-C299-48E8-9324-D7168707CE69.PNG");
-background-size: contain;
-background-position: top;
-background-attachment: scroll;
-    background-color: black;
-    background-repeat: no-repeat;
+    font-family:Arial, sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("2848E977-C299-48E8-9324-D7168707CE69.PNG");
+    background-size:contain;
+    background-position:top center;
+    background-attachment:scroll;
+    background-color:black;
+    background-repeat:no-repeat;
     color:white;
     overflow-x:hidden;
 }
+
+nav{
+    padding:20px;
+    text-align:center;
+    background:#050505;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #222;
+}
+
+nav a{
+    color:white;
+    margin:15px;
+    text-decoration:none;
+    font-size:17px;
+}
+
+nav a:hover{
+    color:#ff1f1f;
+}
+
 .overlay{
-    position:none;
+    position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
     pointer-events:none;
-    background:
-    radial-gradient(circle at center,
-    rgba(255,0,0,.05),
-    transparent 70%);
-    z-index:999;
+    background:radial-gradient(circle at center, rgba(255,0,0,.05), transparent 70%);
+    z-index:1;
 }
+
 .hero{
-    padding:20px;
-    background-position:center top;
+    position:relative;
+    z-index:2;
+    padding:60px 10%;
     min-height:85vh;
-}
 }
 
 .hero-content{
-    max-width:700px;
+    max-width:720px;
 }
 
 h1{
-    font-size:38px;
+    font-size:64px;
     line-height:1;
+    margin-bottom:15px;
 }
 
 .red{
@@ -82,6 +104,62 @@ h1{
     line-height:1.7;
     color:#ddd;
     font-size:18px;
+}
+
+.follow-box{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(140px, 1fr));
+    gap:12px;
+    max-width:430px;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.follow-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 16px;
+    border-radius:14px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(0,0,0,.65);
+    box-shadow:0 0 18px rgba(255,0,0,.25);
+    transition:.3s;
+    text-align:center;
+}
+
+.follow-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(255,0,0,.45);
+}
+
+.instagram{
+    border-color:#ff3b8d;
+}
+
+.tiktok{
+    border-color:#00f2ea;
+}
+
+.youtube{
+    border-color:#ff1f1f;
+}
+
+.facebook{
+    border-color:#1877f2;
+}
+
+.hero-player{
+    max-width:430px;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.hero-player iframe{
+    width:100%;
 }
 
 .button-group{
@@ -113,12 +191,15 @@ h1{
 }
 
 section{
+    position:relative;
+    z-index:2;
     padding:80px 10%;
 }
 
 .section-title{
     font-size:42px;
     margin-bottom:40px;
+    font-weight:bold;
 }
 
 .album-grid{
@@ -140,56 +221,11 @@ section{
     font-size:18px;
 }
 
-.socials{
-    margin-top:40px;
-    .hero-socials{
-    margin-top:25px;
-    margin-bottom:25px;
+.music-links{
+    margin-top:30px;
 }
 
-.hero-player{
-    max-width:420px;
-    margin-top:25px;
-    margin-bottom:25px;
-}
-    .hero-player iframe{
-    width:100%;
-}
-}.hero-music{
-display:flex;
-align-items:center;
-gap:25px;
-margin-top:25px;
-margin-bottom:25px;
-}
-
-.hero-cover img{
-width:220px;
-border-radius:16px;
-box-shadow:0 0 25px rgba(255,0,0,.4);
-}
-
-@media(max-width:768px){
-
-.hero-cover{
-display:none;
-}
-<div class="hero-music">
-
-<div class="hero-cover">
-<img src="love-me-back-cover.jpg" alt="Love Me Back">
-</div>
-
-<div class="hero-player">
-
-<!-- Spotify iframe -->
-
-</div>
-
-</div>
-}
-
-.socials a{
+.music-links a{
     display:inline-block;
     margin-right:15px;
     margin-bottom:15px;
@@ -199,20 +235,18 @@ display:none;
     text-decoration:none;
     color:white;
     font-size:18px;
+    background:rgba(0,0,0,.5);
+    transition:.3s;
 }
-    .socials i{
-    margin-right:8px;
-    font-size:20px;
+
+.music-links a:hover{
+    background:#ff1f1f;
+    transform:scale(1.05);
 }
-}
-.hero-player{
-    max-width:420px;
-    margin-top:25px;
-    margin-bottom:25px;
-}
+
 .video-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:30px;
 }
 
@@ -221,6 +255,7 @@ display:none;
     border-radius:20px;
     overflow:hidden;
     transition:.3s;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
 }
 
 .video-card:hover{
@@ -228,51 +263,71 @@ display:none;
     box-shadow:0 0 30px rgba(255,0,0,.4);
 }
 
-.video-card img{
-    width:100%;
+.video-card iframe{
     display:block;
 }
 
 .video-info{
     padding:20px;
 }
+
+.part-tag{
+    color:#ff3b3b;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.video-info h2{
+    margin:0 0 10px 0;
+}
+
+.video-info p{
+    color:#ccc;
+    margin:0;
+}
+
 .coming-soon{
-margin-top:120px;
-position:relative;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 0 50px rgba(255,0,0,.25);
+    margin-top:40px;
+    position:relative;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 0 50px rgba(255,0,0,.25);
 }
 
 .coming-soon img{
-width:100%;
-display:block;
-filter:brightness(.45);
+    width:100%;
+    display:block;
+    filter:brightness(.45);
 }
 
 .coming-soon-overlay{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-width:90%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    width:90%;
 }
 
 .coming-soon-overlay h2{
-font-size:64px;
-margin:0;
-color:white;
-letter-spacing:4px;
+    font-size:64px;
+    margin:0;
+    color:white;
+    letter-spacing:4px;
 }
 
 .coming-soon-overlay p{
-font-size:24px;
-color:#ff3b3b;
-margin-top:20px;
-letter-spacing:3px;
+    font-size:24px;
+    color:#ff3b3b;
+    margin-top:20px;
+    letter-spacing:3px;
 }
+
 footer{
+    position:relative;
+    z-index:2;
     background:#080808;
     text-align:center;
     padding:50px;
@@ -281,41 +336,90 @@ footer{
 
 @media(max-width:900px){
 
-.hero{
-    padding:30px;
+    body{
+        background-size:cover;
+        background-position:top center;
+    }
+
+    nav{
+        padding:12px;
+    }
+
+    nav a{
+        display:inline-block;
+        font-size:16px;
+        margin:8px;
+    }
+
+    .hero{
+        padding:40px 25px;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .tagline{
+        font-size:21px;
+    }
+
+    .bio{
+        font-size:17px;
+    }
+
+    .album-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:34px;
+    }
+
+    section{
+        padding:60px 25px;
+    }
+
+    .coming-soon-overlay h2{
+        font-size:34px;
+    }
+
+    .coming-soon-overlay p{
+        font-size:16px;
+    }
 }
 
-h1{
-    font-size:48px;
-}
+@media(max-width:768px){
 
-.album-grid{
-    grid-template-columns:1fr;
-}
-.coming-soon-overlay h2{
-font-size:28px;
-}
+    .follow-box{
+        grid-template-columns:1fr;
+        max-width:100%;
+    }
 
-.coming-soon-overlay p{
-font-size:14px;
-}
+    .hero-player{
+        max-width:100%;
+    }
 
-  .hero p {
-    font-size: 18px !important;
-  }
+    h1{
+        font-size:38px;
+        line-height:1.1;
+    }
 
-  nav {
-    padding: 12px !important;
-  }
+    .tagline{
+        font-size:19px;
+    }
 
-  nav a {
-    font-size: 18px !important;
-    margin: 8px !important;
-  }
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.2rem !important;
-        line-height: 1.1;
+    .btn{
+        width:100%;
+        text-align:center;
+        margin-right:0;
+    }
+
+    .coming-soon-overlay h2{
+        font-size:28px;
+    }
+
+    .coming-soon-overlay p{
+        font-size:14px;
     }
 }
 </style>
@@ -323,221 +427,214 @@ font-size:14px;
 
 <body>
 
-<nav style="padding:20px; text-align:center; background:#050505; position:sticky; top:0; z-index:1000;">
-
-<a href="index.html" style="color:white; margin:15px; text-decoration:none;">Home</a>
-
-<a href="about.html" style="color:white; margin:15px; text-decoration:none;">Bio</a>
-
-<a href="media.html" style="color:white; margin:15px; text-decoration:none;">Media</a>
-
-<a href="lyrics.html" style="color:white; margin:15px; text-decoration:none;">Lyrics</a>
-
-<a href="https://superdaddychris-shop.fourthwall.com/" style="color:white; margin:15px; text-decoration:none;">Merch</a>
-
-<a href="contact.html" style="color:white; margin:15px; text-decoration:none;">Contact</a>
-
-<a href="press.html" style="color:white; margin:15px; text-decoration:none;">Press Kit</a>
-
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">Bio</a>
+    <a href="media.html">Media</a>
+    <a href="lyrics.html">Lyrics</a>
+    <a href="https://superdaddychris-shop.fourthwall.com/" target="_blank">Merch</a>
+    <a href="contact.html">Contact</a>
+    <a href="press.html">Press Kit</a>
 </nav>
 
 <div class="overlay"></div>
 
 <div class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<h1>SuperDaddy<span class="red">Chris</span></h1>
+        <h1>SuperDaddy<span class="red">Chris</span></h1>
 
-<div class="tagline">
-Independent Hip Hop Artist & Cinematic Storyteller
-</div>
+        <div class="tagline">
+            Independent Hip Hop Artist & Cinematic Storyteller
+        </div>
 
-<div class="bio">
-Independent hip hop artist, cinematic storyteller, and creator of Love Me Back.
-</div>
+        <div class="bio">
+            Independent hip hop artist, cinematic storyteller, and creator of Love Me Back.
+        </div>
 
-<div class="socials hero-socials">
+        <div class="follow-box">
 
-<a href="https://www.instagram.com/superdaddychris/" target="_blank">
-<i class="fab fa-instagram"></i> Instagram
-</a>
+            <a class="follow-card instagram" href="https://www.instagram.com/superdaddychris/" target="_blank">
+                📸 Follow on Instagram
+            </a>
 
-<a href="https://www.tiktok.com/@superdaddychris" target="_blank">
-<i class="fab fa-tiktok"></i> TikTok
-</a>
+            <a class="follow-card tiktok" href="https://www.tiktok.com/@superdaddychris" target="_blank">
+                🎵 Follow on TikTok
+            </a>
 
-<a href="https://www.youtube.com/@SuperDaddyChris" target="_blank">
-<i class="fab fa-youtube"></i> YouTube
-</a>
+            <a class="follow-card youtube" href="https://www.youtube.com/@SuperDaddyChris?sub_confirmation=1" target="_blank">
+                ▶️ Subscribe on YouTube
+            </a>
 
-<a href="https://www.facebook.com/share/18yoajtqRr/?mibextid=wwXIfr" target="_blank">
-<i class="fab fa-facebook"></i> Facebook
-</a>
-</div>
-<div class="hero-player">
+            <a class="follow-card facebook" href="https://www.facebook.com/share/18yoajtqRr/?mibextid=wwXIfr" target="_blank">
+                📘 Follow on Facebook
+            </a>
 
-<iframe
-style="border-radius:12px"
-src="https://open.spotify.com/embed/album/29QxGNdCLjZpffYWi1hyQv?utm_source=generator"
-width="100%"
-height="352"
-frameBorder="0"
-allowfullscreen=""
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-loading="lazy">
-</iframe>
+        </div>
 
-</div>
-<div class="button-group">
-    
+        <div class="hero-player">
 
-<a class="btn btn-red"
-href="https://open.spotify.com/album/29QxGNdCLjZpffYWi1hyQv"
-target="_blank">
-❤️ Save Love Me Back On Spotify
-</a>
+            <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/album/29QxGNdCLjZpffYWi1hyQv?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+            </iframe>
 
-<a class="btn btn-red"
-href="https://open.spotify.com/artist/6Sg3u97rKDlO3OWH24n3Fd"
-target="_blank">
-➕ Follow SuperDaddyChris On Spotify
-</a>
+        </div>
+
+        <div class="button-group">
+
+            <a class="btn btn-red"
+            href="https://open.spotify.com/album/29QxGNdCLjZpffYWi1hyQv"
+            target="_blank">
+                ❤️ Save Love Me Back On Spotify
+            </a>
+
+            <a class="btn btn-red"
+            href="https://open.spotify.com/artist/6Sg3u97rKDlO3OWH24n3Fd"
+            target="_blank">
+                ➕ Follow SuperDaddyChris On Spotify
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
 <section>
 
-<div class="section-title">
-LOVE ME BACK
-</div>
+    <div class="section-title">
+        LOVE ME BACK
+    </div>
 
-<div style="color:#ff3b3b; margin-bottom:25px; font-weight:bold;">
-THE ALBUM • OUT NOW
-</div>
+    <div style="color:#ff3b3b; margin-bottom:25px; font-weight:bold;">
+        THE ALBUM • OUT NOW
+    </div>
 
-<div class="album-grid">
+    <div class="album-grid">
 
-<div>
-<img src="love-me-back-cover.jpg" class="album-cover">
-</div>
+        <div>
+            <img src="love-me-back-cover.jpg" class="album-cover" alt="Love Me Back Album Cover">
+        </div>
 
-<div>
+        <div>
 
-<div class="tracklist">
+            <div class="tracklist">
+                01. Love Me Back<br>
+                02. Cry Wolf<br>
+                03. Are We Through<br>
+                04. Not the Man You Think I Am<br>
+                05. Misery Loves Company<br>
+            </div>
 
-01. Love Me Back<br>
-02. Cry Wolf<br>
-03. Are We Through<br>
-04. Not the Man you Think I Am<br>
-05. Misery Loves Company<br>
+            <div class="music-links">
 
-</div>
-<br>
+                <a href="https://open.spotify.com/artist/6Sg3u97rKDlO3OWH24n3Fd" target="_blank">Spotify</a>
 
-<div class="socials">
+                <a href="https://music.apple.com/us/artist/superdaddychris/1883781526" target="_blank">Apple Music</a>
 
-<a href="https://open.spotify.com/artist/6Sg3u97rKDlO3OWH24n3Fd" target="_blank">Spotify</a>
+                <a href="https://music.amazon.com/artists/B0D9DLLKYP/superdaddychris" target="_blank">Amazon Music</a>
 
-<a href="https://music.apple.com/us/artist/superdaddychris/1883781526" target="_blank">Apple Music</a>
+                <a href="https://www.iheart.com/artist/superdaddychris-43536498/albums/love-me-back-390927090" target="_blank">iHeart</a>
 
-<a href="https://music.amazon.com/artists/B0D9DLLKYP/superdaddychris" target="_blank">Amazon Music</a>
+            </div>
 
-<a href="https://www.iheart.com/artist/superdaddychris-43536498/albums/love-me-back-390927090" target="_blank">iHeart</a>
-    
-</div>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </section>
 
 <section>
 
-<div class="section-title">
-LATEST VIDEOS
-</div>
+    <div class="section-title">
+        LATEST VIDEOS
+    </div>
 
-<div class="video-grid">
+    <div class="video-grid">
 
-<div class="video-card">
+        <div class="video-card">
 
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/cpNhBbfFeLk"
-title="Perfect Girl"
-frameborder="0"
-allowfullscreen>
-</iframe>
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/cpNhBbfFeLk"
+            title="Perfect Girl"
+            frameborder="0"
+            allowfullscreen>
+            </iframe>
 
-<div class="video-info">
-<div class="part-tag">PART 1 OF 13</div>
-<h2>Perfect Girl</h2>
-<p>Official Visual</p>
-</div>
+            <div class="video-info">
+                <div class="part-tag">PART 1 OF 13</div>
+                <h2>Perfect Girl</h2>
+                <p>Official Visual</p>
+            </div>
 
-</div>
+        </div>
 
-<div class="video-card">
+        <div class="video-card">
 
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/_c0EYZ8GsGU"
-title="Cry Wolf"
-frameborder="0"
-allowfullscreen>
-</iframe>
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/_c0EYZ8GsGU"
+            title="Cry Wolf"
+            frameborder="0"
+            allowfullscreen>
+            </iframe>
 
-<div class="video-info">
-<div class="part-tag">PART 2 OF 13</div>
-<h2>Cry Wolf</h2>
-<p>Official Visual</p>
-</div>
+            <div class="video-info">
+                <div class="part-tag">PART 2 OF 13</div>
+                <h2>Cry Wolf</h2>
+                <p>Official Visual</p>
+            </div>
 
-</div>
+        </div>
 
-<div class="video-card">
+        <div class="video-card">
 
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/UxAoG1Pf41o"
-title="Are We Through"
-frameborder="0"
-allowfullscreen>
-</iframe>
+            <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/UxAoG1Pf41o"
+            title="Are We Through"
+            frameborder="0"
+            allowfullscreen>
+            </iframe>
 
-<div class="video-info">
-<div class="part-tag">PART 3 OF 13</div>
-<h2>Are We Through</h2>
-<p>Official Visual</p>
-</div>
+            <div class="video-info">
+                <div class="part-tag">PART 3 OF 13</div>
+                <h2>Are We Through</h2>
+                <p>Official Visual</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-</div>
+</section>
 
 <section>
 
-<div class="coming-soon">
+    <div class="coming-soon">
 
-<img src="love-me-back-coming-soon.jpg">
+        <img src="love-me-back-coming-soon.jpg" alt="Love Me Back Part 4 Coming Soon">
 
-<div class="coming-soon-overlay">
+        <div class="coming-soon-overlay">
 
-<h2>LOVE ME BACK</h2>
+            <h2>LOVE ME BACK</h2>
 
-<p>PART 4 OF 13 — COMING SOON</p>
+            <p>PART 4 OF 13 — COMING SOON</p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 <footer>
-
-© 2026 SuperDaddyChris — Official Artist Website
-
+    © 2026 SuperDaddyChris — Official Artist Website
 </footer>
 
 </body>
