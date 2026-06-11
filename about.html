@@ -12,426 +12,85 @@
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top left, rgba(255, 0, 60, 0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(0, 140, 255, 0.16), transparent 32%),
-        radial-gradient(circle at bottom, rgba(170, 0, 255, 0.13), transparent 35%),
-        #030303;
+      background: #000;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(3, 3, 3, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(5, 5, 5, 0.95);
+      border-bottom: 1px solid #222;
       padding: 16px 20px;
       text-align: center;
     }
 
     nav a {
-      display: inline-block;
+      color: #ddd;
+      text-decoration: none;
       margin: 8px 12px;
       font-size: 14px;
-      color: #d8d8d8;
       letter-spacing: 1px;
       text-transform: uppercase;
+      display: inline-block;
     }
 
     nav a:hover {
-      color: #ff3b3b;
+      color: #ff3333;
     }
 
-    .page {
-      width: min(1400px, 94%);
+    .bio-page {
+      width: 100%;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255, 0, 60, 0.14), transparent 35%),
+        radial-gradient(circle at bottom, rgba(0, 120, 255, 0.12), transparent 35%),
+        #000;
+      padding: 30px 12px 60px;
+    }
+
+    .bio-wrap {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 45px 0 70px;
     }
 
-    .top-title {
-      margin-bottom: 30px;
-    }
-
-    .top-title h1 {
-      margin: 0;
-      font-size: clamp(48px, 9vw, 128px);
-      line-height: 0.9;
-      letter-spacing: -4px;
-      text-transform: uppercase;
-      color: #e8e8e8;
-      text-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
-    }
-
-    .top-title p {
-      margin: 15px 0 0;
-      color: #bcbcbc;
-      letter-spacing: 5px;
-      font-size: clamp(13px, 1.5vw, 22px);
-      text-transform: uppercase;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr 0.9fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .glass {
-      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025));
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 22px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-      overflow: hidden;
-    }
-
-    .card {
-      padding: 24px;
-      margin-bottom: 18px;
-    }
-
-    .card h2,
-    .card h3 {
-      margin: 0 0 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .card h2 {
-      font-size: 24px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-    }
-
-    .card p,
-    .card li {
-      color: #d7d7d7;
-      line-height: 1.7;
-      font-size: 15.5px;
-    }
-
-    .red {
-      color: #ff4b4b;
-    }
-
-    .blue {
-      color: #55bfff;
-    }
-
-    .purple {
-      color: #d678ff;
-    }
-
-    .gold {
-      color: #ffd36a;
-    }
-
-    .intro-card {
-      border-left: 4px solid #ff3838;
-    }
-
-    .photo-box {
-      position: relative;
-      min-height: 240px;
-      background: #111;
-      overflow: hidden;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .photo-box img {
+    .bio-image {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      filter: contrast(1.08) saturate(1.05);
-    }
-
-    .photo-label {
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      background: rgba(0,0,0,0.72);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .hero-photo {
-      min-height: 760px;
-    }
-
-    .side-stack {
-      display: grid;
-      gap: 16px;
-    }
-
-    .side-stack .photo-box {
-      min-height: 180px;
-    }
-
-    .love-box {
-      border: 1px solid rgba(255, 60, 60, 0.45);
-      background: radial-gradient(circle at top, rgba(255,0,60,0.18), rgba(255,255,255,0.03));
-      padding: 20px;
       border-radius: 18px;
-      margin-top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 35px rgba(255, 0, 60, 0.18),
+                  0 0 60px rgba(0, 120, 255, 0.14);
     }
 
-    .love-box h3 {
-      color: #ff3838;
-      font-size: 28px;
-      letter-spacing: 8px;
-      margin-bottom: 10px;
-    }
-
-    .roles {
+    .bio-caption {
+      text-align: center;
       margin-top: 28px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .section-title {
-      margin: 0 0 22px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 8px;
-      color: #eaeaea;
-      font-size: 22px;
-    }
-
-    .role-grid {
-      display: grid;
-      grid-template-columns: repeat(9, 1fr);
-      gap: 12px;
-    }
-
-    .role {
-      border-right: 1px solid rgba(255,255,255,0.15);
-      padding: 14px 8px;
-    }
-
-    .role:last-child {
-      border-right: none;
-    }
-
-    .role-icon {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .role span {
-      display: block;
-      color: #dcdcdc;
-      font-size: 12px;
-      line-height: 1.3;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .lower-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.65fr;
-      gap: 22px;
-      margin-top: 22px;
-    }
-
-    .timeline {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .timeline li {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 12px;
-      align-items: start;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 11px 0;
-      color: #ddd;
+      color: #aaa;
       font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .timeline-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff3737, #7b55ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .notable-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .notable {
-      min-height: 105px;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 15px;
-      background: rgba(255,255,255,0.045);
-      text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    .era-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-    }
-
-    .era-card {
-      min-height: 260px;
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: #111;
-    }
-
-    .era-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      opacity: 0.7;
-    }
-
-    .era-info {
-      position: absolute;
-      inset: auto 0 0;
-      padding: 14px;
-      background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-      text-align: center;
-    }
-
-    .era-info h3 {
-      margin: 0 0 5px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 17px;
-    }
-
-    .era-info p {
-      margin: 0;
-      font-size: 11px;
-      color: #ddd;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .closing {
-      margin-top: 24px;
-      display: grid;
-      grid-template-columns: 220px 1fr 280px;
-      gap: 22px;
-      align-items: center;
-      padding: 22px;
-    }
-
-    .closing .photo-box {
-      min-height: 190px;
-    }
-
-    .signature {
-      text-align: center;
-    }
-
-    .signature h2 {
-      font-family: cursive;
-      font-size: 38px;
-      font-weight: normal;
-      margin: 0 0 12px;
-    }
-
-    .signature p {
-      color: #ff4545;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid,
-      .lower-grid,
-      .closing {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-photo {
-        min-height: 540px;
-      }
-
-      .role-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .role {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .notable-grid,
-      .era-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .top-title h1 {
-        letter-spacing: -2px;
-      }
-
-      .top-title p {
-        letter-spacing: 2px;
-      }
-
-      .hero-photo {
-        min-height: 420px;
-      }
-
-      .role-grid,
-      .notable-grid,
-      .era-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 20px;
+    @media (max-width: 700px) {
+      nav {
+        padding: 12px 8px;
       }
 
       nav a {
         font-size: 12px;
         margin: 6px;
+      }
+
+      .bio-page {
+        padding: 18px 8px 40px;
+      }
+
+      .bio-image {
+        border-radius: 12px;
       }
     }
   </style>
@@ -450,308 +109,22 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="page">
+  <main class="bio-page">
+    <div class="bio-wrap">
 
-    <header class="top-title">
-      <h1>SUPERDADDYCHRIS</h1>
-      <p>Creator. Videographer. Artist. Entrepreneur.</p>
-    </header>
+      <!-- background -->
+      <!-- Then make sure the file name below matches your image file name exactly -->
+      <img
+        class="bio-image"
+        src="superdaddychris-bio-page.png"
+        alt="SuperDaddyChris official biography page"
+      />
 
-    <section class="hero-grid">
-
-      <!-- LEFT BIO CARDS -->
-      <div>
-        <div class="card glass intro-card">
-          <p>
-            SuperDaddyChris is a recording artist, content creator, videographer, editor,
-            entrepreneur, U.S. Army servicemember, and founder whose work spans music,
-            media, entertainment, and technology. Born in Chicago and later rooted in
-            Houston, Texas, he built his career by documenting stories, producing videos,
-            collaborating with creators and artists, and creating projects designed to
-            connect audiences through storytelling.
-          </p>
-        </div>
-
-        <div class="card glass">
-          <h3 class="red">The Creator Era</h3>
-          <p>
-            With a camera and a vision, SuperDaddyChris began documenting the people,
-            places, and personalities around him. What started as a hobby evolved into
-            years of content creation, interviews, travel videos, behind-the-scenes
-            productions, and creator collaborations.
-          </p>
-        </div>
-
-        <div class="card glass">
-          <h3 class="blue">Videography & Collaborations</h3>
-          <p>
-            He has worked with artists, entertainers, entrepreneurs, and creators,
-            producing and editing visual content across music, lifestyle, dance, and
-            branded storytelling. Among those collaborations, he shot and edited several
-            dance videos for Osmara Rojas, whose background includes time as a Houston
-            Texans Cheerleader and a Miami Heat dancer before moving into acting in
-            Los Angeles.
-          </p>
-        </div>
+      <div class="bio-caption">
+        SuperDaddyChris — Create. Connect. Leave A Legacy.
       </div>
 
-      <!-- CENTER HERO IMAGE -->
-      <div>
-        <div class="photo-box hero-photo">
-          <!-- REPLACE THIS IMAGE WITH YOUR MAIN BIG BIO PHOTO -->
-          <img src="REPLACE-main-hero-photo.jpg" alt="Main hero photo of SuperDaddyChris">
-          <div class="photo-label">REPLACE: Main Hero Photo</div>
-        </div>
-
-        <div class="card glass" style="margin-top:18px;">
-          <h3 class="purple">Artist & Music Vision</h3>
-          <p>
-            As an artist, SuperDaddyChris creates music driven by emotion, storytelling,
-            and cinematic world-building. His work blends personal reflection with visual
-            ambition, turning songs into experiences. His album <i>Love Me Back</i>
-            expands his identity beyond music alone, showing him as both performer and
-            visual architect.
-          </p>
-
-          <div class="love-box">
-            <h3>LOVE ME BACK</h3>
-            <ul>
-              <li>13-track cinematic album experience</li>
-              <li>Themes: heartbreak, regret, growth, accountability, acceptance</li>
-              <li>Visual worlds: Velvet Noir, Hellwave, Cry Wolf, Are We Through, Perfect Girl</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card glass">
-          <h3 class="purple">Gaming & Pop Culture</h3>
-          <p>
-            SuperDaddyChris is also connected to creative projects in gaming and pop
-            culture, including <i>My Morphin Life Video Game</i>, a project tied to the
-            world of Jason David Frank. This reflects his ability to move across
-            entertainment spaces and bring his presence into media beyond music videos
-            and social content.
-          </p>
-        </div>
-      </div>
-
-      <!-- RIGHT PHOTO STACK + CARDS -->
-      <div class="side-stack">
-
-        <div class="photo-box">
-          <!-- REPLACE THIS IMAGE WITH A PHOTO OF YOU RECORDING MUSIC -->
-          <img src="REPLACE-recording-studio-photo.jpg" alt="SuperDaddyChris recording studio photo">
-          <div class="photo-label">REPLACE: Recording Studio Photo</div>
-        </div>
-
-        <div class="photo-box">
-          <!-- REPLACE THIS IMAGE WITH A PHOTO OF YOU HOLDING CAMERA / FILMING -->
-          <img src="REPLACE-videographer-camera-photo.jpg" alt="SuperDaddyChris videographer camera photo">
-          <div class="photo-label">REPLACE: Videographer Camera Photo</div>
-        </div>
-
-        <div class="photo-box">
-          <!-- REPLACE THIS IMAGE WITH A PHOTO OF YOU EDITING VIDEO / AT COMPUTER -->
-          <img src="REPLACE-editing-workstation-photo.jpg" alt="SuperDaddyChris editing workstation photo">
-          <div class="photo-label">REPLACE: Editing Workstation Photo</div>
-        </div>
-
-        <div class="photo-box">
-          <!-- REPLACE THIS IMAGE WITH A PHOTO OF YOU IN ARMY UNIFORM -->
-          <img src="REPLACE-army-uniform-photo.jpg" alt="SuperDaddyChris Army uniform photo">
-          <div class="photo-label">REPLACE: Army Uniform Photo</div>
-        </div>
-
-        <div class="card glass">
-          <h3 class="gold">Military Service</h3>
-          <p>
-            In addition to his creative work, SuperDaddyChris serves in the United States
-            Army. His discipline, resilience, and commitment to growth have shaped the
-            way he approaches both life and art.
-          </p>
-        </div>
-
-        <div class="card glass">
-          <h3 class="gold">Founder Mindset</h3>
-          <p>
-            Beyond the camera and microphone, he is a builder focused on long-term vision.
-            His work as an entrepreneur and founder reflects a drive to create platforms,
-            brands, and opportunities that reach beyond entertainment into community,
-            innovation, and legacy.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- WHAT HE DOES -->
-    <section class="roles glass">
-      <h2 class="section-title">What He Does</h2>
-
-      <div class="role-grid">
-        <div class="role">
-          <div class="role-icon red">🎙️</div>
-          <span>Recording<br>Artist</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon red">▶️</div>
-          <span>Content<br>Creator</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon blue">📷</div>
-          <span>Videographer</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon purple">💻</div>
-          <span>Video<br>Editor</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon purple">🎬</div>
-          <span>Music Video<br>Producer</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon gold">💡</div>
-          <span>Entrepreneur</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon gold">⭐</div>
-          <span>U.S. Army<br>Servicemember</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon gold">🚩</div>
-          <span>Founder</span>
-        </div>
-
-        <div class="role">
-          <div class="role-icon blue">💬</div>
-          <span>Storyteller</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="lower-grid">
-
-      <!-- CAREER HIGHLIGHTS -->
-      <div class="card glass">
-        <h2 class="section-title">Career Highlights</h2>
-
-        <ul class="timeline">
-          <li><span class="timeline-number">1</span><span>Born in Chicago.</span></li>
-          <li><span class="timeline-number">2</span><span>Built creative roots in Houston, Texas.</span></li>
-          <li><span class="timeline-number">3</span><span>Spent years documenting creators, artists, and stories.</span></li>
-          <li><span class="timeline-number">4</span><span>Produced interviews, travel content, behind-the-scenes videos, and collaborations.</span></li>
-          <li><span class="timeline-number">5</span><span>Shot and edited dance content for Osmara Rojas.</span></li>
-          <li><span class="timeline-number">6</span><span>Expanded into artist branding and cinematic music storytelling.</span></li>
-          <li><span class="timeline-number">7</span><span>Created the <i>Love Me Back</i> visual universe.</span></li>
-          <li><span class="timeline-number">8</span><span>Connected to <i>My Morphin Life Video Game</i>.</span></li>
-          <li><span class="timeline-number">9</span><span>Continued serving in the U.S. Army while building his brand.</span></li>
-        </ul>
-      </div>
-
-      <!-- NOTABLE WORK -->
-      <div class="card glass">
-        <h2 class="section-title">Notable Work & Creative Universe</h2>
-
-        <div class="notable-grid">
-          <div class="notable red">Love<br>Me<br>Back</div>
-          <div class="notable blue">My Morphin Life<br>Video Game</div>
-          <div class="notable purple">Osmara Rojas<br>Dance Videos</div>
-          <div class="notable blue">Interviews<br>Travel<br>Behind The Scenes</div>
-        </div>
-
-        <h2 class="section-title">Music / Visual Era</h2>
-
-        <div class="era-grid">
-
-          <div class="era-card">
-            <!-- REPLACE THIS IMAGE WITH YOUR VELVET NOIR / MAGENTA ARTIST PHOTO -->
-            <img src="REPLACE-velvet-noir-photo.jpg" alt="Velvet Noir visual era photo">
-            <div class="photo-label">REPLACE: Velvet Noir Photo</div>
-            <div class="era-info">
-              <h3 class="purple">Velvet Noir</h3>
-              <p>Luxury. Desire. Secrets.</p>
-            </div>
-          </div>
-
-          <div class="era-card">
-            <!-- REPLACE THIS IMAGE WITH YOUR HELLWAVE / RED PHOTO -->
-            <img src="REPLACE-hellwave-photo.jpg" alt="Hellwave visual era photo">
-            <div class="photo-label">REPLACE: Hellwave Photo</div>
-            <div class="era-info">
-              <h3 class="red">Hellwave</h3>
-              <p>Pain. Regret. The Fire Within.</p>
-            </div>
-          </div>
-
-          <div class="era-card">
-            <!-- REPLACE THIS IMAGE WITH YOUR CRY WOLF / BLUE PHOTO -->
-            <img src="REPLACE-cry-wolf-photo.jpg" alt="Cry Wolf visual era photo">
-            <div class="photo-label">REPLACE: Cry Wolf Photo</div>
-            <div class="era-info">
-              <h3 class="blue">Cry Wolf</h3>
-              <p>Loneliness. Truth. Finding My Voice.</p>
-            </div>
-          </div>
-
-          <div class="era-card">
-            <!-- REPLACE THIS IMAGE WITH YOUR ARE WE THROUGH PHOTO -->
-            <img src="REPLACE-are-we-through-photo.jpg" alt="Are We Through visual era photo">
-            <div class="photo-label">REPLACE: Are We Through Photo</div>
-            <div class="era-info">
-              <h3>Are We Through</h3>
-              <p>Questions. Doubts. Unfinished Love.</p>
-            </div>
-          </div>
-
-          <div class="era-card">
-            <!-- REPLACE THIS IMAGE WITH YOUR PERFECT GIRL PHOTO -->
-            <img src="REPLACE-perfect-girl-photo.jpg" alt="Perfect Girl visual era photo">
-            <div class="photo-label">REPLACE: Perfect Girl Photo</div>
-            <div class="era-info">
-              <h3 class="purple">Perfect Girl</h3>
-              <p>The One I Want. The One I Lost.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-    <!-- CLOSING -->
-    <section class="closing glass">
-
-      <div class="photo-box">
-        <!-- REPLACE THIS IMAGE WITH A MOODY CLOSING / PRAYER / THINKING PHOTO -->
-        <img src="REPLACE-closing-prayer-photo.jpg" alt="SuperDaddyChris closing portrait photo">
-        <div class="photo-label">REPLACE: Closing Portrait Photo</div>
-      </div>
-
-      <div>
-        <h2 class="section-title" style="text-align:left;">Closing Statement</h2>
-        <p style="color:#ddd; line-height:1.8; font-size:16px;">
-          SuperDaddyChris represents a new kind of modern creative: one who can film
-          the story, edit the vision, perform the emotion, and build the platform behind it.
-          His journey is still unfolding, but his foundation is already clear —
-          creativity, ambition, discipline, and the drive to leave a lasting impact.
-        </p>
-      </div>
-
-      <div class="signature">
-        <h2>SuperDaddyChris</h2>
-        <p>Create. Connect. Leave A Legacy.</p>
-      </div>
-
-    </section>
-
+    </div>
   </main>
 
 </body>
