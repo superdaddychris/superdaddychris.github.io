@@ -1,104 +1,978 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Bio - SuperDaddyChris</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SuperDaddyChris | Bio</title>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: rgba(15, 15, 18, 0.9);
+      --card2: rgba(25, 25, 32, 0.85);
+      --text: #f5f5f5;
+      --muted: #b8b8b8;
+      --red: #ff2b2b;
+      --blue: #249cff;
+      --purple: #a855f7;
+      --gold: #f5b93f;
+      --green: #39d353;
+      --border: rgba(255,255,255,0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,0,0,0.24), transparent 30%),
+        radial-gradient(circle at top right, rgba(0,90,255,0.24), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       TOP NAV
+    ========================= */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 7%;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: 2px;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      min-height: 520px;
+      padding: 55px 7% 35px;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 45px rgba(255,0,0,0.18);
+      background: #111;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-content h1 {
+      margin: 0;
+      font-size: clamp(54px, 8vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+    }
+
+    .hero-content h1 span {
+      color: var(--red);
+    }
+
+    .role-line {
+      margin: 18px 0;
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .social-bar {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-bar a {
+      padding: 12px 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+      font-size: 13px;
+    }
+
+    .social-bar a:hover {
+      background: var(--red);
+    }
+
+    /* =========================
+       MAIN BIO PANEL
+    ========================= */
+
+    .bio-panel {
+      width: 86%;
+      margin: 0 auto 40px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(5,5,8,0.82);
+      box-shadow: 0 0 60px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 28px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-header h2 {
+      margin: 0 0 8px;
+      font-size: 36px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .panel-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       TIMELINE ROWS
+    ========================= */
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 24px;
+      padding: 26px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-label {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .number {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      background: var(--red);
+      box-shadow: 0 0 18px currentColor;
+    }
+
+    .timeline-label h3 {
+      margin: 2px 0 10px;
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .timeline-label p,
+    .timeline-label li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .timeline-label ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .timeline-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .timeline-content.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-content.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .slot {
+      min-height: 135px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slot strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .slot.red {
+      border-color: rgba(255,43,43,0.45);
+    }
+
+    .slot.blue {
+      border-color: rgba(36,156,255,0.45);
+    }
+
+    .slot.purple {
+      border-color: rgba(168,85,247,0.45);
+    }
+
+    .slot.gold {
+      border-color: rgba(245,185,63,0.45);
+    }
+
+    .slot.green {
+      border-color: rgba(57,211,83,0.45);
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .slot img,
+    .slot iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* =========================
+       CAREER HIGHLIGHTS
+    ========================= */
+
+    .highlights {
+      padding: 30px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .highlights h2,
+    .archive h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+    }
+
+    .highlight-card {
+      min-height: 125px;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card2);
+      text-align: center;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      color: var(--red);
+    }
+
+    .highlight-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    /* =========================
+       MEDIA ARCHIVE
+    ========================= */
+
+    .archive {
+      padding: 30px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .archive-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .archive-tabs button {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .archive-tabs button.active,
+    .archive-tabs button:hover {
+      background: var(--red);
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .archive-item {
+      min-height: 120px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       QUOTE / CTA
+    ========================= */
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 30px;
+      padding: 35px 32px;
+      align-items: center;
+      background:
+        radial-gradient(circle at left, rgba(255,0,0,0.18), transparent 35%),
+        radial-gradient(circle at right, rgba(0,80,255,0.18), transparent 35%);
+    }
+
+    .quote-section img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .quote h2 {
+      font-size: 32px;
+      line-height: 1.3;
+      margin: 0 0 22px;
+    }
+
+    .quote h2 span {
+      color: var(--red);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta-buttons a {
+      padding: 13px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .cta-buttons a:hover {
+      background: var(--red);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .hero,
+      .timeline-row,
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-panel {
+        width: 94%;
+      }
+
+      .timeline-content,
+      .timeline-content.two,
+      .timeline-content.three,
+      .highlight-grid,
+      .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 35px 5%;
+      }
+
+      .panel-header,
+      .timeline-row,
+      .highlights,
+      .archive,
+      .quote-section {
+        padding: 22px;
+      }
+
+      .timeline-content,
+      .timeline-content.two,
+      .timeline-content.three,
+      .highlight-grid,
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: span 1;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
 </head>
 
-<body style="margin:0; background:#000; color:white; font-family:Arial, sans-serif;">
+<body>
 
-  <nav style="padding:20px; text-align:center; background:#050505; border-bottom:1px solid #222;">
-    <a href="index.html" style="color:white; margin:15px;">Home</a>
-    <a href="about.html" style="color:white; margin:15px;">Bio</a>
-    <a href="media.html" style="color:white; margin:15px;">Media</a>
-    <a href="lyrics.html" style="color:white; margin:15px;">Lyrics</a>
-    <a href="news.html" style="color:white; margin:15px;">News</a>
-    <a href="press.html" style="color:white; margin:15px;">Press</a>
-    <a href="https://superdaddychris-shop.fourthwall.com/" target="_blank" style="color:white; margin:15px;">Merch</a>
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+  <nav class="nav">
+    <div class="logo">SDC<br><small>SuperDaddyChris</small></div>
+
+    <div class="nav-links">
+      <a href="#story">The Story</a>
+      <a href="#music">Music</a>
+      <a href="#videos">Videos</a>
+      <a href="#gaming">Gaming</a>
+      <a href="#military">Military</a>
+      <a href="#entrepreneur">Entrepreneur</a>
+      <a href="#archive">Media Archive</a>
+      <a href="press.html">Press Kit</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </nav>
 
-  <section style="padding:60px 20px; max-width:1100px; margin:auto; text-align:center;">
+  <!-- =========================
+       HERO SECTION
+       Change bio-hero.jpg to your real photo file
+  ========================= -->
+  <section class="hero">
+    <div class="hero-photo">
+      <img src="bio-hero.jpg" alt="SuperDaddyChris portrait">
+    </div>
 
-    <h1 style="font-size:48px; margin-bottom:10px;">SuperDaddyChris</h1>
-    <h2 style="font-size:22px; color:#ccc; font-weight:normal;">
-      Artist. Creator. Videographer. Editor. Entrepreneur. Army Servicemember. Founder.
-    </h2>
-    <img src="Bio Background2.png" alt="SuperDaddyChris Bio Image" style="width:100%; max-width:1040px; border-radius:20px; margin:40px 0; box-shadow:0 0 40px rgba(255,255,255,0.15);">
+    <div class="hero-content">
+      <h1>SuperDaddy<span>Chris</span></h1>
+
+      <div class="role-line">
+        Recording Artist • Content Creator • Videographer • Entrepreneur
+      </div>
+
+      <p>
+        From creator interviews and music video production to recording artist,
+        entrepreneur, Army servicemember, and game collaborator, SuperDaddyChris
+        has spent over a decade building projects across music, media,
+        entertainment, and technology.
+      </p>
+
+      <div class="social-bar">
+        <a href="#">YouTube</a>
+        <a href="#">Music</a>
+        <a href="#">Spotify</a>
+        <a href="#">Apple Music</a>
+        <a href="#">Amazon Music</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       MAIN BIO PANEL
+  ========================= -->
+  <main class="bio-panel" id="story">
+
+    <div class="panel-header">
+      <h2>The Story</h2>
+      <p>
+        A journey of creativity, collaboration, and constant evolution.
+        From behind the camera to behind the mic — every chapter built the foundation for the next.
+      </p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section class="timeline-row">
+      <div class="timeline-label">
+        <div class="number">1</div>
+        <div>
+          <h3>Content Creator Era</h3>
+          <ul>
+            <li>Houston YouTubers</li>
+            <li>Creator interviews</li>
+            <li>Travel vlogs</li>
+            <li>Content production</li>
+            <li>Creator networking</li>
+          </ul>
+          <p>
+            Started in Houston, Texas creating content, interviewing creators,
+            and documenting the culture around him.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot red">
+          <div>
+            <strong>Photo Widget</strong>
+            Houston YouTubers
+          </div>
+        </div>
+
+        <div class="slot">
+          <div>
+            <strong>Video Widget</strong>
+            Creator Interviews
+          </div>
+        </div>
+
+        <div class="slot">
+          <div>
+            <strong>Media Slot</strong>
+            Behind the Scenes
+          </div>
+        </div>
+
+        <div class="slot">
+          <div>
+            <strong>Content Module</strong>
+            Travel / Vlogs
+          </div>
+        </div>
+      </div>
     </section>
 
-  <section style="padding:40px 25px; max-width:1000px; margin:auto; line-height:1.8; font-size:18px;">
+    <!-- SECTION 2 -->
+    <section class="timeline-row">
+      <div class="timeline-label">
+        <div class="number">2</div>
+        <div>
+          <h3>Paul Whisky Era</h3>
+          <p>
+            Traveled, filmed, documented, and collaborated with Paul Whisky during
+            road trips, creator events, and behind-the-scenes productions.
+          </p>
+        </div>
+      </div>
 
-    <h2 style="font-size:34px;">Biography</h2>
+      <div class="timeline-content">
+        <div class="slot red"><div><strong>Photo Widget</strong>Paul Whisky Content</div></div>
+        <div class="slot"><div><strong>Video Widget</strong>Road Trip Vlog</div></div>
+        <div class="slot"><div><strong>Behind The Scenes</strong>Creator Events</div></div>
+        <div class="slot"><div><strong>Content Slot</strong>Travel Content</div></div>
+      </div>
+    </section>
 
-    <p>
-      SuperDaddyChris is a recording artist, content creator, videographer, editor,
-      entrepreneur, United States Army servicemember, and founder whose work spans
-      music, media, entertainment, storytelling, and technology.
-    </p>
+    <!-- SECTION 3 -->
+    <section class="timeline-row">
+      <div class="timeline-label">
+        <div class="number">3</div>
+        <div>
+          <h3>Will Peters Collaboration</h3>
+          <p>
+            Worked with Will Peters through creator collaborations, music projects,
+            travel experiences, and the song IDGAF.
+          </p>
+        </div>
+      </div>
 
-    <p>
-      Born in Chicago and later building roots in Houston, Texas, SuperDaddyChris
-      developed his creative vision through years of filming, editing, documenting,
-      producing, and creating. Before stepping fully into music, he built a foundation
-      behind the camera, capturing artists, dancers, creators, entrepreneurs, and
-      entertainers.
-    </p>
+      <div class="timeline-content">
+        <div class="slot purple"><div><strong>Collaboration Widget</strong>Will Peters</div></div>
+        <div class="slot wide">
+          <div>
+            <strong>IDGAF</strong>
+            Music project featuring SuperDaddyChris
+          </div>
+        </div>
+        <div class="slot"><div><strong>Music Player</strong>Insert Spotify / Audio</div></div>
+      </div>
+    </section>
 
-    <p>
-      His work includes music videos, creator collaborations, interviews,
-      behind-the-scenes content, dance videos, visual storytelling, and digital media
-      projects. He has also shot and edited several dance videos for Osmara Rojas,
-      a former Houston Texans Cheerleader and Miami Heat Dancer who later moved to
-      Los Angeles to pursue acting.
-    </p>
+    <!-- SECTION 4 -->
+    <section class="timeline-row" id="videos">
+      <div class="timeline-label">
+        <div class="number">4</div>
+        <div>
+          <h3>Music Video Production</h3>
+          <p>
+            Shot, directed, and edited music videos, artist visuals, interviews,
+            dance videos, and cinematic behind-the-scenes content.
+          </p>
+        </div>
+      </div>
 
-    <p>
-      As an artist, SuperDaddyChris creates emotional, cinematic music built around
-      heartbreak, growth, love, regret, accountability, and transformation. His project
-      <strong>Love Me Back</strong> represents a major creative chapter, blending music,
-      film-style visuals, storytelling, and personal emotion into one connected world.
-    </p>
+      <div class="timeline-content">
+        <div class="slot blue"><div><strong>Video Production</strong>Music Videos</div></div>
+        <div class="slot"><div><strong>Behind The Scenes</strong>Production Days</div></div>
+        <div class="slot"><div><strong>Director View</strong>Camera / Editing</div></div>
+        <div class="slot"><div><strong>Editing Module</strong>Final Cut / Timeline</div></div>
+      </div>
+    </section>
 
-    <p>
-      SuperDaddyChris is also connected to the world of entertainment and gaming through
-      <strong>My Morphin Life Video Game</strong>, a project connected to Jason David Frank,
-      expanding his presence beyond music and video into digital entertainment.
-    </p>
+    <!-- SECTION 5 -->
+    <section class="timeline-row" id="music">
+      <div class="timeline-label">
+        <div class="number">5</div>
+        <div>
+          <h3>Music Career</h3>
+          <p>
+            Recording artist and storyteller. His album LOVE ME BACK captures heartbreak,
+            growth, accountability, and emotional evolution.
+          </p>
+        </div>
+      </div>
 
-    <p>
-      Beyond entertainment, he is building the <strong>ME app</strong>, a social platform
-      concept focused on identity, creators, profiles, rooms, following tools, dating
-      features, content, and user connection.
-    </p>
+      <div class="timeline-content">
+        <div class="slot red">
+          <div>
+            <strong>Love Me Back</strong>
+            Album Artwork
+          </div>
+        </div>
 
-    <p>
-      His journey represents more than one title. SuperDaddyChris is a creator building
-      across multiple lanes: music, media, video, technology, entrepreneurship, military
-      service, and personal legacy.
-    </p>
+        <div class="slot">
+          <div>
+            <strong>Perfect Girl</strong>
+            Video / Song Widget
+          </div>
+        </div>
 
-  </section>
+        <div class="slot">
+          <div>
+            <strong>Cry Wolf</strong>
+            Video / Song Widget
+          </div>
+        </div>
 
-  <section style="padding:40px 25px; max-width:1000px; margin:auto;">
+        <div class="slot">
+          <div>
+            <strong>Are We Through</strong>
+            Video / Song Widget
+          </div>
+        </div>
 
-    <h2 style="font-size:34px;">Accomplishments & Features</h2>
+        <div class="slot full">
+          <div>
+            <strong>Stream Now</strong>
+            Spotify • Apple Music • YouTube • Amazon Music • Tidal
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <ul style="font-size:18px; line-height:1.9;">
-      <li>Recording artist under the name SuperDaddyChris</li>
-      <li>Creator and founder of the Love Me Back music project</li>
-      <li>Videographer and editor with years of production experience</li>
-      <li>Music video producer and visual storyteller</li>
-      <li>United States Army servicemember</li>
-      <li>Entrepreneur and founder building the ME app</li>
-      <li>Featured in My Morphin Life Video Game connected to Jason David Frank</li>
-      <li>Shot and edited dance videos for Osmara Rojas</li>
-      <li>Built a creative brand across music, media, video, and technology</li>
-      <li>Developed cinematic visual worlds including Love Me Back, Cry Wolf, Are We Through, and Perfect Girl</li>
-    </ul>
+    <!-- SECTION 6 -->
+    <section class="timeline-row">
+      <div class="timeline-label">
+        <div class="number">6</div>
+        <div>
+          <h3>Industry Collaborations</h3>
+          <p>
+            Selected collaborations across creator culture, music, content production,
+            branded media, and entertainment.
+          </p>
+        </div>
+      </div>
 
-  </section>
+      <div class="timeline-content">
+        <div class="slot gold"><div><strong>Bone Thugs-N-Harmony</strong>Industry / Media Work</div></div>
+        <div class="slot gold"><div><strong>Sleepy Da Hitman</strong>Production / Media Work</div></div>
+        <div class="slot purple"><div><strong>Osmara Rojas</strong>Dance Videos Shot & Edited</div></div>
+        <div class="slot"><div><strong>Will Peters</strong>Creator / Music Collaboration</div></div>
 
-  <footer style="text-align:center; padding:30px; color:#777; border-top:1px solid #222;">
-    © 2026 SuperDaddyChris. All Rights Reserved.
+        <div class="slot full red">
+          <div>
+            <strong>Featured Collaboration</strong>
+            Shot and edited multiple dance videos for Osmara Rojas —
+            former Houston Texans Cheerleader, Miami Heat Dancer, and later actress in Los Angeles.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 -->
+    <section class="timeline-row" id="gaming">
+      <div class="timeline-label">
+        <div class="number">7</div>
+        <div>
+          <h3>Gaming & Entertainment</h3>
+          <p>
+            Featured in My Morphin Life Video Game, a project connected to the legacy
+            and vision of Jason David Frank.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot blue wide">
+          <div>
+            <strong>My Morphin Life</strong>
+            Video Game Feature
+          </div>
+        </div>
+
+        <div class="slot"><div><strong>Gameplay Widget</strong>Insert Game Media</div></div>
+        <div class="slot"><div><strong>Entertainment Credit</strong>Jason David Frank Connection</div></div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 -->
+    <section class="timeline-row" id="military">
+      <div class="timeline-label">
+        <div class="number">8</div>
+        <div>
+          <h3>Military Service</h3>
+          <p>
+            United States Army servicemember, 91M Bradley Fighting Vehicle Maintainer,
+            supporting NATO operations in Poland.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot gold"><div><strong>U.S. Army</strong>Servicemember</div></div>
+        <div class="slot"><div><strong>91M</strong>Vehicle Maintainer</div></div>
+        <div class="slot"><div><strong>Bradley Fighting Vehicle</strong>Military Specialty</div></div>
+        <div class="slot blue"><div><strong>NATO Operations</strong>Poland</div></div>
+      </div>
+    </section>
+
+    <!-- SECTION 9 -->
+    <section class="timeline-row" id="entrepreneur">
+      <div class="timeline-label">
+        <div class="number">9</div>
+        <div>
+          <h3>Entrepreneurship</h3>
+          <p>
+            Founder and visionary behind the ME social media platform, building a space
+            for creators, connection, ownership, and community.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot purple wide">
+          <div>
+            <strong>ME App</strong>
+            The Social Media Platform Built Different
+          </div>
+        </div>
+
+        <div class="slot">
+          <div>
+            <strong>Creator Focused</strong>
+            Community Driven
+          </div>
+        </div>
+
+        <div class="slot">
+          <div>
+            <strong>The Vision</strong>
+            Building the future for creators
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER HIGHLIGHTS -->
+    <section class="highlights">
+      <h2>Career Highlights</h2>
+
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <h3>10+</h3>
+          <p>Years of content creation, storytelling, and building brands</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Founder</h3>
+          <p>ME App social media platform</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Artist</h3>
+          <p>Independent music releases and visuals</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Video</h3>
+          <p>Music videos, interviews, dance videos, and BTS content</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Army</h3>
+          <p>U.S. Army servicemember and Bradley maintainer</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Gaming</h3>
+          <p>Featured in My Morphin Life Video Game</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Industry</h3>
+          <p>Bone Thugs-N-Harmony, Sleepy Da Hitman, Osmara Rojas, and more</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA ARCHIVE -->
+    <section class="archive" id="archive">
+      <h2>Media Archive</h2>
+
+      <div class="archive-tabs">
+        <button class="active">All</button>
+        <button>Creator Interviews</button>
+        <button>Houston YouTubers</button>
+        <button>Paul Whisky</button>
+        <button>Will Peters</button>
+        <button>Music Videos</button>
+        <button>Travel Vlogs</button>
+        <button>Behind The Scenes</button>
+      </div>
+
+      <div class="archive-grid">
+        <div class="archive-item">Video Widget</div>
+        <div class="archive-item">Photo Widget</div>
+        <div class="archive-item">YouTube Embed</div>
+        <div class="archive-item">Content Slot</div>
+        <div class="archive-item">Vlog Module</div>
+        <div class="archive-item">Playlist Module</div>
+      </div>
+    </section>
+
+    <!-- QUOTE / CTA -->
+    <section class="quote-section">
+      <img src="bio-hero.jpg" alt="SuperDaddyChris portrait">
+
+      <div class="quote">
+        <h2>
+          <span>“</span>
+          From creator to videographer.<br>
+          From videographer to artist.<br>
+          From artist to entrepreneur.<br>
+          The journey is still being written.
+          <span>”</span>
+        </h2>
+
+        <div class="cta-buttons">
+          <a href="#">Listen To Music</a>
+          <a href="#">Watch Videos</a>
+          <a href="press.html">View Press Kit</a>
+          <a href="#">Explore Career Highlights</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Building • Creating • Inspiring
   </footer>
 
 </body>
