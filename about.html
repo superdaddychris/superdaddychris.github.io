@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -325,17 +326,32 @@
     }
 
     .timeline-content {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: flex;
       gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 2px 14px;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
     }
 
-    .timeline-content.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .timeline-content.two,
     .timeline-content.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: flex;
+    }
+
+    .timeline-content::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .timeline-content::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+    }
+
+    .timeline-content::-webkit-scrollbar-thumb {
+      background: var(--section-color);
+      border-radius: 999px;
     }
 
     .slot {
@@ -358,6 +374,19 @@
 
     .slot > div {
       width: 100%;
+    }
+
+    .timeline-content .slot {
+      flex: 0 0 clamp(220px, 28vw, 300px);
+      scroll-snap-align: start;
+    }
+
+    .timeline-content .slot.wide {
+      flex-basis: clamp(320px, 42vw, 470px);
+    }
+
+    .timeline-content .slot.full {
+      flex-basis: clamp(320px, 55vw, 650px);
     }
 
     .slot strong {
@@ -604,7 +633,6 @@
     ========================= */
 
     @media (max-width: 1100px) {
-      .timeline-content,
       .highlight-grid,
       .archive-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -655,12 +683,18 @@
         font-size: 15px;
       }
 
-      .timeline-content,
-      .timeline-content.two,
-      .timeline-content.three,
       .highlight-grid,
       .archive-grid {
         grid-template-columns: 1fr;
+      }
+
+      .timeline-content .slot {
+        flex-basis: 250px;
+      }
+
+      .timeline-content .slot.wide,
+      .timeline-content .slot.full {
+        flex-basis: 300px;
       }
 
       .wide {
@@ -690,8 +724,6 @@
       SDC<br>
       <small>SuperDaddyChris</small>
     </div>
-
-```
 <div class="nav-links">
   <a href="#story">The Story</a>
   <a href="#early-life">Early Life</a>
@@ -706,8 +738,6 @@
   <a href="press.html">Press Kit</a>
   <a href="contact.html">Contact</a>
 </div>
-```
-
   </nav>
 
   <!-- =========================
@@ -718,8 +748,6 @@
     <div class="hero-photo">
       <img src="crywolf moon.PNG" alt="SuperDaddyChris portrait">
     </div>
-
-```
 <div class="hero-content">
   <h1>SuperDaddy<span>Chris</span></h1>
 
@@ -742,8 +770,6 @@
     <a href="#">Amazon Music</a>
   </div>
 </div>
-```
-
   </section>
 
   <!-- =========================
@@ -751,8 +777,6 @@
   ========================= -->
 
   <main class="bio-panel" id="story">
-
-```
 <div class="panel-header">
   <h2>The Story</h2>
   <p>
@@ -871,35 +895,43 @@
   <div class="timeline-content">
     <div class="slot green wide">
       <div>
-        <strong><img src="My Morphin Life VG.jpg" alt="Game Cover"></strong>
+        <img src="My Morphin Life VG.jpg" alt="Game Cover">
          
       </div>
     </div>
 
     <div class="slot green">
       <div>
-        <strong><img src="Morphing time (1).jpeg" alt="JDF Scene"></strong>
+        <img src="Morphing time (1).jpeg" alt="JDF Scene">
       </div>
     </div>
 
     <div class="slot green">
       <div>
-        <strong><img src="Morphing time (2).jpeg" alt="JDF Scene"></strong>
+        <img src="Morphing time (2).jpeg" alt="JDF Scene">
       </div>
     </div>
         <div class="slot green">
       <div>
-        <strong><img src="IMG_1115.png" alt="Gameplay"></strong>
+        <img src="IMG_1115.png" alt="Gameplay">
       </div>
     </div>
     <div class="slot green">
       <div>
-        <strong><img src="IMG_1113.png" alt="Gameplay 2"></strong>
+        <img src="IMG_1113.png" alt="Gameplay 2">
       </div>
     </div>
     <div class="slot green">
       <div>
-        <strong><iframe width="560" height="315" src="https://www.youtube.com/embed/tEU_4YUsJbI?si=I1cMj5v73uZKt6lu&amp;start=314" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
+        <strong><div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/tEU_4YUsJbI?si=I1cMj5v73uZKt6lu&amp;start=314"
+            title="My Morphin Life gameplay video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div></strong>
       </div>
     </div>
   </div>
@@ -1369,8 +1401,6 @@
     </div>
   </div>
 </section>
-```
-
   </main>
 
   <footer>
