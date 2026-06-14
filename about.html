@@ -17,7 +17,6 @@
       --red: #ff2b2b;
       --blue: #249cff;
       --purple: #a855f7;
-      --gold: #f5b93f;
       --green: #39d353;
       --border: rgba(255,255,255,0.12);
     }
@@ -263,11 +262,28 @@
     ========================= */
 
     .timeline-row {
+      --section-color: var(--red);
       display: grid;
       grid-template-columns: 250px 1fr;
       gap: 24px;
       padding: 26px 32px;
       border-top: 1px solid var(--border);
+    }
+
+    .theme-red {
+      --section-color: var(--red);
+    }
+
+    .theme-green {
+      --section-color: var(--green);
+    }
+
+    .theme-purple {
+      --section-color: var(--purple);
+    }
+
+    .theme-blue {
+      --section-color: var(--blue);
     }
 
     .timeline-label {
@@ -283,13 +299,14 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      background: var(--red);
-      box-shadow: 0 0 18px currentColor;
+      background: var(--section-color);
+      box-shadow: 0 0 18px var(--section-color);
+      color: #fff;
     }
 
     .timeline-label h3 {
       margin: 2px 0 10px;
-      color: var(--red);
+      color: var(--section-color);
       text-transform: uppercase;
       font-size: 18px;
       letter-spacing: 1px;
@@ -357,20 +374,16 @@
       border-color: rgba(255,43,43,0.45);
     }
 
-    .slot.blue {
-      border-color: rgba(36,156,255,0.45);
+    .slot.green {
+      border-color: rgba(57,211,83,0.45);
     }
 
     .slot.purple {
       border-color: rgba(168,85,247,0.45);
     }
 
-    .slot.gold {
-      border-color: rgba(245,185,63,0.45);
-    }
-
-    .slot.green {
-      border-color: rgba(57,211,83,0.45);
+    .slot.blue {
+      border-color: rgba(36,156,255,0.45);
     }
 
     .wide {
@@ -447,7 +460,22 @@
     .highlight-card h3 {
       margin: 0 0 8px;
       font-size: 22px;
+    }
+
+    .highlight-card:nth-child(4n + 1) h3 {
       color: var(--red);
+    }
+
+    .highlight-card:nth-child(4n + 2) h3 {
+      color: var(--green);
+    }
+
+    .highlight-card:nth-child(4n + 3) h3 {
+      color: var(--purple);
+    }
+
+    .highlight-card:nth-child(4n + 4) h3 {
+      color: var(--blue);
     }
 
     .highlight-card p {
@@ -667,9 +695,11 @@
 <div class="nav-links">
   <a href="#story">The Story</a>
   <a href="#early-life">Early Life</a>
-  <a href="#music">Music</a>
+  <a href="#morphin-life">Gaming</a>
+  <a href="#paul-whisky">Paul Whisky</a>
   <a href="#videos">Videos</a>
-  <a href="#gaming">Gaming</a>
+  <a href="#music">Music</a>
+  <a href="#collaborations">Collaborations</a>
   <a href="#military">Military</a>
   <a href="#entrepreneur">Entrepreneur</a>
   <a href="#archive">Media Archive</a>
@@ -775,8 +805,8 @@
   </p>
 </section>
 
-<!-- SECTION 1 -->
-<section class="timeline-row" id="early-life">
+<!-- SECTION 1: RED -->
+<section class="timeline-row theme-red" id="early-life">
   <div class="timeline-label">
     <div class="number">1</div>
     <div>
@@ -804,19 +834,19 @@
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <img src="Young Karate.jpeg" alt="Young Chris doing karate">
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <img src="Young Jeremy.jpeg" alt="Young kids">
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <img src="Young Couch.jpeg" alt="Young Chris on couch">
       </div>
@@ -824,12 +854,50 @@
   </div>
 </section>
 
-<!-- SECTION 2 -->
-<section class="timeline-row">
+<!-- SECTION 2: GREEN -->
+<section class="timeline-row theme-green" id="morphin-life">
   <div class="timeline-label">
     <div class="number">2</div>
     <div>
-      <h3>My Morphin Life Video Game</h3>
+      <h3>My Morphin Life Game</h3>
+      <p>
+        Featured in My Morphin Life Video Game, a project connected to the legacy
+        and vision of Jason David Frank. Chris was also part of the gaming team
+        The Contenders of the Round Table.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-content">
+    <div class="slot green wide">
+      <div>
+        <strong>My Morphin Life</strong>
+        Video Game Feature
+      </div>
+    </div>
+
+    <div class="slot green">
+      <div>
+        <strong>Gaming Team</strong>
+        The Contenders of the Round Table
+      </div>
+    </div>
+
+    <div class="slot green">
+      <div>
+        <strong>Entertainment Credit</strong>
+        Jason David Frank Connection
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: PURPLE -->
+<section class="timeline-row theme-purple" id="paul-whisky">
+  <div class="timeline-label">
+    <div class="number">3</div>
+    <div>
+      <h3>Paul Whisky Era</h3>
       <p>
         Traveled, filmed, documented, and collaborated with Houston’s own Paul Whisky
         during road trips, creator events, comedy content, music videos, and
@@ -839,28 +907,28 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot red">
+    <div class="slot purple">
       <div>
         <strong>Photo Widget</strong>
         Paul Whisky Content
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot purple">
       <div>
         <strong>Video Widget</strong>
         Road Trip Vlog
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot purple">
       <div>
         <strong>Behind The Scenes</strong>
         Creator Events
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot purple">
       <div>
         <strong>Travel Content</strong>
         <div class="video-wrap">
@@ -877,10 +945,10 @@
   </div>
 </section>
 
-<!-- SECTION 3 -->
-<section class="timeline-row">
+<!-- SECTION 4: BLUE -->
+<section class="timeline-row theme-blue">
   <div class="timeline-label">
-    <div class="number">3</div>
+    <div class="number">4</div>
     <div>
       <h3>Will Peters Collaboration</h3>
       <p>
@@ -891,21 +959,21 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot purple">
+    <div class="slot blue">
       <div>
         <strong>Collaboration Widget</strong>
         Will Peters
       </div>
     </div>
 
-    <div class="slot wide">
+    <div class="slot blue wide">
       <div>
         <strong>IDGAF</strong>
         Music project featuring SuperDaddyChris
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot blue">
       <div>
         <strong>Music Player</strong>
         Insert Spotify / Audio
@@ -914,10 +982,10 @@
   </div>
 </section>
 
-<!-- SECTION 4 -->
-<section class="timeline-row" id="videos">
+<!-- SECTION 5: RED -->
+<section class="timeline-row theme-red" id="videos">
   <div class="timeline-label">
-    <div class="number">4</div>
+    <div class="number">5</div>
     <div>
       <h3>Music Video Production</h3>
       <p>
@@ -928,28 +996,28 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot blue">
+    <div class="slot red">
       <div>
         <strong>Video Production</strong>
         Music Videos
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <strong>Behind The Scenes</strong>
         Production Days
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <strong>Director View</strong>
         Camera / Editing
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <strong>Editing Module</strong>
         Final Cut / Timeline
@@ -958,10 +1026,10 @@
   </div>
 </section>
 
-<!-- SECTION 5 -->
-<section class="timeline-row" id="music">
+<!-- SECTION 6: GREEN -->
+<section class="timeline-row theme-green" id="music">
   <div class="timeline-label">
-    <div class="number">5</div>
+    <div class="number">6</div>
     <div>
       <h3>Music Career</h3>
       <p>
@@ -972,14 +1040,14 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot red album-cover">
+    <div class="slot green album-cover">
       <div>
         <strong>Love Me Back Album</strong>
         <img src="love-me-back-cover.jpg" alt="Love Me Back album cover">
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot green">
       <div>
         <strong>Perfect Girl</strong>
         <div class="video-wrap">
@@ -994,7 +1062,7 @@
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot green">
       <div>
         <strong>Cry Wolf</strong>
         <div class="video-wrap">
@@ -1009,7 +1077,7 @@
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot green">
       <div>
         <strong>Are We Through</strong>
         <div class="video-wrap">
@@ -1024,7 +1092,7 @@
       </div>
     </div>
 
-    <div class="slot full red">
+    <div class="slot full green">
       <div>
         <strong>Stream Now</strong>
         Spotify • Apple Music • YouTube • Amazon Music • Tidal
@@ -1033,10 +1101,10 @@
   </div>
 </section>
 
-<!-- SECTION 6 -->
-<section class="timeline-row">
+<!-- SECTION 7: PURPLE -->
+<section class="timeline-row theme-purple" id="collaborations">
   <div class="timeline-label">
-    <div class="number">6</div>
+    <div class="number">7</div>
     <div>
       <h3>Industry Collaborations</h3>
       <p>
@@ -1047,7 +1115,7 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot gold">
+    <div class="slot purple">
       <div>
         <strong>Bone Thugs-N-Harmony New Artist</strong>
         <div class="video-wrap">
@@ -1062,7 +1130,7 @@
       </div>
     </div>
 
-    <div class="slot gold">
+    <div class="slot purple">
       <div>
         <strong>Sleepy Da Hitman</strong>
         <div class="video-wrap">
@@ -1092,7 +1160,7 @@
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot purple">
       <div>
         <strong>Will Peters</strong>
         <div class="video-wrap">
@@ -1107,7 +1175,7 @@
       </div>
     </div>
 
-    <div class="slot full red">
+    <div class="slot full purple">
       <div>
         <strong>Featured Collaboration</strong>
         Shot and edited multiple dance videos for Osmara Rojas —
@@ -1117,46 +1185,8 @@
   </div>
 </section>
 
-<!-- SECTION 7 -->
-<section class="timeline-row" id="gaming">
-  <div class="timeline-label">
-    <div class="number">7</div>
-    <div>
-      <h3>Gaming & Entertainment</h3>
-      <p>
-        Featured in My Morphin Life Video Game, a project connected to the legacy
-        and vision of Jason David Frank. Chris was also part of the gaming team
-        The Contenders of the Round Table.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-content">
-    <div class="slot blue wide">
-      <div>
-        <strong>My Morphin Life</strong>
-        Video Game Feature
-      </div>
-    </div>
-
-    <div class="slot">
-      <div>
-        <strong>Gaming Team</strong>
-        The Contenders of the Round Table
-      </div>
-    </div>
-
-    <div class="slot">
-      <div>
-        <strong>Entertainment Credit</strong>
-        Jason David Frank Connection
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 8 -->
-<section class="timeline-row" id="military">
+<!-- SECTION 8: BLUE -->
+<section class="timeline-row theme-blue" id="military">
   <div class="timeline-label">
     <div class="number">8</div>
     <div>
@@ -1169,21 +1199,21 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot gold">
+    <div class="slot blue">
       <div>
         <strong>U.S. Army</strong>
         Active Duty Servicemember
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot blue">
       <div>
         <strong>91M</strong>
         Bradley Maintainer
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot blue">
       <div>
         <strong>Bradley Fighting Vehicle</strong>
         Military Specialty
@@ -1199,8 +1229,8 @@
   </div>
 </section>
 
-<!-- SECTION 9 -->
-<section class="timeline-row" id="entrepreneur">
+<!-- SECTION 9: RED -->
+<section class="timeline-row theme-red" id="entrepreneur">
   <div class="timeline-label">
     <div class="number">9</div>
     <div>
@@ -1213,21 +1243,21 @@
   </div>
 
   <div class="timeline-content">
-    <div class="slot purple wide">
+    <div class="slot red wide">
       <div>
         <strong>ME App</strong>
         The Social Media Platform Built Different
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <strong>Creator Focused</strong>
         Community Driven
       </div>
     </div>
 
-    <div class="slot">
+    <div class="slot red">
       <div>
         <strong>The Vision</strong>
         Building the future for creators
