@@ -3,35 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SuperDaddyChris - Recording Artist, Content Creator, Videographer & U.S. Army Servicemember" />
-  <title>SuperDaddyChris | Official Bio</title>
+
+  <title>SuperDaddyChris | Bio</title>
+
   <style>
     :root {
       --bg: #050505;
-      --card: rgba(15, 15, 18, 0.95);
-      --card2: rgba(25, 25, 32, 0.9);
+      --card: rgba(15, 15, 18, 0.92);
+      --card2: rgba(25, 25, 32, 0.88);
       --text: #f5f5f5;
       --muted: #b8b8b8;
       --red: #ff2b2b;
       --blue: #249cff;
       --purple: #a855f7;
       --green: #39d353;
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: rgba(0, 0, 0, 0.65);
       --radius: 18px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
+    * {
+      box-sizing: border-box;
     }
 
-    /* NAV */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(255, 43, 43, 0.28), transparent 30%),
+        radial-gradient(circle at 94% 4%, rgba(36, 156, 255, 0.24), transparent 34%),
+        radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.15), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* =========================
+       TOP NAV
+    ========================= */
+
     .nav {
       position: sticky;
       top: 0;
@@ -39,212 +62,1468 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
       padding: 16px 7%;
-      background: rgba(5, 5, 8, 0.92);
-      backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
     .logo-main {
-      font-size: clamp(22px, 2.4vw, 32px);
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      background: linear-gradient(90deg, #fff, var(--red), #fff);
+      font-size: clamp(20px, 2.2vw, 30px);
+      font-weight: 950;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #fff 0%, #ff2b2b 42%, #fff 82%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      text-shadow: 0 0 30px rgba(255, 43, 43, 0.3);
     }
+
     .logo-sub {
+      color: var(--muted);
       font-size: 10px;
       letter-spacing: 3px;
-      color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: 1px;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.85);
-      transition: all 0.2s ease;
-    }
-    .nav-links a:hover {
-      color: var(--red);
-      text-shadow: 0 0 12px rgba(255,43,43,0.4);
+      text-transform: uppercase;
     }
 
-    /* HERO */
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.82);
+      transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+      text-shadow: 0 0 16px rgba(255, 43, 43, 0.5);
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
     .hero {
       display: grid;
-      grid-template-columns: minmax(300px, 42%) 1fr;
-      min-height: 620px;
-      padding: 60px 7% 40px;
-      gap: 48px;
+      grid-template-columns: minmax(280px, 42%) 1fr;
+      min-height: 560px;
+      padding: 58px 7% 38px;
+      gap: 38px;
       align-items: center;
     }
+
     .hero-photo {
-      border-radius: 26px;
+      position: relative;
+      border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.7);
-      background: #0a0a0a;
+      box-shadow:
+        0 0 45px rgba(255, 0, 0, 0.18),
+        0 20px 60px var(--shadow);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+        #080808;
     }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.52)),
+        radial-gradient(circle at bottom left, rgba(255, 43, 43, 0.2), transparent 46%);
+    }
+
     .hero-photo img {
       width: 100%;
-      height: auto;
+      max-height: 650px;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
+      background: #080808;
     }
 
     .hero-content h1 {
-      font-size: clamp(56px, 8.5vw, 118px);
-      line-height: 0.92;
-      letter-spacing: -5px;
+      margin: 0;
+      font-size: clamp(52px, 8vw, 112px);
+      line-height: 0.9;
+      letter-spacing: -4px;
       text-transform: uppercase;
-      font-weight: 900;
+      text-shadow:
+        0 0 28px rgba(255, 43, 43, 0.22),
+        0 8px 24px rgba(0, 0, 0, 0.5);
     }
-    .hero-content .red { color: var(--red); }
+
+    .hero-content h1 .white {
+      color: #fff;
+    }
+
+    .hero-content h1 .red {
+      color: var(--red);
+    }
 
     .role-line {
+      margin: 22px 0 16px;
       color: var(--red);
-      font-weight: 800;
-      letter-spacing: 2px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      margin: 24px 0 18px;
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.7;
     }
 
     .social-bar {
+      margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 32px;
-    }
-    .social-bar a {
-      padding: 14px 22px;
-      border: 1px solid var(--border);
-      border-radius: 9999px;
-      background: rgba(255,255,255,0.04);
-      font-weight: 700;
-      font-size: 13px;
-      transition: all 0.25s ease;
-    }
-    .social-bar a:hover {
-      background: var(--red);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(255,43,43,0.3);
     }
 
-    /* BIO PANEL */
-    .bio-panel {
-      width: 88%;
-      max-width: 1480px;
-      margin: 0 auto 60px;
+    .social-bar a {
+      padding: 12px 18px;
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(8, 8, 11, 0.96);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .social-bar a:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 43, 43, 0.9);
+      border-color: rgba(255, 43, 43, 0.95);
+    }
+
+    /* =========================
+       MAIN BIO PANEL
+    ========================= */
+
+    .bio-panel {
+      width: 86%;
+      margin: 0 auto 44px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(5, 5, 8, 0.84);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.62);
       overflow: hidden;
-      box-shadow: 0 40px 90px rgba(0,0,0,0.65);
     }
 
     .panel-header {
-      padding: 36px 40px;
+      padding: 30px 32px;
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(90deg, rgba(255,43,43,0.1), transparent);
+      background:
+        linear-gradient(90deg, rgba(255, 43, 43, 0.12), transparent 55%),
+        rgba(255, 255, 255, 0.02);
     }
 
-    /* Timeline */
+    .panel-header h2 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .panel-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       BIO INTRO CARD
+    ========================= */
+
+    .bio-intro-card {
+      margin: 28px 32px;
+      padding: 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 43, 43, 0.45);
+      background:
+        radial-gradient(circle at top left, rgba(255, 43, 43, 0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(36, 156, 255, 0.12), transparent 35%),
+        linear-gradient(145deg, rgba(25, 25, 32, 0.95), rgba(8, 8, 10, 0.95));
+      box-shadow: 0 0 35px rgba(255, 0, 0, 0.12);
+    }
+
+    .bio-intro-badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 43, 43, 0.15);
+      border: 1px solid rgba(255, 43, 43, 0.45);
+      color: #ff3b3b;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .bio-intro-card h2 {
+      margin: 0 0 18px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: white;
+    }
+
+    .bio-intro-card p {
+      margin: 0 0 16px;
+      color: #d8d8d8;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .bio-intro-card strong {
+      color: white;
+      font-weight: 900;
+    }
+
+    .bio-intro-closing {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff !important;
+      font-size: 18px !important;
+      font-weight: 800;
+    }
+
+    /* =========================
+       TIMELINE ROWS
+    ========================= */
+
     .timeline-row {
+      --section-color: var(--red);
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 32px;
-      padding: 32px 40px;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      padding: 28px 32px;
       border-top: 1px solid var(--border);
     }
 
+    .theme-red {
+      --section-color: var(--red);
+    }
+
+    .theme-green {
+      --section-color: var(--green);
+    }
+
+    .theme-purple {
+      --section-color: var(--purple);
+    }
+
+    .theme-blue {
+      --section-color: var(--blue);
+    }
+
+    .timeline-label {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
     .number {
-      width: 42px;
-      height: 42px;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-weight: 900;
+      font-weight: 950;
+      background: var(--section-color);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--section-color) 80%, transparent);
+      color: #fff;
+    }
+
+    .timeline-label h3 {
+      margin: 2px 0 10px;
+      color: var(--section-color);
+      text-transform: uppercase;
       font-size: 18px;
-      color: white;
-      box-shadow: 0 0 20px currentColor;
+      letter-spacing: 1px;
+    }
+
+    .timeline-label p,
+    .timeline-label li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.48;
+    }
+
+    .timeline-label ul {
+      padding-left: 18px;
+      margin: 0 0 12px;
+    }
+
+    .timeline-content {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 2px 2px 16px;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      min-width: 0;
+    }
+
+    .timeline-content::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .timeline-content::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+    }
+
+    .timeline-content::-webkit-scrollbar-thumb {
+      background: var(--section-color);
+      border-radius: 999px;
     }
 
     .slot {
-      flex: 0 0 clamp(260px, 30vw, 340px);
-      border-radius: 16px;
-      overflow: hidden;
-      background: var(--card);
+      flex: 0 0 clamp(235px, 28vw, 315px);
+      min-height: 170px;
       border: 1px solid var(--border);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+        var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      position: relative;
+      overflow: hidden;
+      scroll-snap-align: start;
     }
-    .slot:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+    .slot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: radial-gradient(circle at top left, color-mix(in srgb, var(--section-color) 16%, transparent), transparent 42%);
+      opacity: 0.9;
+    }
+
+    .slot > div {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .slot.wide {
+      flex-basis: clamp(335px, 42vw, 500px);
+    }
+
+    .slot.full {
+      flex-basis: clamp(335px, 55vw, 680px);
+    }
+
+    .slot strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .slot.red {
+      border-color: rgba(255, 43, 43, 0.45);
+    }
+
+    .slot.green {
+      border-color: rgba(57, 211, 83, 0.45);
+    }
+
+    .slot.purple {
+      border-color: rgba(168, 85, 247, 0.45);
+    }
+
+    .slot.blue {
+      border-color: rgba(36, 156, 255, 0.45);
+    }
+
+    /*
+      Important image fix:
+      object-fit: contain keeps the entire photo visible.
+      This prevents the military images and every other timeline image
+      from being cropped inside the cards.
+    */
+    .slot img {
+      width: 100%;
+      height: clamp(190px, 25vw, 280px);
+      object-fit: contain;
+      object-position: center;
+      border-radius: 11px;
+      display: block;
+      background: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .slot.wide img,
+    .slot.full img {
+      height: clamp(210px, 30vw, 330px);
+    }
+
+    .album-cover img {
+      aspect-ratio: 1 / 1;
+      height: clamp(220px, 28vw, 310px);
     }
 
     .video-wrap {
       position: relative;
-      padding-top: 56.25%; /* 16:9 */
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 11px;
+      overflow: hidden;
+      margin-top: 8px;
       background: #000;
-    }
-    .video-wrap iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .hero, .timeline-row { grid-template-columns: 1fr; }
-      .bio-panel { width: 94%; }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* =========================
+       CAREER HIGHLIGHTS
+    ========================= */
+
+    .highlights {
+      padding: 30px 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .highlights h2,
+    .archive h2 {
+      margin-top: 0;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .highlight-card {
+      min-height: 132px;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.07), transparent 40%),
+        var(--card2);
+      text-align: center;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .highlight-card:nth-child(4n + 1) h3 {
+      color: var(--red);
+    }
+
+    .highlight-card:nth-child(4n + 2) h3 {
+      color: var(--green);
+    }
+
+    .highlight-card:nth-child(4n + 3) h3 {
+      color: var(--purple);
+    }
+
+    .highlight-card:nth-child(4n + 4) h3 {
+      color: var(--blue);
+    }
+
+    .highlight-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* =========================
+       MEDIA ARCHIVE
+    ========================= */
+
+    .archive {
+      padding: 30px 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .archive-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .archive-tabs button {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .archive-tabs button.active,
+    .archive-tabs button:hover {
+      background: var(--red);
+      border-color: rgba(255, 43, 43, 0.85);
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .archive-item {
+      min-height: 122px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--card);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       QUOTE / CTA
+    ========================= */
+
+    .quote-section {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+      padding: 36px 32px;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      background:
+        radial-gradient(circle at left, rgba(255, 0, 0, 0.18), transparent 35%),
+        radial-gradient(circle at right, rgba(0, 80, 255, 0.18), transparent 35%);
+    }
+
+    .quote-section img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      display: block;
+      background: #050505;
+    }
+
+    .quote h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.28;
+      margin: 0 0 22px;
+    }
+
+    .quote h2 span {
+      color: var(--red);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta-buttons a {
+      padding: 13px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .cta-buttons a:hover {
+      background: var(--red);
+      border-color: rgba(255, 43, 43, 0.85);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1200px) {
+      .highlight-grid,
+      .archive-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .hero,
+      .timeline-row,
+      .quote-section {
+        grid-template-columns: 1fr;
+      }
+
+      .bio-panel {
+        width: 94%;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .timeline-label {
+        max-width: 760px;
+      }
     }
 
     @media (max-width: 700px) {
-      .nav { padding: 14px 5%; flex-direction: column; gap: 16px; }
-      .timeline-row { padding: 24px 5%; gap: 20px; }
+      .nav {
+        padding: 14px 5%;
+      }
+
+      .hero {
+        padding: 35px 5%;
+        gap: 24px;
+      }
+
+      .panel-header,
+      .timeline-row,
+      .highlights,
+      .archive,
+      .quote-section {
+        padding: 22px;
+      }
+
+      .bio-intro-card {
+        margin: 22px;
+        padding: 24px;
+      }
+
+      .bio-intro-card p {
+        font-size: 15px;
+      }
+
+      .highlight-grid,
+      .archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-content .slot {
+        flex-basis: 255px;
+      }
+
+      .timeline-content .slot.wide,
+      .timeline-content .slot.full {
+        flex-basis: 310px;
+      }
+
+      .slot img,
+      .slot.wide img,
+      .slot.full img {
+        height: 230px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+
+      .role-line {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <!-- NAV -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <nav class="nav">
-    <a href="index.html" class="logo">
-      <div class="logo-main">SuperDaddyChris</div>
-      <div class="logo-sub">Official Bio</div>
+    <a class="logo" href="index.html" aria-label="SuperDaddyChris home">
+      <span class="logo-main">SuperDaddyChris</span>
+      <span class="logo-sub">Official Bio</span>
     </a>
-    <div class="nav-links">
+
+    <div class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">Bio</a>
       <a href="media.html">Media</a>
       <a href="lyrics.html">Lyrics</a>
       <a href="news.html">News</a>
-      <a href="https://superdaddychris-shop.fourthwall.com/" target="_blank">Merch</a>
-      <a href="press.html">Press</a>
+      <a href="https://superdaddychris-shop.fourthwall.com/" target="_blank" rel="noopener">Merch</a>
+      <a href="press.html">Press Kit</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
 
-  <!-- HERO + REST OF YOUR CONTENT -->
-  <!-- (I kept your content structure but you can paste the rest here) -->
+  <!-- =========================
+       HERO SECTION
+  ========================= -->
 
-  <footer style="text-align:center; padding:40px 20px; color:var(--muted); font-size:13px;">
-    Building • Creating • Inspiring © 2026 SuperDaddyChris
+  <section class="hero">
+    <div class="hero-photo">
+      <img src="images/cry-wolf/crywolf moon.PNG" alt="SuperDaddyChris portrait" />
+    </div>
+
+    <div class="hero-content">
+      <h1><span class="white">SuperDaddy</span><span class="red">Chris</span></h1>
+
+      <div class="role-line">
+        Recording Artist • Content Creator • Videographer • Entrepreneur
+      </div>
+
+      <p>
+        From creator interviews and music video production to recording artist,
+        entrepreneur, Army servicemember, and game collaborator, SuperDaddyChris
+        has spent over a decade building projects across music, media,
+        entertainment, and technology.
+      </p>
+
+      <div class="social-bar">
+        <a href="https://www.youtube.com/@SuperDaddyChris" target="_blank" rel="noopener">YouTube</a>
+        <a href="#music">Music</a>
+        <a href="#">Spotify</a>
+        <a href="#">Apple Music</a>
+        <a href="#">Amazon Music</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       MAIN BIO PANEL
+  ========================= -->
+
+  <main class="bio-panel" id="story">
+    <div class="panel-header">
+      <h2>The Story</h2>
+      <p>
+        A journey of creativity, collaboration, and constant evolution.
+        From behind the camera to behind the mic — every chapter built the foundation for the next.
+      </p>
+    </div>
+
+    <!-- BIO INTRO -->
+    <section class="bio-intro-card">
+      <div class="bio-intro-badge">SuperDaddyChris</div>
+
+      <h2>More Than an Artist</h2>
+
+      <p>
+        Chris has achieved many things that the average person has never come close to experiencing.
+      </p>
+
+      <p>
+        From creating viral videos to appearing as a character in a video game alongside the original
+        Green Ranger, <strong>Jason David Frank</strong>, Chris has built a career across entertainment,
+        media, music, gaming, and storytelling. He has interviewed major creators and celebrities
+        including <strong>Queen Naija</strong>, <strong>Liza Koshy</strong>, <strong>Jon Vlogs</strong>,
+        and others.
+      </p>
+
+      <p>
+        His work behind the camera includes traveling with, shooting, and editing videos for
+        Houston’s own <strong>Paul Whisky</strong> before his passing, as well as shooting and editing
+        dance videos for <strong>Osmara Rojas</strong>, an actress in Los Angeles who was once a
+        Houston Texans Cheerleader and Miami Heat Dancer.
+      </p>
+
+      <p>
+        Chris has also worked with and recorded music alongside artists connected to
+        <strong>Bone Thugs-N-Harmony</strong>, including <strong>Sleepy Da Hitman</strong> and
+        <strong>Smoke Bone</strong>. Even in the gaming world, Chris made his mark as a member of
+        <strong>The Contenders of the Round Table</strong>.
+      </p>
+
+      <p>
+        Now, while currently serving on active duty in the <strong>U.S. Military</strong>,
+        SuperDaddyChris has released his most personal project yet:
+        <strong>Love Me Back</strong>.
+      </p>
+
+      <p class="bio-intro-closing">
+        From behind the camera to the front of the stage, Chris has continued to rise to every occasion —
+        proving there is no lane he cannot step into and make his own.
+      </p>
+    </section>
+
+    <!-- SECTION 1: RED -->
+    <section class="timeline-row theme-red" id="early-life">
+      <div class="timeline-label">
+        <div class="number">1</div>
+        <div>
+          <h3>Early Life</h3>
+          <ul>
+            <li>From the streets of Chicago</li>
+            <li>A father in prison</li>
+            <li>Moving from school to school</li>
+            <li>Mother working two jobs</li>
+            <li>Video games became his escape</li>
+          </ul>
+          <p>
+            “In Chicago, I was either outside playing basketball, getting into fights,
+            or staying home playing video games to stay out of trouble. Sonic, Mario,
+            Super Smash Bros., Star Fox, Resident Evil 2 — those were my escape.
+            It wasn’t until I was 13 that I wrote my first song.”
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot red">
+          <div>
+            <img src="images/young-chris/Young Russel.jpeg" alt="Young Russell" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <img src="images/young-chris/Young Karate.jpeg" alt="Young Chris doing karate" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <img src="images/young-chris/Young Jeremy.jpeg" alt="Young kids" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <img src="images/young-chris/Young Couch.jpeg" alt="Young Chris on couch" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: GREEN -->
+    <section class="timeline-row theme-green" id="morphin-life">
+      <div class="timeline-label">
+        <div class="number">2</div>
+        <div>
+          <h3>My Morphin Life Game</h3>
+          <p>
+            Featured in My Morphin Life Game, a project connected to the legacy
+            and vision of Jason David Frank. Chris was an NPC that players had to defeat.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot green wide">
+          <div>
+            <img src="images/morphin-life/My Morphin Life VG.jpg" alt="My Morphin Life game cover" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green">
+          <div>
+            <img src="images/morphin-life/Morphing time (1).jpeg" alt="Jason David Frank scene" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green">
+          <div>
+            <img src="images/morphin-life/Morphing time (2).jpeg" alt="Jason David Frank scene" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green">
+          <div>
+            <img src="images/morphin-life/IMG_1115.png" alt="My Morphin Life gameplay" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green">
+          <div>
+            <img src="images/morphin-life/IMG_1113.png" alt="My Morphin Life gameplay 2" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green wide">
+          <div>
+            <strong>Gameplay Clip</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/tEU_4YUsJbI?si=I1cMj5v73uZKt6lu&amp;start=314"
+                title="My Morphin Life gameplay video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PURPLE -->
+    <section class="timeline-row theme-purple" id="paul-whisky">
+      <div class="timeline-label">
+        <div class="number">3</div>
+        <div>
+          <h3>Paul Whisky Era</h3>
+          <p>
+            Traveled, filmed, documented, and collaborated with Houston’s own Paul Whisky
+            during road trips, creator events, comedy content, music videos, and
+            behind-the-scenes productions before his passing.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot purple">
+          <div>
+            <strong>Photo Widget</strong>
+            Paul Whisky Content
+          </div>
+        </div>
+
+        <div class="slot purple">
+          <div>
+            <strong>Video Widget</strong>
+            Road Trip Vlog
+          </div>
+        </div>
+
+        <div class="slot purple">
+          <div>
+            <strong>Behind The Scenes</strong>
+            Creator Events
+          </div>
+        </div>
+
+        <div class="slot purple wide">
+          <div>
+            <strong>Travel Content</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/liLH_h6XDpY?si=90o1UFob0ibUKi6c"
+                title="Paul Whisky travel content"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BLUE -->
+    <section class="timeline-row theme-blue" id="will-peters">
+      <div class="timeline-label">
+        <div class="number">4</div>
+        <div>
+          <h3>Will Peters Collaboration</h3>
+          <p>
+            Worked with Will Peters through creator collaborations, music projects,
+            travel experiences, and the song IDGAF.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot blue">
+          <div>
+            <strong>Collaboration Widget</strong>
+            Will Peters
+          </div>
+        </div>
+
+        <div class="slot blue wide">
+          <div>
+            <strong>IDGAF</strong>
+            Music project featuring SuperDaddyChris
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <strong>Music Player</strong>
+            Insert Spotify / Audio
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: RED -->
+    <section class="timeline-row theme-red" id="videos">
+      <div class="timeline-label">
+        <div class="number">5</div>
+        <div>
+          <h3>Music Video Production</h3>
+          <p>
+            Shot, directed, and edited music videos, artist visuals, interviews,
+            dance videos, and cinematic behind-the-scenes content.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot red">
+          <div>
+            <strong>Video Production</strong>
+            Music Videos
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <strong>Behind The Scenes</strong>
+            Production Days
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <strong>Director View</strong>
+            Camera / Editing
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <strong>Editing Module</strong>
+            Final Cut / Timeline
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: GREEN -->
+    <section class="timeline-row theme-green" id="music">
+      <div class="timeline-label">
+        <div class="number">6</div>
+        <div>
+          <h3>Music Career</h3>
+          <p>
+            Recording artist and storyteller. His album Love Me Back captures heartbreak,
+            growth, accountability, and emotional evolution.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot green album-cover">
+          <div>
+            <strong>Love Me Back Album</strong>
+            <img src="love-me-back-cover.jpg" alt="Love Me Back album cover" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot green wide">
+          <div>
+            <strong>Perfect Girl</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/cpNhBbfFeLk?si=lMlZrlcY0s-7Hsth"
+                title="Perfect Girl music video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot green wide">
+          <div>
+            <strong>Cry Wolf</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/_c0EYZ8GsGU?si=OXMJ9dg8TRqoh3M0"
+                title="Cry Wolf music video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot green wide">
+          <div>
+            <strong>Are We Through</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/UxAoG1Pf41o?si=r1FtA2lcimmPTZaY"
+                title="Are We Through music video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot full green">
+          <div>
+            <strong>Stream Now</strong>
+            Spotify • Apple Music • YouTube • Amazon Music • Tidal
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: PURPLE -->
+    <section class="timeline-row theme-purple" id="collaborations">
+      <div class="timeline-label">
+        <div class="number">7</div>
+        <div>
+          <h3>Industry Collaborations</h3>
+          <p>
+            Selected collaborations across creator culture, music, content production,
+            branded media, and entertainment.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot purple wide">
+          <div>
+            <strong>Bone Thugs-N-Harmony New Artist</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/t26-xAQ2fBY?si=3V35AfXUYCmb-SBz"
+                title="Bone Thugs-N-Harmony connected artist video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot purple wide">
+          <div>
+            <strong>Sleepy Da Hitman</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/UyTUOomE_IE?si=4kQcnO39QabJ1K6k"
+                title="Sleepy Da Hitman video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot purple wide">
+          <div>
+            <strong>Osmara Rojas</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/bmUzAuV2tQY?si=xvLBM0AB9rTUz6sk&amp;start=202"
+                title="Osmara Rojas dance video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot purple wide">
+          <div>
+            <strong>Will Peters</strong>
+            <div class="video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/LF-CCqIshfc?si=kKXOyKicyOf0Mj09&amp;start=98"
+                title="Will Peters collaboration video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="slot full purple">
+          <div>
+            <strong>Featured Collaboration</strong>
+            Shot and edited multiple dance videos for Osmara Rojas —
+            former Houston Texans Cheerleader, Miami Heat Dancer, and later actress in Los Angeles.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: BLUE -->
+    <section class="timeline-row theme-blue" id="military">
+      <div class="timeline-label">
+        <div class="number">8</div>
+        <div>
+          <h3>Military Service</h3>
+          <p>
+            United States Army servicemember, 91M Bradley Fighting Vehicle Maintainer,
+            supporting NATO operations in Poland while continuing to build his creative legacy.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot blue">
+          <div>
+            <strong>Active Duty Servicemember</strong>
+            <img src="images/army/army- (4).JPG" alt="Chris in Army uniform" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <img src="images/army/army- (2).JPG" alt="Chris Army photo" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <img src="images/army/army- (2).png" alt="Chris Army photo" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <img src="images/army/army- (3).png" alt="Chris Army photo" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <img src="images/army/army- (3).JPG" alt="Chris Army photo" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="slot blue">
+          <div>
+            <img src="images/army/army- (4).JPG" alt="Chris Army photo" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: RED -->
+    <section class="timeline-row theme-red" id="entrepreneur">
+      <div class="timeline-label">
+        <div class="number">9</div>
+        <div>
+          <h3>Entrepreneurship</h3>
+          <p>
+            Founder and visionary behind the ME social media platform, building a space
+            for creators, connection, ownership, and community.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="slot red wide">
+          <div>
+            <strong>ME App</strong>
+            The Social Media Platform Built Different
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <strong>Creator Focused</strong>
+            Community Driven
+          </div>
+        </div>
+
+        <div class="slot red">
+          <div>
+            <strong>The Vision</strong>
+            Building the future for creators
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER HIGHLIGHTS -->
+    <section class="highlights">
+      <h2>Career Highlights</h2>
+
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <h3>10+</h3>
+          <p>Years of content creation, storytelling, and building brands</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Founder</h3>
+          <p>ME App social media platform</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Artist</h3>
+          <p>Independent music releases and visuals</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Video</h3>
+          <p>Music videos, interviews, dance videos, and behind-the-scenes content</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Army</h3>
+          <p>U.S. Army servicemember and Bradley maintainer</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Gaming</h3>
+          <p>Featured in My Morphin Life Video Game</p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Industry</h3>
+          <p>Bone Thugs-N-Harmony, Sleepy Da Hitman, Osmara Rojas, and more</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA ARCHIVE -->
+    <section class="archive" id="archive">
+      <h2>Media Archive</h2>
+
+      <div class="archive-tabs">
+        <button class="active" type="button">All</button>
+        <button type="button">Creator Interviews</button>
+        <button type="button">Houston YouTubers</button>
+        <button type="button">Paul Whisky</button>
+        <button type="button">Will Peters</button>
+        <button type="button">Music Videos</button>
+        <button type="button">Travel Vlogs</button>
+        <button type="button">Behind The Scenes</button>
+      </div>
+
+      <div class="archive-grid">
+        <div class="archive-item">Video Widget</div>
+        <div class="archive-item">Photo Widget</div>
+        <div class="archive-item">YouTube Embed</div>
+        <div class="archive-item">Content Slot</div>
+        <div class="archive-item">Vlog Module</div>
+        <div class="archive-item">Playlist Module</div>
+      </div>
+    </section>
+
+    <!-- QUOTE / CTA -->
+    <section class="quote-section">
+      <img src="images/are-we-through/AWT (2).PNG" alt="SuperDaddyChris portrait" loading="lazy" />
+
+      <div class="quote">
+        <h2>
+          <span>“</span>
+          From creator to videographer.<br />
+          From videographer to artist.<br />
+          From artist to entrepreneur.<br />
+          The journey is still being written.
+          <span>”</span>
+        </h2>
+
+        <div class="cta-buttons">
+          <a href="#music">Listen To Music</a>
+          <a href="media.html">Watch Videos</a>
+          <a href="press.html">View Press Kit</a>
+          <a href="#archive">Explore Career Highlights</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Building • Creating • Inspiring
   </footer>
 
   <script>
-    // Simple active tab script (your archive tabs)
-    document.querySelectorAll('.archive-tabs button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.archive-tabs button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    const archiveButtons = document.querySelectorAll(".archive-tabs button");
+
+    archiveButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        archiveButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
       });
     });
   </script>
