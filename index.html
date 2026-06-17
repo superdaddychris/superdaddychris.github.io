@@ -1,38 +1,511 @@
-<!-- Add this right before </body> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SuperDaddyChris | Official Website</title>
 
-<script>
-let touchStartX = 0;
-let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-document.addEventListener("touchstart", function(e){
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-}, { passive:true });
+html {
+    scroll-behavior: smooth;
+}
 
-document.addEventListener("touchend", function(e){
-    touchEndX = e.changedTouches[0].screenX;
-    touchEndY = e.changedTouches[0].screenY;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
 
-    handleSwipe();
-}, { passive:true });
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-function handleSwipe(){
-    const swipeX = touchEndX - touchStartX;
-    const swipeY = touchEndY - touchStartY;
+.page {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.85)),
+        url("images/Background1.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+}
 
-    if(Math.abs(swipeX) < 90) return;
-    if(Math.abs(swipeY) > 80) return;
+/* HEADER */
+header {
+    width: 100%;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,.45);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
 
-    const touchedElement = document.elementFromPoint(touchEndX, touchEndY);
+.logo {
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff003c, #ffffff, #8b0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(255,0,60,.45);
+}
 
-    if(touchedElement && touchedElement.closest("a, button, iframe")){
-        return;
+nav {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+nav a {
+    font-size: .85rem;
+    opacity: .85;
+    transition: .25s;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: #ff003c;
+}
+
+/* HERO */
+.hero {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 6%;
+}
+
+.hero-text {
+    max-width: 760px;
+}
+
+.kicker {
+    color: #ff003c;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    line-height: .9;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff003c;
+    text-shadow: 0 0 30px rgba(255,0,60,.8);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 28px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .85rem;
+    transition: .25s;
+}
+
+.btn.primary {
+    background: #ff003c;
+    color: white;
+    box-shadow: 0 0 25px rgba(255,0,60,.5);
+}
+
+.btn.secondary {
+    border: 1px solid rgba(255,255,255,.4);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* IMAGE CARD */
+.hero-card {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    border-radius: 32px;
+    overflow: hidden;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+}
+
+.hero-card img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.card-info {
+    padding: 20px;
+    background: rgba(0,0,0,.75);
+}
+
+.card-info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    color: #bbb;
+    line-height: 1.5;
+}
+
+/* SECTIONS */
+section {
+    padding: 70px 6%;
+    background: #080808;
+}
+
+.section-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.section-title span {
+    color: #ff003c;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 22px;
+    padding: 24px;
+    min-height: 190px;
+}
+
+.feature-card h3 {
+    color: #ff003c;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: #ccc;
+    line-height: 1.55;
+}
+
+/* MUSIC */
+.music-strip {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.music-card {
+    min-width: 260px;
+    background: #111;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.12);
+    scroll-snap-align: start;
+}
+
+.music-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.music-card div {
+    padding: 16px;
+}
+
+.music-card h3 {
+    margin-bottom: 8px;
+}
+
+.music-card p {
+    color: #bbb;
+    font-size: .95rem;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    background:
+        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+        url("images/Banners1.jpg") center/cover no-repeat;
+}
+
+.cta p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    background: #030303;
+    padding: 30px 6%;
+    text-align: center;
+    color: #aaa;
+    font-size: .9rem;
+}
+
+.swipe-note {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.7);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #ddd;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: .8rem;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    header {
+        flex-direction: column;
+        gap: 14px;
     }
 
-    if(swipeX > 0){
-        window.location.href = "about.html";
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-card img {
+        height: 430px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
+</style>
+</head>
+
+<body data-prev="" data-next="about.html">
+
+<div class="page">
+
+<header>
+    <a href="index.html" class="logo">SuperDaddyChris</a>
+
+    <nav>
+        <a href="about.html">Bio</a>
+        <a href="media.html">Media</a>
+        <a href="lyrics.html">Lyrics</a>
+        <a href="news.html">News</a>
+        <a href="press.html">Press Kit</a>
+        <a href="merch.html">Merch</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="hero">
+    <div class="hero-text">
+        <div class="kicker">Recording Artist • Creator • Soldier • Entrepreneur</div>
+
+        <h1>Welcome to<br><span>My World</span></h1>
+
+        <p>
+            SuperDaddyChris is building more than music. This is the official home
+            for the videos, lyrics, projects, stories, merch, press, and everything
+            connected to the SuperDaddyChris brand.
+        </p>
+
+        <div class="buttons">
+            <a href="about.html" class="btn primary">Enter Bio</a>
+            <a href="media.html" class="btn secondary">Watch Media</a>
+            <a href="lyrics.html" class="btn secondary">Read Lyrics</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <img src="images/Banners2.jpg" alt="SuperDaddyChris official promo image">
+        <div class="card-info">
+            <h2>Love Me Back</h2>
+            <p>The official era: heartbreak, redemption, cinematic visuals, and a story told through music.</p>
+        </div>
+    </div>
+</main>
+
+</div>
+
+<section>
+    <h2 class="section-title">The <span>Brand</span></h2>
+
+    <div class="grid">
+        <div class="feature-card">
+            <h3>Music</h3>
+            <p>
+                Emotional records, cinematic visuals, and stories built from real life,
+                heartbreak, growth, and ambition.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Video & Media</h3>
+            <p>
+                From interviews and music videos to creative projects, SuperDaddyChris
+                has built a visual world around his name.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Creator Legacy</h3>
+            <p>
+                Artist, father, soldier, editor, entrepreneur, and creator building a
+                platform bigger than one lane.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Featured <span>Era</span></h2>
+
+    <div class="music-strip">
+        <div class="music-card">
+            <img src="images/PerfectGirl1.jpg" alt="Perfect Girl">
+            <div>
+                <h3>Perfect Girl</h3>
+                <p>Gold-toned cinematic love story.</p>
+            </div>
+        </div>
+
+        <div class="music-card">
+            <img src="images/CryWolf1.jpg" alt="Cry Wolf">
+            <div>
+                <h3>Cry Wolf</h3>
+                <p>Blue wolf-eye heartbreak energy.</p>
+            </div>
+        </div>
+
+        <div class="music-card">
+            <img src="images/AreWeThrough1.jpg" alt="Are We Through">
+            <div>
+                <h3>Are We Through</h3>
+                <p>Magenta neon emotional conflict.</p>
+            </div>
+        </div>
+
+        <div class="music-card">
+            <img src="images/LoveMeBack1.jpg" alt="Love Me Back">
+            <div>
+                <h3>Love Me Back</h3>
+                <p>Red storm, pain, redemption, and fire.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2 class="section-title">Start the <span>Story</span></h2>
+
+    <p>
+        Swipe right or tap below to move into the official bio page and continue
+        through the SuperDaddyChris website like a mobile app.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+        <a href="about.html" class="btn primary">Go to Bio</a>
+        <a href="media.html" class="btn secondary">Go to Media</a>
+    </div>
+</section>
+
+<footer>
+    © 2026 SuperDaddyChris. All Rights Reserved.
+</footer>
+
+<div class="swipe-note">Swipe right → Bio</div>
+
+<script>
+let startX = 0;
+let startY = 0;
+
+document.addEventListener("touchstart", function(e) {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener("touchend", function(e) {
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+
+    const diffX = endX - startX;
+    const diffY = endY - startY;
+
+    if (Math.abs(diffX) < 100) return;
+    if (Math.abs(diffY) > 80) return;
+
+    const touchedElement = e.target.closest("a, button, iframe, input, textarea, select, label");
+    if (touchedElement) return;
+
+    const prevPage = document.body.dataset.prev;
+    const nextPage = document.body.dataset.next;
+
+    if (diffX > 0 && nextPage) {
+        window.location.href = nextPage;
+    }
+
+    if (diffX < 0 && prevPage) {
+        window.location.href = prevPage;
+    }
+}, { passive: true });
 </script>
+
+</body>
+</html>
