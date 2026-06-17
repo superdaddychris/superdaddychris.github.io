@@ -1527,5 +1527,75 @@
       });
     });
   </script>
+  <script>
+    /*
+      Page swipe navigation for about.html:
+      Swipe left  -> index.html
+      Swipe right -> media.html
+
+      Protected areas:
+      - timeline horizontal scrollers
+      - links, buttons, iframes, inputs, videos, audio
+      This keeps your timeline rows scrollable without accidentally changing pages.
+    */
+
+    let pageTouchStartX = 0;
+    let pageTouchStartY = 0;
+    let pageTouchEndX = 0;
+    let pageTouchEndY = 0;
+    let pageSwipeStartElement = null;
+
+    const blockedSwipeSelector = "a, button, iframe, input, textarea, select, video, audio, .timeline-content, .archive-tabs";
+
+    document.addEventListener("touchstart", function(e){
+      pageTouchStartX = e.changedTouches[0].screenX;
+      pageTouchStartY = e.changedTouches[0].screenY;
+      pageSwipeStartElement = e.target;
+    }, { passive:true });
+
+    document.addEventListener("touchend", function(e){
+      pageTouchEndX = e.changedTouches[0].screenX;
+      pageTouchEndY = e.changedTouches[0].screenY;
+
+      handlePageSwipe(e.target);
+    }, { passive:true });
+
+    function handlePageSwipe(pageSwipeEndElement){
+      const swipeX = pageTouchEndX - pageTouchStartX;
+      const swipeY = pageTouchEndY - pageTouchStartY;
+
+      if(pageSwipeStartElement && pageSwipeStartElement.closest(blockedSwipeSelector)){
+        return;
+      }
+
+      if(pageSwipeEndElement && pageSwipeEndElement.closest(blockedSwipeSelector)){
+        return;
+      }
+
+      if(Math.abs(swipeX) < 90){
+        return;
+      }
+
+      if(Math.abs(swipeY) > 80){
+        return;
+      }
+
+      /*
+        Your chosen navigation direction:
+        On Bio/About:
+        swipe left  -> homepage
+        swipe right -> media page
+      */
+
+      if(swipeX < 0){
+        window.location.href = "index.html";
+      }
+
+      if(swipeX > 0){
+        window.location.href = "media.html";
+      }
+    }
+  </script>
+
 </body>
 </html>
