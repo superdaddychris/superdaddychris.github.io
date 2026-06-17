@@ -71,5 +71,45 @@ gap:30px;
 </div>
 
 </section>
+  <script>
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+let swipeStartElement = null;
+
+document.addEventListener("touchstart", function(e){
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+    swipeStartElement = e.target;
+}, { passive:true });
+
+document.addEventListener("touchend", function(e){
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handlePageSwipe(e.target);
+}, { passive:true });
+
+function handlePageSwipe(swipeEndElement){
+    const swipeX = touchEndX - touchStartX;
+    const swipeY = touchEndY - touchStartY;
+
+    const blockedSelector = "a, button, iframe, input, textarea, select, video, audio";
+
+    if(swipeStartElement && swipeStartElement.closest(blockedSelector)) return;
+    if(swipeEndElement && swipeEndElement.closest(blockedSelector)) return;
+
+    if(Math.abs(swipeX) < 90) return;
+    if(Math.abs(swipeY) > 80) return;
+
+    if(swipeX < 0){
+        window.location.href = "media.html";
+    }
+
+    if(swipeX > 0){
+        window.location.href = "news.html";
+    }
+}
+</script>
 </body>
 </html>
