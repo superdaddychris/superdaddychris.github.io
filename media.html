@@ -315,11 +315,11 @@ function handlePageSwipe(swipeEndElement){
     if(Math.abs(swipeX) < 90) return;
     if(Math.abs(swipeY) > 80) return;
 
-    if(swipeX < 0){
+    if(swipeX > 0){
         window.location.href = "media.html";
     }
 
-    if(swipeX > 0){
+    if(swipeX < 0){
         window.location.href = "news.html";
     }
 }
