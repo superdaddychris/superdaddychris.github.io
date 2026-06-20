@@ -741,12 +741,16 @@
       display: block;
       background: #050505;
     }
-
+#videos .paul-video-card {
+  flex: 0 0 clamp(520px, 45vw, 700px);
+  min-width: 520px;
+}
 #videos .paul-video-card .video-wrap {
-      height: 320px;
-      aspect-ratio: auto;
-      margin-top: 0;
-    }
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin-top: 0;
+}
 
     #videos .paul-text {
       grid-column: 1 / -1;
