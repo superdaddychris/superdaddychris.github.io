@@ -23,17 +23,17 @@
       --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
+      overflow-x: hidden;
       background:
         radial-gradient(circle at 8% 0%, rgba(255, 43, 43, 0.28), transparent 30%),
         radial-gradient(circle at 94% 4%, rgba(36, 156, 255, 0.24), transparent 34%),
@@ -43,18 +43,9 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    /* =========================
-       TOP NAV
-    ========================= */
+    a { color: inherit; text-decoration: none; }
+    img, iframe { max-width: 100%; }
+    img { height: auto; }
 
     .nav {
       position: sticky;
@@ -65,7 +56,7 @@
       justify-content: space-between;
       gap: 24px;
       padding: 16px 7%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.82);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
@@ -76,6 +67,7 @@
       gap: 4px;
       line-height: 1;
       text-transform: uppercase;
+      flex: 0 0 auto;
     }
 
     .logo-main {
@@ -118,10 +110,6 @@
       text-shadow: 0 0 16px rgba(255, 43, 43, 0.5);
     }
 
-    /* =========================
-       HERO SECTION
-    ========================= */
-
     .hero {
       display: grid;
       grid-template-columns: minmax(280px, 42%) 1fr;
@@ -136,12 +124,8 @@
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow:
-        0 0 45px rgba(255, 0, 0, 0.18),
-        0 20px 60px var(--shadow);
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
-        #080808;
+      box-shadow: 0 0 45px rgba(255, 0, 0, 0.18), 0 20px 60px var(--shadow);
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)), #080808;
     }
 
     .hero-photo::after {
@@ -149,9 +133,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background:
-        linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.52)),
-        radial-gradient(circle at bottom left, rgba(255, 43, 43, 0.2), transparent 46%);
+      background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,0.52)), radial-gradient(circle at bottom left, rgba(255,43,43,0.2), transparent 46%);
     }
 
     .hero-photo img {
@@ -168,18 +150,11 @@
       line-height: 0.9;
       letter-spacing: -4px;
       text-transform: uppercase;
-      text-shadow:
-        0 0 28px rgba(255, 43, 43, 0.22),
-        0 8px 24px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 0 28px rgba(255,43,43,0.22), 0 8px 24px rgba(0,0,0,0.5);
     }
 
-    .hero-content h1 .white {
-      color: #fff;
-    }
-
-    .hero-content h1 .red {
-      color: var(--red);
-    }
+    .hero-content h1 .white { color: #fff; }
+    .hero-content h1 .red { color: var(--red); }
 
     .role-line {
       margin: 22px 0 16px;
@@ -207,40 +182,27 @@
       padding: 12px 18px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.045);
+      background: rgba(255,255,255,0.045);
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 1px;
       text-transform: uppercase;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
     }
-
-    .social-bar a:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 43, 43, 0.9);
-      border-color: rgba(255, 43, 43, 0.95);
-    }
-
-    /* =========================
-       MAIN BIO PANEL
-    ========================= */
 
     .bio-panel {
-      width: 86%;
+      width: min(86%, 1500px);
       margin: 0 auto 44px;
       border: 1px solid var(--border);
       border-radius: 22px;
       background: rgba(5, 5, 8, 0.84);
-      box-shadow: 0 0 60px rgba(0, 0, 0, 0.62);
+      box-shadow: 0 0 60px rgba(0,0,0,0.62);
       overflow: hidden;
     }
 
     .panel-header {
       padding: 30px 32px;
       border-bottom: 1px solid var(--border);
-      background:
-        linear-gradient(90deg, rgba(255, 43, 43, 0.12), transparent 55%),
-        rgba(255, 255, 255, 0.02);
+      background: linear-gradient(90deg, rgba(255,43,43,0.12), transparent 55%), rgba(255,255,255,0.02);
     }
 
     .panel-header h2 {
@@ -257,20 +219,13 @@
       line-height: 1.6;
     }
 
-    /* =========================
-       BIO INTRO CARD
-    ========================= */
-
     .bio-intro-card {
       margin: 28px 32px;
       padding: 32px;
       border-radius: 18px;
-      border: 1px solid rgba(255, 43, 43, 0.45);
-      background:
-        radial-gradient(circle at top left, rgba(255, 43, 43, 0.18), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(36, 156, 255, 0.12), transparent 35%),
-        linear-gradient(145deg, rgba(25, 25, 32, 0.95), rgba(8, 8, 10, 0.95));
-      box-shadow: 0 0 35px rgba(255, 0, 0, 0.12);
+      border: 1px solid rgba(255,43,43,0.45);
+      background: radial-gradient(circle at top left, rgba(255,43,43,0.18), transparent 35%), radial-gradient(circle at bottom right, rgba(36,156,255,0.12), transparent 35%), linear-gradient(145deg, rgba(25,25,32,0.95), rgba(8,8,10,0.95));
+      box-shadow: 0 0 35px rgba(255,0,0,0.12);
     }
 
     .bio-intro-badge {
@@ -278,8 +233,8 @@
       margin-bottom: 14px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255, 43, 43, 0.15);
-      border: 1px solid rgba(255, 43, 43, 0.45);
+      background: rgba(255,43,43,0.15);
+      border: 1px solid rgba(255,43,43,0.45);
       color: #ff3b3b;
       font-size: 12px;
       font-weight: 900;
@@ -303,23 +258,16 @@
       line-height: 1.75;
     }
 
-    .bio-intro-card strong {
-      color: white;
-      font-weight: 900;
-    }
+    .bio-intro-card strong { color: white; font-weight: 900; }
 
     .bio-intro-closing {
       margin-top: 22px;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-top: 1px solid rgba(255,255,255,0.12);
       color: #ffffff !important;
       font-size: 18px !important;
       font-weight: 800;
     }
-
-    /* =========================
-       TIMELINE ROWS
-    ========================= */
 
     .timeline-row {
       --section-color: var(--red);
@@ -328,23 +276,13 @@
       gap: 24px;
       padding: 28px 32px;
       border-top: 1px solid var(--border);
+      min-width: 0;
     }
 
-    .theme-red {
-      --section-color: var(--red);
-    }
-
-    .theme-green {
-      --section-color: var(--green);
-    }
-
-    .theme-purple {
-      --section-color: var(--purple);
-    }
-
-    .theme-blue {
-      --section-color: var(--blue);
-    }
+    .theme-red { --section-color: var(--red); }
+    .theme-green { --section-color: var(--green); }
+    .theme-purple { --section-color: var(--purple); }
+    .theme-blue { --section-color: var(--blue); }
 
     .timeline-label {
       display: flex;
@@ -374,8 +312,7 @@
       letter-spacing: 1px;
     }
 
-    .timeline-label p,
-    .timeline-label li {
+    .timeline-label p, .timeline-label li {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.48;
@@ -395,30 +332,20 @@
       scroll-snap-type: x proximity;
       -webkit-overflow-scrolling: touch;
       min-width: 0;
+      width: 100%;
+      max-width: 100%;
     }
 
-    .timeline-content::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .timeline-content::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 999px;
-    }
-
-    .timeline-content::-webkit-scrollbar-thumb {
-      background: var(--section-color);
-      border-radius: 999px;
-    }
+    .timeline-content::-webkit-scrollbar { height: 8px; }
+    .timeline-content::-webkit-scrollbar-track { background: rgba(255,255,255,0.06); border-radius: 999px; }
+    .timeline-content::-webkit-scrollbar-thumb { background: var(--section-color); border-radius: 999px; }
 
     .slot {
       flex: 0 0 clamp(235px, 28vw, 315px);
       min-height: 170px;
       border: 1px solid var(--border);
       border-radius: 15px;
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-        var(--card);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)), var(--card);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -447,13 +374,8 @@
       width: 100%;
     }
 
-    .slot.wide {
-      flex-basis: clamp(335px, 42vw, 500px);
-    }
-
-    .slot.full {
-      flex-basis: clamp(335px, 55vw, 680px);
-    }
+    .slot.wide { flex-basis: clamp(335px, 42vw, 500px); }
+    .slot.full { flex-basis: clamp(335px, 55vw, 680px); }
 
     .slot strong {
       display: block;
@@ -465,28 +387,11 @@
       line-height: 1.35;
     }
 
-    .slot.red {
-      border-color: rgba(255, 43, 43, 0.45);
-    }
+    .slot.red { border-color: rgba(255,43,43,0.45); }
+    .slot.green { border-color: rgba(57,211,83,0.45); }
+    .slot.purple { border-color: rgba(168,85,247,0.45); }
+    .slot.blue { border-color: rgba(36,156,255,0.45); }
 
-    .slot.green {
-      border-color: rgba(57, 211, 83, 0.45);
-    }
-
-    .slot.purple {
-      border-color: rgba(168, 85, 247, 0.45);
-    }
-
-    .slot.blue {
-      border-color: rgba(36, 156, 255, 0.45);
-    }
-
-    /*
-      Important image fix:
-      object-fit: contain keeps the entire photo visible.
-      This prevents the military images and every other timeline image
-      from being cropped inside the cards.
-    */
     .slot img {
       width: 100%;
       height: clamp(190px, 25vw, 280px);
@@ -495,17 +400,16 @@
       border-radius: 11px;
       display: block;
       background: #050505;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .slot.wide img,
-    .slot.full img {
-      height: clamp(210px, 30vw, 330px);
-    }
+    .slot.wide img, .slot.full img { height: clamp(210px, 30vw, 330px); }
+    .album-cover img { aspect-ratio: 1 / 1; height: clamp(220px, 28vw, 310px); }
 
-    .album-cover img {
-      aspect-ratio: 1 / 1;
-      height: clamp(220px, 28vw, 310px);
+    .slot p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.35;
     }
 
     .video-wrap {
@@ -516,7 +420,7 @@
       overflow: hidden;
       margin-top: 8px;
       background: #000;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .video-wrap iframe {
@@ -527,76 +431,38 @@
       border: 0;
     }
 
-    /* =========================
-       CAREER HIGHLIGHTS
-    ========================= */
-
-    .highlights {
+    .highlights, .archive {
       padding: 30px 32px;
       border-top: 1px solid var(--border);
     }
 
-    .highlights h2,
-    .archive h2 {
+    .highlights h2, .archive h2 {
       margin-top: 0;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
 
-    .highlight-grid {
+    .highlight-grid, .archive-grid {
       display: grid;
-      grid-template-columns: repeat(7, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .highlight-card {
+    .highlight-card, .archive-item {
       min-height: 132px;
       padding: 18px;
       border-radius: 14px;
       border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.07), transparent 40%),
-        var(--card2);
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.07), transparent 40%), var(--card2);
       text-align: center;
     }
 
-    .highlight-card h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-      line-height: 1.1;
-    }
-
-    .highlight-card:nth-child(4n + 1) h3 {
-      color: var(--red);
-    }
-
-    .highlight-card:nth-child(4n + 2) h3 {
-      color: var(--green);
-    }
-
-    .highlight-card:nth-child(4n + 3) h3 {
-      color: var(--purple);
-    }
-
-    .highlight-card:nth-child(4n + 4) h3 {
-      color: var(--blue);
-    }
-
-    .highlight-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    /* =========================
-       MEDIA ARCHIVE
-    ========================= */
-
-    .archive {
-      padding: 30px 32px;
-      border-top: 1px solid var(--border);
-    }
+    .highlight-card h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.1; }
+    .highlight-card:nth-child(4n + 1) h3 { color: var(--red); }
+    .highlight-card:nth-child(4n + 2) h3 { color: var(--green); }
+    .highlight-card:nth-child(4n + 3) h3 { color: var(--purple); }
+    .highlight-card:nth-child(4n + 4) h3 { color: var(--blue); }
+    .highlight-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
     .archive-tabs {
       display: flex;
@@ -607,7 +473,7 @@
 
     .archive-tabs button {
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
       padding: 10px 14px;
       border-radius: 20px;
@@ -618,34 +484,18 @@
       font-weight: 800;
     }
 
-    .archive-tabs button.active,
-    .archive-tabs button:hover {
+    .archive-tabs button.active, .archive-tabs button:hover {
       background: var(--red);
-      border-color: rgba(255, 43, 43, 0.85);
-    }
-
-    .archive-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
+      border-color: rgba(255,43,43,0.85);
     }
 
     .archive-item {
       min-height: 122px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--card);
       display: grid;
       place-items: center;
-      text-align: center;
-      padding: 14px;
       color: var(--muted);
       font-size: 12px;
     }
-
-    /* =========================
-       QUOTE / CTA
-    ========================= */
 
     .quote-section {
       display: grid;
@@ -654,13 +504,11 @@
       padding: 36px 32px;
       align-items: center;
       border-top: 1px solid var(--border);
-      background:
-        radial-gradient(circle at left, rgba(255, 0, 0, 0.18), transparent 35%),
-        radial-gradient(circle at right, rgba(0, 80, 255, 0.18), transparent 35%);
+      background: radial-gradient(circle at left, rgba(255,0,0,0.18), transparent 35%), radial-gradient(circle at right, rgba(0,80,255,0.18), transparent 35%);
     }
 
     .quote-section img {
-      width: 480%;
+      width: 100%;
       max-height: 480px;
       object-fit: cover;
       object-position: center;
@@ -676,9 +524,7 @@
       margin: 0 0 22px;
     }
 
-    .quote h2 span {
-      color: var(--red);
-    }
+    .quote h2 span { color: var(--red); }
 
     .cta-buttons {
       display: flex;
@@ -690,16 +536,11 @@
       padding: 13px 18px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 850;
       letter-spacing: 1px;
-    }
-
-    .cta-buttons a:hover {
-      background: var(--red);
-      border-color: rgba(255, 43, 43, 0.85);
     }
 
     footer {
@@ -711,180 +552,63 @@
       font-size: 12px;
     }
 
-
-    /* =========================
-       PAUL WHISKY HORIZONTAL CARD
-    ========================= */
-
-    #videos .paul-row {
-      align-items: flex-start;
-    }
-
-    #videos .paul-card {
-      flex: 0 0 clamp(680px, 68vw, 900px);
-      align-items: flex-start;
-    }
-
-    #videos .paul-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
-    #videos .paul-media img {
-      width: 100%;
-      height: 260px;
-      object-fit: contain;
-      object-position: center;
-      border-radius: 11px;
-      display: block;
-      background: #050505;
-    }
-#videos .paul-video-card {
-  flex: 0 0 clamp(520px, 45vw, 700px);
-  min-width: 520px;
-}
-#videos .paul-video-card .video-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin-top: 0;
-}
-
-    #videos .paul-text {
-      grid-column: 1 / -1;
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    #videos .mini-card {
-      min-height: 390px;
-    }
-
-    @media (max-width: 900px) {
-      #videos .paul-card {
-        flex-basis: 88vw;
-      }
-
-      #videos .paul-layout {
-        grid-template-columns: 1fr;
-      }
-
-      #videos .paul-text {
-        grid-column: auto;
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
     @media (max-width: 1200px) {
-      .highlight-grid,
-      .archive-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      .highlight-grid, .archive-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 1000px) {
-      .hero,
-      .timeline-row,
-      .quote-section {
-        grid-template-columns: 1fr;
-      }
-
-      .bio-panel {
-        width: 94%;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .timeline-label {
-        max-width: 760px;
-      }
+      .hero, .timeline-row, .quote-section { grid-template-columns: 1fr; }
+      .bio-panel { width: 94%; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .nav-links { justify-content: flex-start; }
+      .timeline-label { max-width: 760px; }
     }
 
     @media (max-width: 700px) {
-      .nav {
-        padding: 14px 5%;
+      .nav { padding: 14px 5%; overflow: hidden; }
+      .logo-main { font-size: 24px; }
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        padding-bottom: 6px;
       }
+      .hero { padding: 35px 5%; gap: 24px; min-height: auto; }
+      .hero-content h1 { font-size: 48px; letter-spacing: -2px; }
+      .role-line { font-size: 13px; }
+      .bio-panel { width: 100%; border-left: 0; border-right: 0; border-radius: 0; }
+      .panel-header, .timeline-row, .highlights, .archive, .quote-section { padding: 22px; }
+      .bio-intro-card { margin: 22px; padding: 24px; }
+      .bio-intro-card p { font-size: 15px; }
+      .timeline-row { gap: 18px; }
+      .timeline-content { width: 100%; max-width: 100%; }
+      .timeline-content .slot, .timeline-content .slot.wide, .timeline-content .slot.full {
+        flex: 0 0 84vw;
+        max-width: 84vw;
+      }
+      .slot img, .slot.wide img, .slot.full img { height: 230px; }
+      .highlight-grid, .archive-grid { grid-template-columns: 1fr; }
+    }
 
-      .hero {
-        padding: 35px 5%;
-        gap: 24px;
+    @media (max-width: 430px) {
+      .timeline-content .slot, .timeline-content .slot.wide, .timeline-content .slot.full {
+        flex-basis: 82vw;
+        max-width: 82vw;
       }
-
-      .panel-header,
-      .timeline-row,
-      .highlights,
-      .archive,
-      .quote-section {
-        padding: 22px;
-      }
-
-      .bio-intro-card {
-        margin: 22px;
-        padding: 24px;
-      }
-
-      .bio-intro-card p {
-        font-size: 15px;
-      }
-
-      .highlight-grid,
-      .archive-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-content .slot {
-        flex-basis: 255px;
-      }
-
-      .timeline-content .slot.wide,
-      .timeline-content .slot.full {
-        flex-basis: 310px;
-      }
-
-      .slot img,
-      .slot.wide img,
-      .slot.full img {
-        height: 230px;
-      }
-
-      .hero-content h1 {
-        font-size: 48px;
-        letter-spacing: -2px;
-      }
-
-      .role-line {
-        font-size: 13px;
-      }
+      .panel-header, .timeline-row, .highlights, .archive, .quote-section { padding: 18px; }
+      .bio-intro-card { margin: 18px; padding: 20px; }
+      .slot { padding: 12px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
   <nav class="nav">
     <a class="logo" href="index.html" aria-label="SuperDaddyChris home">
       <span class="logo-main">SuperDaddyChris</span>
       <span class="logo-sub">Official Bio</span>
     </a>
-
     <div class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">Bio</a>
@@ -897,29 +621,14 @@
     </div>
   </nav>
 
-  <!-- =========================
-       HERO SECTION
-  ========================= -->
-
   <section class="hero">
     <div class="hero-photo">
       <img src="images/cry-wolf/crywolf moon.PNG" alt="SuperDaddyChris portrait" />
     </div>
-
     <div class="hero-content">
       <h1><span class="white">SuperDaddy</span><span class="red">Chris</span></h1>
-
-      <div class="role-line">
-        Recording Artist • Content Creator • Videographer • Entrepreneur
-      </div>
-
-      <p>
-        From creator interviews and music video production to recording artist,
-        entrepreneur, Army servicemember, and game collaborator, SuperDaddyChris
-        has spent over a decade building projects across music, media,
-        entertainment, and technology.
-      </p>
-
+      <div class="role-line">Recording Artist • Content Creator • Videographer • Entrepreneur</div>
+      <p>From creator interviews and music video production to recording artist, entrepreneur, Army servicemember, and game collaborator, SuperDaddyChris has spent over a decade building projects across music, media, entertainment, and technology.</p>
       <div class="social-bar">
         <a href="https://www.youtube.com/@SuperDaddyChris" target="_blank" rel="noopener">YouTube</a>
         <a href="#music">Music</a>
@@ -930,531 +639,111 @@
     </div>
   </section>
 
-  <!-- =========================
-       MAIN BIO PANEL
-  ========================= -->
-
   <main class="bio-panel" id="story">
     <div class="panel-header">
       <h2>The Story</h2>
-      <p>
-        A journey of creativity, collaboration, and constant evolution.
-        From behind the camera to behind the mic — every chapter built the foundation for the next.
-      </p>
+      <p>A journey of creativity, collaboration, and constant evolution. From behind the camera to behind the mic — every chapter built the foundation for the next.</p>
     </div>
 
-    <!-- BIO INTRO -->
     <section class="bio-intro-card">
       <div class="bio-intro-badge">SuperDaddyChris</div>
-
       <h2>More Than an Artist</h2>
-
-      <p>
-        Chris has achieved many things that the average person has never come close to experiencing.
-      </p>
-
-      <p>
-        From creating viral videos to appearing as a character in a video game alongside the original
-        Green Ranger, <strong>Jason David Frank</strong>, Chris has built a career across entertainment,
-        media, music, gaming, and storytelling. He has interviewed major creators and celebrities
-        including <strong>Queen Naija</strong>, <strong>Liza Koshy</strong>, <strong>Jon Vlogs</strong>,
-        and others.
-      </p>
-
-      <p>
-        His work behind the camera includes traveling with, shooting, and editing videos for
-        Houston’s own <strong>Paul Whisky</strong> before his passing, as well as shooting and editing
-        dance videos for <strong>Osmara Rojas</strong>, an actress in Los Angeles who was once a
-        Houston Texans Cheerleader and Miami Heat Dancer.
-      </p>
-
-      <p>
-        Chris has also worked with and recorded music alongside artists connected to
-        <strong>Bone Thugs-N-Harmony</strong>, including <strong>Sleepy Da Hitman</strong> and
-        <strong>Smoke Bone</strong>. Even in the gaming world, Chris made his mark as a member of
-        <strong>The Contenders of the Round Table</strong>.
-      </p>
-
-      <p>
-        Now, while currently serving on active duty in the <strong>U.S. Military</strong>,
-        SuperDaddyChris has released his most personal project yet:
-        <strong>Love Me Back</strong>.
-      </p>
-
-      <p class="bio-intro-closing">
-        From behind the camera to the front of the stage, Chris has continued to rise to every occasion —
-        proving there is no lane he cannot step into and make his own.
-      </p>
+      <p>Chris has achieved many things that the average person has never come close to experiencing.</p>
+      <p>From creating viral videos to appearing as a character in a video game alongside the original Green Ranger, <strong>Jason David Frank</strong>, Chris has built a career across entertainment, media, music, gaming, and storytelling. He has interviewed major creators and celebrities including <strong>Queen Naija</strong>, <strong>Liza Koshy</strong>, <strong>Jon Vlogs</strong>, and others.</p>
+      <p>His work behind the camera includes traveling with, shooting, and editing videos for Houston’s own <strong>Paul Whisky</strong> before his passing, as well as shooting and editing dance videos for <strong>Osmara Rojas</strong>, an actress in Los Angeles who was once a Houston Texans Cheerleader and Miami Heat Dancer.</p>
+      <p>Chris has also worked with and recorded music alongside artists connected to <strong>Bone Thugs-N-Harmony</strong>, including <strong>Sleepy Da Hitman</strong> and <strong>Smoke Bone</strong>. Even in the gaming world, Chris made his mark as a member of <strong>The Contenders of the Round Table</strong>.</p>
+      <p>Now, while currently serving on active duty in the <strong>U.S. Military</strong>, SuperDaddyChris has released his most personal project yet: <strong>Love Me Back</strong>.</p>
+      <p class="bio-intro-closing">From behind the camera to the front of the stage, Chris has continued to rise to every occasion — proving there is no lane he cannot step into and make his own.</p>
     </section>
 
-<!-- SECTION 1: RED -->
-<section class="timeline-row theme-red" id="early-life">
-  <div class="timeline-label">
-    <div class="number">1</div>
-    <div>
-      <h3>Early Life</h3>
-      <ul>
-        <li>From the streets of Chicago</li>
-        <li>A father in prison</li>
-        <li>Moving from school to school</li>
-        <li>Mother working two jobs</li>
-        <li>Video games became his escape</li>
-      </ul>
-      <p>
-        “In Chicago, I was either outside playing basketball, getting into fights,
-        or staying home playing video games to stay out of trouble. Sonic, Mario,
-        Super Smash Bros., Star Fox, Resident Evil 2 — those were my escape.
-        It wasn’t until I was 13 that I wrote my first song.”
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-content">
-    <div class="slot red">
-      <div>
-        <img src="images/young-chris/Young Karate.jpeg" alt="Young Karate" loading="lazy" />
+    <section class="timeline-row theme-red" id="early-life">
+      <div class="timeline-label"><div class="number">1</div><div><h3>Early Life</h3><ul><li>From the streets of Chicago</li><li>A father in prison</li><li>Moving from school to school</li><li>Mother working two jobs</li><li>Video games became his escape</li></ul><p>“In Chicago, I was either outside playing basketball, getting into fights, or staying home playing video games to stay out of trouble. Sonic, Mario, Super Smash Bros., Star Fox, Resident Evil 2 — those were my escape. It wasn’t until I was 13 that I wrote my first song.”</p></div></div>
+      <div class="timeline-content">
+        <div class="slot red"><div><img src="images/young-chris/Young Karate.jpeg" alt="Young Karate" loading="lazy" /></div></div>
+        <div class="slot red"><div><img src="images/young-chris/Young Russel.jpeg" alt="Young Russell" loading="lazy" /></div></div>
+        <div class="slot red"><div><img src="images/young-chris/Young Jeremy.jpeg" alt="Young kids" loading="lazy" /></div></div>
+        <div class="slot red"><div><img src="images/young-chris/young-lonnie.JPG" alt="Young Lonnie" loading="lazy" /></div></div>
       </div>
-    </div>
+    </section>
 
-    <div class="slot red">
-      <div>
-        <img src="images/young-chris/Young Russel.jpeg" alt="Young Russell" loading="lazy" />
-      </div>
-    </div>
-
-    <div class="slot red">
-      <div>
-        <img src="images/young-chris/Young Jeremy.jpeg" alt="Young kids" loading="lazy" />
-      </div>
-    </div>
-
-    <div class="slot red">
-      <div>
-        <img src="images/young-chris/young-lonnie.JPG" alt="Young Lonnie" loading="lazy" />
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- SECTION 2: GREEN -->
     <section class="timeline-row theme-green" id="morphin-life">
-      <div class="timeline-label">
-        <div class="number">2</div>
-        <div>
-          <h3>My Morphin Life Game with Jason David Frank</h3>
-          <p>
-           in Collaboration with Motive 8 Productions Chris is featured in My Morphin Life Game, a project connected to the legacy
-            and vision of Jason David Frank. Chris was an NPC that players had to defeat.
-          </p>
-        </div>
-      </div>
-
+      <div class="timeline-label"><div class="number">2</div><div><h3>My Morphin Life Game with Jason David Frank</h3><p>In collaboration with Motive 8 Productions, Chris is featured in My Morphin Life Game, a project connected to the legacy and vision of Jason David Frank. Chris was an NPC that players had to defeat.</p></div></div>
       <div class="timeline-content">
-        <div class="slot green wide">
-          <div>
-            <img src="morphin-life-cover.png" alt="My Morphin Life game cover" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/my-morphin-life/Morphing-time-(1).jpeg" alt="Jason David Frank scene" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/my-morphin-life/Morphing-time-(2).jpeg" alt="Jason David Frank scene" loading="lazy" />
-          </div>
-        </div>
-<div class="slot green wide">
-          <div>
-            <strong><iframe width="480" height="315" src="https://www.youtube.com/embed/e62kEDpraXk?si=lmfTLb_YPmMiRBPx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div></strong>
-            <div class="video-wrap">
-              </div>
-            </div>
-        <div class="slot green wide">
-          <div>
-            <strong></strong>
-            <div class="video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/tEU_4YUsJbI?si=I1cMj5v73uZKt6lu&amp;start=314"
-                title="My Morphin Life gameplay video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          </div>
+        <div class="slot green wide"><div><img src="morphin-life-cover.png" alt="My Morphin Life game cover" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/my-morphin-life/Morphing-time-(1).jpeg" alt="Jason David Frank scene" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/my-morphin-life/Morphing-time-(2).jpeg" alt="Jason David Frank scene" loading="lazy" /></div></div>
+        <div class="slot green wide"><div><strong>My Morphin Life</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/e62kEDpraXk?si=lmfTLb_YPmMiRBPx" title="My Morphin Life video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot green wide"><div><strong>Gameplay Video</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/tEU_4YUsJbI?si=I1cMj5v73uZKt6lu&amp;start=314" title="My Morphin Life gameplay video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
       </div>
     </section>
 
-    <!-- SECTION 3: PURPLE -->
     <section class="timeline-row theme-purple" id="sleepy">
-      <div class="timeline-label">
-        <div class="number">3</div>
-        <div>
-          <h3>Bone Thugs-N-Harmony's Sleepy Da Hitman</h3>
-          <p>
-            SuperDaddyChris has recorded Bone Thugs-N-Harmony's
-            newest signed artist Sleepy Da Hitman on Chris's 
-            single IDGAD also featuring Will Peters. Chris also 
-            shot and edited Sleepy da Hitman's debut music video 
-            with Bone Thugs-N-Hamony "Show Me" as well as "Go Get It"
-            Chris was also the videograhper for Sleepy Dat Hitman & Smoke Bone's
-            first offical performance as signed Bone Thugs artists.
-          </p>
-        </div>
-      </div>
-
+      <div class="timeline-label"><div class="number">3</div><div><h3>Bone Thugs-N-Harmony's Sleepy Da Hitman</h3><p>SuperDaddyChris recorded with Bone Thugs-N-Harmony's newest signed artist, Sleepy Da Hitman, on Chris's single IDGAD also featuring Will Peters. Chris also shot and edited Sleepy Da Hitman's debut music videos "Show Me" and "Go Get It." Chris was also the videographer for Sleepy Da Hitman and Smoke Bone's first official performance as signed Bone Thugs artists.</p></div></div>
       <div class="timeline-content">
-        <div class="slot purple">
-                   <div>
-            <img src="idgad.jpeg" alt="idgadl cover" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot purple wide">
-          <div>
-            <strong><iframe width="480" height="315" src="https://www.youtube.com/embed/LF-CCqIshfc?si=85zfxrNd2jDJAFCW&amp;start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-          </div>
-        </div>
-
-        <div class="slot purple wide">
-          <div>
-            <strong><iframe width="480" height="315" src="https://www.youtube.com/embed/t26-xAQ2fBY?si=pvZyoy-cBIoOiX3B&amp;start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-            </div>
-        </div>
-
-        <div class="slot purple wide">
-          <div>
-            <strong><iframe width="480" height="315" src="https://www.youtube.com/embed/UyTUOomE_IE?si=jqvCuUCs569lTD_h&amp;start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-           </div>
-          </div>
-
-           <div class="slot purple wide">
-          <div>
-            <strong><iframe width="480" height="315" src="https://www.youtube.com/embed/yUKNkpfEIjE?si=7vuhIZvQpdwfflDu&amp;start=156" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-           </div>
-          </div>
+        <div class="slot purple"><div><img src="idgad.jpeg" alt="IDGAD cover" loading="lazy" /></div></div>
+        <div class="slot purple wide"><div><strong>Sleepy Da Hitman</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/LF-CCqIshfc?si=85zfxrNd2jDJAFCW&amp;start=156" title="Sleepy Da Hitman video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot purple wide"><div><strong>Go Get It</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/t26-xAQ2fBY?si=pvZyoy-cBIoOiX3B&amp;start=156" title="Go Get It video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot purple wide"><div><strong>Performance</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/UyTUOomE_IE?si=jqvCuUCs569lTD_h&amp;start=156" title="Sleepy Da Hitman performance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot purple wide"><div><strong>Bone Thugs Connection</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/yUKNkpfEIjE?si=7vuhIZvQpdwfflDu&amp;start=156" title="Bone Thugs connected video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
       </div>
     </section>
 
-<!-- SECTION 4: BLUE -->
-<section class="timeline-row theme-blue" id="notable-collaborations">
-  <div class="timeline-label">
-    <div class="number">4</div>
-    <div>
-      <h3>Queen Naija & Osmara Rojas</h3>
-      <p>
-        Chris has filmed and edited several dance videos for actress Osmara Rojas, R&B artist Queen Naija,
-        Chris Sails, and Houston influencer Paul Whisky.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-content">
-
-    <div class="slot bluewide">
-      <div>
-       <Strong>Queen Naija</Strong> <img 
-          src="images/collabs/queennaija.png" 
-          alt="Queen Naija collaboration cover" 
-          loading="lazy" 
-        />
+    <section class="timeline-row theme-blue" id="notable-collaborations">
+      <div class="timeline-label"><div class="number">4</div><div><h3>Queen Naija & Osmara Rojas</h3><p>Chris has filmed and edited several dance videos for actress Osmara Rojas, R&B artist Queen Naija, Chris Sails, and Houston influencer Paul Whisky.</p></div></div>
+      <div class="timeline-content">
+        <div class="slot blue"><div><strong>Queen Naija</strong><img src="images/collabs/queennaija.png" alt="Queen Naija collaboration cover" loading="lazy" /></div></div>
+        <div class="slot blue wide"><div><strong>Houston YouTubers</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/UUvkuRZN1bg?si=oazx7jdP6TINEMrp&amp;start=150" title="Queen Naija and Chris Sails video appearance" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div><p>Queen Naija and Chris Sails in SuperDaddyChris Houston YouTubers.</p></div></div>
+        <div class="slot blue"><div><strong>Actress Osmara Rojas</strong><img src="images/collabs/osmara.jfif" alt="Osmara Rojas collaboration cover" loading="lazy" /></div></div>
+        <div class="slot blue wide"><div><strong>Osmara Rojas Dance Video</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/8Dkf6R8YlQ4?si=_dRdKH72w7Ordc0h&amp;start=150" title="Osmara Rojas dance video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div><p>Dance video featuring Osmara Rojas, filmed and edited by Chris.</p></div></div>
       </div>
-    </div>
+    </section>
 
-    <div class="slot blue wide">
-      <div>
-        <iframe 
-          width="480" 
-          height="315" 
-          src="https://www.youtube.com/embed/UUvkuRZN1bg?si=oazx7jdP6TINEMrp&amp;start=150" 
-          title="Queen Naija and Chris Sails video appearance" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-
-        <p>
-          Queen Naija and Chris Sails in Superdaddychris Houston Youtubers
-        </p>
+    <section class="timeline-row theme-purple" id="videos">
+      <div class="timeline-label"><div class="number">5</div><div><h3>Paul Whisky Comedy Skits, Vlogs, & Tours</h3><p>SuperDaddyChris shot, directed, and edited music videos, artist visuals, interviews, comedy videos, and cinematic behind-the-scenes content.</p></div></div>
+      <div class="timeline-content">
+        <div class="slot purple"><div><strong>Paul Whisky</strong><img src="images/collabs/IMG_1400.jpeg" alt="Paul Whisky cover" loading="lazy" /><p>Houston influencer Paul Whisky, featured through Chris’s video work, vlogs, comedy skits, tours, and creative collaborations.</p></div></div>
+        <div class="slot purple wide"><div><strong>Paul Whisky</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/JOIBCtoKlmw?si=fQhLT2N0OUEYRDU7&amp;start=192" title="Paul Whisky video collaboration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div><p>Chris & Paul in New Orleans.</p></div></div>
+        <div class="slot purple wide"><div><strong>Director / Tour Footage</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/liLH_h6XDpY?si=XIIZllJOSzU2KeHh" title="Paul and Chris in Austin and San Antonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div><p>Paul & Chris in Austin and San Antonio shooting Lil Sneak's music video "Gucci."</p></div></div>
+        <div class="slot purple wide"><div><strong>Music Video</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/rkGgEcOOEUY?si=IaciaWg9DaH0LIQA" title="Lil Sneak Gucci official music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div><p>Lil Sneak Official Music Video "Gucci" featuring Paul Whisky & Will Peters.</p></div></div>
       </div>
-    </div>
+    </section>
 
-    <div class="slot blue">
-      <div>
-        <strong>Actress Osmara Rojas</strong>
-        <img 
-          src="images/collabs/osmara.jfif" 
-          alt="Osmara Rojas collaboration cover" 
-          loading="lazy" 
-        />
-        <p>
-      </div>
-    </div>
-
-    <div class="slot blue wide">
-      <div>
-        <iframe 
-          width="480" 
-          height="315" 
-          src="https://www.youtube.com/embed/8Dkf6R8YlQ4?si=_dRdKH72w7Ordc0h&amp;start=150" 
-          title="Osmara Rojas dance video" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-
-        <p>
-          Dance video featuring Osmara Rojas, filmed and edited by Chris.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- SECTION 5: PURPLE -->
-<section class="timeline-row theme-purple" id="videos">
-  <div class="timeline-label">
-    <div class="number">5</div>
-    <div>
-      <h3>Paul Whisky Comedy Skits, Vlogs, & Tours</h3>
-      <p>
-        SuperDaddyChris shot, directed, and edited music videos, artist visuals, interviews,
-        comedy videos, and cinematic behind-the-scenes content.
-      </p>
-    </div>
-  </div>
-
-  <div class="timeline-content paul-row">
-
-    <!-- PAUL WHISKY IMAGE / TEXT BLOCK -->
-    <div class="slot purple paul-info-card">
-      <div>
-        <strong>Paul Whisky</strong>
-
-        <img
-          src="images/collabs/IMG_1400.jpeg"
-          alt="Paul Whisky cover"
-          loading="lazy"
-        />
-
-        <p>
-          Houston influencer Paul Whisky, featured through Chris’s video work, vlogs,
-          comedy skits, tours, and creative collaborations.
-        </p>
-      </div>
-    </div>
-
-    <!-- PAUL WHISKY VIDEO BLOCK -->
-    <div class="slot purple wide">
-      <div>
-        <strong>Paul Whisky</strong>
-
-        <div class="video-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/JOIBCtoKlmw?si=fQhLT2N0OUEYRDU7&amp;start=192"
-            title="Paul Whisky video collaboration"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </p>Chris & Paul in New Orleans.</p>
-      </div>
-    </div>
-
-    <!-- DIRECTOR BLOCK -->
-    <div class="slot purple wide">
-      <div>
-        <strong><iframe width="560" height="315" src="https://www.youtube.com/embed/liLH_h6XDpY?si=XIIZllJOSzU2KeHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-        <p>Paul & Chris in Austin and San Antonio shooting Lil Sneak's Musci video "Gucci"</p>
-      </div>
-    </div>
-
-    <!-- EDITING BLOCK -->
-    <div class="slot purple wide">
-      <div>
-        <strong><iframe width="560" height="315" src="https://www.youtube.com/embed/rkGgEcOOEUY?si=IaciaWg9DaH0LIQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></strong>
-        <p>Lil Sneak Official Music Video Gucci featuring Paul Whisky & Will Peters</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <!-- SECTION 6: RED -->
     <section class="timeline-row theme-red" id="music">
-      <div class="timeline-label">
-        <div class="number">6</div>
-        <div>
-          <h3>Music Career</h3>
-          <p>
-            Recording artist and storyteller. His album Love Me Back captures heartbreak,
-            growth, accountability, and emotional evolution.
-          </p>
-        </div>
-      </div>
-
+      <div class="timeline-label"><div class="number">6</div><div><h3>Music Career</h3><p>Recording artist and storyteller. His album Love Me Back captures heartbreak, growth, accountability, and emotional evolution.</p></div></div>
       <div class="timeline-content">
-        <div class="slot red album-cover">
-          <div>
-            <strong>Love Me Back Album</strong>
-            <img src="images/love-me-back-cover.jpg" alt="Love Me Back album cover" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot red wide">
-          <div>
-            <strong>Perfect Girl</strong>
-            <div class="video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/cpNhBbfFeLk?si=lMlZrlcY0s-7Hsth"
-                title="Perfect Girl music video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="slot red wide">
-          <div>
-            <strong>Cry Wolf</strong>
-            <div class="video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/_c0EYZ8GsGU?si=OXMJ9dg8TRqoh3M0"
-                title="Cry Wolf music video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="slot red wide">
-          <div>
-            <strong>Are We Through</strong>
-            <div class="video-wrap">
-              <iframe
-                src="https://www.youtube.com/embed/UxAoG1Pf41o?si=r1FtA2lcimmPTZaY"
-                title="Are We Through music video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="slot full red">
-          <div>
-            <strong>Stream Now</strong>
-            Spotify • Apple Music • YouTube • Amazon Music • Tidal
-          </div>
-        </div>
+        <div class="slot red album-cover"><div><strong>Love Me Back Album</strong><img src="images/love-me-back-cover.jpg" alt="Love Me Back album cover" loading="lazy" /></div></div>
+        <div class="slot red wide"><div><strong>Perfect Girl</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/cpNhBbfFeLk?si=lMlZrlcY0s-7Hsth" title="Perfect Girl music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot red wide"><div><strong>Cry Wolf</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/_c0EYZ8GsGU?si=OXMJ9dg8TRqoh3M0" title="Cry Wolf music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot red wide"><div><strong>Are We Through</strong><div class="video-wrap"><iframe src="https://www.youtube.com/embed/UxAoG1Pf41o?si=r1FtA2lcimmPTZaY" title="Are We Through music video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div></div></div>
+        <div class="slot full red"><div><strong>Stream Now</strong>Spotify • Apple Music • YouTube • Amazon Music • Tidal</div></div>
       </div>
     </section>
 
-  
-    <!-- SECTION 7: GREEN -->
     <section class="timeline-row theme-green" id="military">
-      <div class="timeline-label">
-        <div class="number">7</div>
-        <div>
-          <h3>Military Service</h3>
-          <p>
-            United States Army servicemember, 91M Bradley Fighting Vehicle Maintainer,
-            supporting NATO operations in Poland while continuing to build his creative legacy.
-          </p>
-        </div>
-      </div>
-
+      <div class="timeline-label"><div class="number">7</div><div><h3>Military Service</h3><p>United States Army servicemember, 91M Bradley Fighting Vehicle Maintainer, supporting NATO operations in Poland while continuing to build his creative legacy.</p></div></div>
       <div class="timeline-content">
-        <div class="slot green">
-          <div>
-            <strong>Active Duty Servicemember</strong>
-            <img src="images/army/army- (4).JPG" alt="Chris in Army uniform" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/army/army- (2).JPG" alt="Chris Army photo" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/army/army- (2).png" alt="Chris Army photo" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/army/army- (3).png" alt="Chris Army photo" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="slot green">
-          <div>
-            <img src="images/army/army- (3).JPG" alt="Chris Army photo" loading="lazy" />
-          </div>
-        </div>
-</div>
+        <div class="slot green"><div><strong>Active Duty Servicemember</strong><img src="images/army/army- (4).JPG" alt="Chris in Army uniform" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/army/army- (2).JPG" alt="Chris Army photo" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/army/army- (2).png" alt="Chris Army photo" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/army/army- (3).png" alt="Chris Army photo" loading="lazy" /></div></div>
+        <div class="slot green"><div><img src="images/army/army- (3).JPG" alt="Chris Army photo" loading="lazy" /></div></div>
+      </div>
     </section>
 
-    <!-- CAREER HIGHLIGHTS -->
     <section class="highlights">
       <h2>Career Highlights</h2>
-
       <div class="highlight-grid">
-        <div class="highlight-card">
-          <h3>10+</h3>
-          <p>Years of content creation, storytelling, and building brands</p>
-        </div>
-
-        <div class="highlight-card">
-          <h3>Artist</h3>
-          <p>Independent music releases and visuals</p>
-        </div>
-
-        <div class="highlight-card">
-          <h3>Video</h3>
-          <p>Music videos, interviews, dance videos, and behind-the-scenes content</p>
-        </div>
-
-        <div class="highlight-card">
-          <h3>Army</h3>
-          <p>U.S. Army servicemember and Bradley maintainer</p>
-        </div>
-
-        <div class="highlight-card">
-          <h3>Gaming</h3>
-          <p>Featured in My Morphin Life Video Game</p>
-        </div>
-
-        <div class="highlight-card">
-          <h3>Industry</h3>
-          <p>Bone Thugs-N-Harmony, Sleepy Da Hitman, Osmara Rojas, and more</p>
-        </div>
+        <div class="highlight-card"><h3>10+</h3><p>Years of content creation, storytelling, and building brands</p></div>
+        <div class="highlight-card"><h3>Artist</h3><p>Independent music releases and visuals</p></div>
+        <div class="highlight-card"><h3>Video</h3><p>Music videos, interviews, dance videos, and behind-the-scenes content</p></div>
+        <div class="highlight-card"><h3>Army</h3><p>U.S. Army servicemember and Bradley maintainer</p></div>
+        <div class="highlight-card"><h3>Gaming</h3><p>Featured in My Morphin Life Video Game</p></div>
+        <div class="highlight-card"><h3>Industry</h3><p>Bone Thugs-N-Harmony, Sleepy Da Hitman, Osmara Rojas, and more</p></div>
       </div>
     </section>
 
-    <!-- MEDIA ARCHIVE -->
     <section class="archive" id="archive">
       <h2>Media Archive</h2>
-
       <div class="archive-tabs">
         <button class="active" type="button">All</button>
         <button type="button">Creator Interviews</button>
@@ -1465,7 +754,6 @@
         <button type="button">Travel Vlogs</button>
         <button type="button">Behind The Scenes</button>
       </div>
-
       <div class="archive-grid">
         <div class="archive-item">Video Widget</div>
         <div class="archive-item">Photo Widget</div>
@@ -1476,20 +764,10 @@
       </div>
     </section>
 
-    <!-- QUOTE / CTA -->
     <section class="quote-section">
       <img src="images/are-we-through/AWT (2).PNG" alt="SuperDaddyChris portrait" loading="lazy" />
-
       <div class="quote">
-        <h2>
-          <span>“</span>
-          From creator to videographer.<br />
-          From videographer to artist.<br />
-          From artist to entrepreneur.<br />
-          The journey is still being written.
-          <span>”</span>
-        </h2>
-
+        <h2><span>“</span>From creator to videographer.<br />From videographer to artist.<br />From artist to entrepreneur.<br />The journey is still being written.<span>”</span></h2>
         <div class="cta-buttons">
           <a href="#music">Listen To Music</a>
           <a href="media.html">Watch Videos</a>
@@ -1501,13 +779,10 @@
     </section>
   </main>
 
-  <footer>
-    Building • Creating • Inspiring
-  </footer>
+  <footer>Building • Creating • Inspiring</footer>
 
   <script>
     const archiveButtons = document.querySelectorAll(".archive-tabs button");
-
     archiveButtons.forEach((button) => {
       button.addEventListener("click", () => {
         archiveButtons.forEach((item) => item.classList.remove("active"));
@@ -1515,24 +790,13 @@
       });
     });
   </script>
+
   <script>
-    /*
-      Page swipe navigation for about.html:
-      Swipe left  -> index.html
-      Swipe right -> media.html
-
-      Protected areas:
-      - timeline horizontal scrollers
-      - links, buttons, iframes, inputs, videos, audio
-      This keeps your timeline rows scrollable without accidentally changing pages.
-    */
-
     let pageTouchStartX = 0;
     let pageTouchStartY = 0;
     let pageTouchEndX = 0;
     let pageTouchEndY = 0;
     let pageSwipeStartElement = null;
-
     const blockedSwipeSelector = "a, button, iframe, input, textarea, select, video, audio, .timeline-content, .archive-tabs";
 
     document.addEventListener("touchstart", function(e){
@@ -1544,46 +808,19 @@
     document.addEventListener("touchend", function(e){
       pageTouchEndX = e.changedTouches[0].screenX;
       pageTouchEndY = e.changedTouches[0].screenY;
-
       handlePageSwipe(e.target);
     }, { passive:true });
 
     function handlePageSwipe(pageSwipeEndElement){
       const swipeX = pageTouchEndX - pageTouchStartX;
       const swipeY = pageTouchEndY - pageTouchStartY;
-
-      if(pageSwipeStartElement && pageSwipeStartElement.closest(blockedSwipeSelector)){
-        return;
-      }
-
-      if(pageSwipeEndElement && pageSwipeEndElement.closest(blockedSwipeSelector)){
-        return;
-      }
-
-      if(Math.abs(swipeX) < 90){
-        return;
-      }
-
-      if(Math.abs(swipeY) > 80){
-        return;
-      }
-
-      /*
-        Your chosen navigation direction:
-        On Bio/About:
-        swipe left  -> homepage
-        swipe right -> media page
-      */
-
-      if(swipeX > 0){
-        window.location.href = "index.html";
-      }
-
-      if(swipeX < 0){
-        window.location.href = "media.html";
-      }
+      if(pageSwipeStartElement && pageSwipeStartElement.closest(blockedSwipeSelector)) return;
+      if(pageSwipeEndElement && pageSwipeEndElement.closest(blockedSwipeSelector)) return;
+      if(Math.abs(swipeX) < 90) return;
+      if(Math.abs(swipeY) > 80) return;
+      if(swipeX > 0) window.location.href = "index.html";
+      if(swipeX < 0) window.location.href = "media.html";
     }
   </script>
-
 </body>
 </html>
