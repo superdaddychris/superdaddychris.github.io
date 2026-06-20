@@ -711,6 +711,69 @@
       font-size: 12px;
     }
 
+
+    /* =========================
+       PAUL WHISKY HORIZONTAL CARD
+    ========================= */
+
+    #videos .paul-row {
+      align-items: flex-start;
+    }
+
+    #videos .paul-card {
+      flex: 0 0 clamp(680px, 68vw, 900px);
+      align-items: flex-start;
+    }
+
+    #videos .paul-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    #videos .paul-media img {
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 11px;
+      display: block;
+      background: #050505;
+    }
+
+    #videos .paul-video {
+      height: 260px;
+      aspect-ratio: auto;
+      margin-top: 0;
+    }
+
+    #videos .paul-text {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    #videos .mini-card {
+      min-height: 170px;
+    }
+
+    @media (max-width: 900px) {
+      #videos .paul-card {
+        flex-basis: 88vw;
+      }
+
+      #videos .paul-layout {
+        grid-template-columns: 1fr;
+      }
+
+      #videos .paul-text {
+        grid-column: auto;
+      }
+    }
+
     /* =========================
        MOBILE
     ========================= */
@@ -1151,192 +1214,66 @@
     </div>
   </div>
 </section>
-    <!-- SECTION 5: RED -->
-    <section class="timeline-row theme-red" id="videos">
-      <div class="timeline-label">
-        <div class="number">5</div>
-        <div>
-          <h3>Paul Whisky Comedy skits, Vlogs, & tours</h3>
-          <p>
-            Superdaddychris Shot, directed, and edited music videos, artist visuals, interviews,
-            comedy videos, and cinematic behind-the-scenes content.
-          </p>
-        </div>
-      </div>
+  <!-- SECTION 5: RED -->
+<section class="timeline-row theme-red" id="videos">
+  <div class="timeline-label">
+    <div class="number">5</div>
+    <div>
+      <h3>Paul Whisky Comedy Skits, Vlogs, & Tours</h3>
+      <p>
+        SuperDaddyChris shot, directed, and edited music videos, artist visuals, interviews,
+        comedy videos, and cinematic behind-the-scenes content.
+      </p>
+    </div>
+  </div>
 
-<style>
-  .timeline-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    gap: 22px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 20px 0 28px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
+  <div class="timeline-content paul-row">
 
-  .timeline-content .slot {
-    flex: 0 0 500px;
-    min-width: 500px;
-    scroll-snap-align: start;
-    align-self: flex-start;
-  }
-
-  .timeline-content .slot.wide {
-    flex: 0 0 760px;
-    min-width: 760px;
-  }
-
-  .slot {
-    border-radius: 18px;
-    padding: 18px;
-    background: linear-gradient(145deg, #18181d, #111116);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-  }
-
-  .slot.red {
-    border-color: rgba(255, 45, 45, 0.55);
-    box-shadow: 0 0 22px rgba(255, 0, 0, 0.16);
-  }
-
-  .slot strong {
-    display: block;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    color: #fff;
-    text-align: center;
-  }
-
-  .slot p {
-    color: #ccc;
-    line-height: 1.5;
-    margin: 12px 0;
-  }
-
-  .paul-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    align-items: stretch;
-  }
-
-  .paul-media img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 14px;
-    display: block;
-    background: #000;
-  }
-
-  .paul-text {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 0;
-  }
-
-  .video-wrap {
-    position: relative;
-    width: 100%;
-    height: 260px;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #000;
-  }
-
-  .video-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  .mini-card {
-    min-height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .mini-card p {
-    margin: 0;
-  }
-
-  @media (max-width: 900px) {
-    .timeline-content .slot.wide {
-      flex: 0 0 88vw;
-      min-width: 88vw;
-    }
-
-    .paul-layout {
-      grid-template-columns: 1fr;
-    }
-
-    .paul-text {
-      grid-column: auto;
-    }
-
-    .paul-media img,
-    .video-wrap {
-      height: 240px;
-    }
-  }
-
-  @media (max-width: 700px) {
-    .timeline-content .slot {
-      flex: 0 0 82vw;
-      min-width: 82vw;
-    }
-
-    .timeline-content .slot.wide {
-      flex: 0 0 88vw;
-      min-width: 88vw;
-    }
-  }
-</style>
-
-<section class="timeline-section">
-
-  <div class="timeline-content">
-
-    <div class="slot red wide">
+    <!-- PAUL WHISKY IMAGE / TEXT BLOCK -->
+    <div class="slot red paul-info-card">
       <div>
         <strong>Paul Whisky</strong>
 
-        <div class="paul-layout">
+        <img
+          src="images/collabs/IMG_1400.jpeg"
+          alt="Paul Whisky cover"
+          loading="lazy"
+        />
 
-          <div class="paul-media">
-            <img 
-              src="images/collabs/IMG_1400.jpeg" 
-              alt="Paul Whisky cover" 
-              loading="lazy"
-            />
-          </div>
+        <p>
+          Houston influencer Paul Whisky, featured through Chris’s video work, vlogs,
+          comedy skits, tours, and creative collaborations.
+        </p>
+      </div>
+    </div>
+
+    <!-- PAUL WHISKY VIDEO BLOCK -->
+    <div class="slot red paul-video-card">
+      <div>
+        <strong>Paul Whisky Video Collaboration</strong>
+
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/JOIBCtoKlmw?si=fQhLT2N0OUEYRDU7&amp;start=192"
+            title="Paul Whisky video collaboration"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
         </div>
       </div>
     </div>
 
+    <!-- DIRECTOR BLOCK -->
     <div class="slot red mini-card">
       <div>
-        <strong> <iframe 
-              src="https://www.youtube.com/embed/JOIBCtoKlmw?si=fQhLT2N0OUEYRDU7&amp;start=192" 
-              title="Paul Whisky video collaboration" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-            </iframe></strong>
-        <p>Houston influencer Paul Whisky, featured through Chris’s video work, vlogs, and creative collaborations.</p>
+        <strong>Director View</strong>
+        <p>Camera / Editing</p>
       </div>
     </div>
 
+    <!-- EDITING BLOCK -->
     <div class="slot red mini-card">
       <div>
         <strong>Editing Module</strong>
@@ -1345,7 +1282,6 @@
     </div>
 
   </div>
-
 </section>
 
     <!-- SECTION 6: RED -->
